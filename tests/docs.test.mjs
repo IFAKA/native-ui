@@ -27,10 +27,25 @@ test("documentation examples expose the complete public vocabulary", async () =>
 
   for (const name of vocabulary) {
     const marker = name === "primary" || name === "danger" || name === "quiet"
-      ? 'data-variant="primary|danger|quiet"'
+      ? `data-variant="${name}"`
       : name;
     assert.match(discovery, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `${name} is missing from docs`);
   }
+});
+
+test("examples page visually demonstrates every public layout, composition, and variant", async () => {
+  const [manifest, html] = await Promise.all([
+    readFile(resolve(root, "src/manifest.json"), "utf8").then(JSON.parse),
+    readFile(resolve(site, "examples/index.html"), "utf8"),
+  ]);
+
+  for (const name of manifest.layouts) {
+    assert.match(html, new RegExp(`nui-site-layout-specimen[\\s\\S]*?<h2>${name.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}</h2>`), `${name} lacks a visible layout specimen`);
+  }
+  for (const name of manifest.compositions) {
+    assert.match(html, new RegExp(`nui-site-composition-specimen[\\s\\S]*?<h2>${name.replaceAll("-", " ")}<\\/h2>[\\s\\S]*?href="\\/recipes\\/${name}\\/"`), `${name} lacks a visible composition specimen`);
+  }
+  for (const name of manifest.variants) assert.match(html, new RegExp(`button[^>]+data-variant="${name}"`), `${name} lacks a visible variant specimen`);
 });
 
 test("documentation includes every required guide and local link targets", async () => {

@@ -56,6 +56,28 @@
   .nui-site-layer-number { color: var(--nui-accent); font-variant-numeric: tabular-nums; font-weight: 800; }
   .nui-site-layer h3 { margin-block: 0 .35rem; }
   .nui-site-layer p { max-inline-size: 48rem; margin: 0; color: var(--nui-foreground-muted); }
+  .nui-site-catalog-section { padding-block: clamp(2rem, 6vw, 5rem); }
+  .nui-site-catalog-heading { max-inline-size: 58rem; }
+  .nui-site-catalog-heading h2 { margin-block: .15rem 0; }
+  .nui-site-catalog-heading p:last-child { color: var(--nui-foreground-muted); }
+  .nui-site-catalog-grid { align-items: stretch; }
+  .nui-site-specimen { display: flex; min-inline-size: 0; flex-direction: column; gap: var(--nui-space-4); padding: var(--nui-space-4); border: 1px solid var(--nui-border-color); border-radius: var(--nui-radius); background: var(--nui-surface-raised); }
+  .nui-site-specimen > header { display: grid; gap: .35rem; }
+  .nui-site-specimen > header h2 { margin: 0; font-size: 1.15rem; }
+  .nui-site-specimen > header p { margin: 0; color: var(--nui-foreground-muted); font-size: var(--nui-text-sm); }
+  .nui-site-specimen-stage { display: grid; min-block-size: 8rem; align-content: center; gap: var(--nui-space-3); padding: var(--nui-space-4); border: 1px dashed var(--nui-border-color); border-radius: var(--nui-radius-sm); background: var(--nui-surface-sunken); }
+  .nui-site-specimen-stage > .card, .nui-site-specimen-stage > .empty-state { margin: 0; padding: var(--nui-space-4); }
+  .nui-site-specimen-stage > .field-actions { align-items: end; }
+  .nui-site-specimen-stage code, .nui-site-specimen > code, .nui-site-variant-card code { color: var(--nui-foreground-muted); font-size: var(--nui-text-sm); overflow-wrap: anywhere; }
+  .nui-site-demo-box { padding: var(--nui-space-3); border: 1px solid var(--nui-accent); background: var(--nui-site-wash); text-align: center; }
+  .nui-site-demo-copy { margin: 0; }
+  .nui-site-mini-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .nui-site-mini-grid .badge { justify-content: center; }
+  .nui-site-recipe-link { margin-block-start: auto; font-size: var(--nui-text-sm); font-weight: 700; }
+  .nui-site-variant-grid { align-items: stretch; }
+  .nui-site-variant-card { display: grid; align-content: start; gap: var(--nui-space-3); padding: var(--nui-space-5); border-block-start: 2px solid var(--nui-foreground); background: var(--nui-surface-raised); }
+  .nui-site-variant-card p { margin: 0; color: var(--nui-foreground-muted); }
+  .nui-site-variant-card button { justify-self: start; }
   .nui-site-callout { display: grid; gap: var(--nui-space-5); align-items: end; padding: clamp(1.5rem, 5vw, 4rem); border: 1px solid var(--nui-border-color); border-radius: var(--nui-radius-lg); background: var(--nui-site-wash); }
   .nui-site-callout h2 { margin-block: .2rem .5rem; }
   .nui-site-callout p { max-inline-size: 42rem; }
