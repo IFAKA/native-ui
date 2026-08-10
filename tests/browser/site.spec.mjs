@@ -26,6 +26,21 @@ test.describe("public site", () => {
     await expect(page.locator("dialog")).not.toBeVisible();
   });
 
+  test("popover stays anchored to its invoking control", async ({ page }) => {
+    await page.goto("/lab/");
+    const button = page.getByRole("button", { name: "Show popover" });
+    await button.click();
+    const popover = page.locator("#lab-popover");
+    await expect(popover).toBeVisible();
+    const placement = await button.evaluate((trigger) => {
+      const surface = document.querySelector("#lab-popover").getBoundingClientRect();
+      const anchor = trigger.getBoundingClientRect();
+      return { below: surface.top >= anchor.bottom - 2, overlapsInline: surface.left < anchor.right && surface.right > anchor.left };
+    });
+    expect(placement.below).toBeTruthy();
+    expect(placement.overlapsInline).toBeTruthy();
+  });
+
   test("narrow viewport and reduced motion preserve the page", async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 800 });
     await page.emulateMedia({ reducedMotion: "reduce" });
