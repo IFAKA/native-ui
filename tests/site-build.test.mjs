@@ -91,6 +91,8 @@ test("interactive examples start closed and site variants have distinct treatmen
     const css = await readFile(join(output, "styles.css"), "utf8");
     assert.doesNotMatch(lab, /<dialog[^>]+\sopen(?:=|\s|>)/);
     assert.doesNotMatch(css, /\[popover\]\s*\{\s*inset:\s*auto/);
+    assert.match(css, /\[popover\][^}]*translate:\s*-50%\s+-50%/s);
+    assert.doesNotMatch(css, /\[popover\][^}]*transform:\s*translate\(-50%,\s*-50%\)/s);
     assert.match(css, /data-variant="primary"/);
     assert.match(css, /data-variant="quiet"/);
   } finally {
