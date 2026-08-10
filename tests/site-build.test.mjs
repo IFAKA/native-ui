@@ -23,6 +23,23 @@ test("site assembler creates every public route and stable Native UI assets", as
   }
 });
 
+test("homepage carries the consolidated product story", async () => {
+  const output = await mkdtemp(join(tmpdir(), "native-ui-homepage-contract-"));
+  try {
+    const { buildSite } = await import("../scripts/build-site.mjs");
+    await buildSite({ root, output });
+    const html = await readFile(join(output, "index.html"), "utf8");
+    assert.match(html, /Give agents a smaller UI vocabulary/);
+    assert.match(html, /Native HTML first/);
+    assert.match(html, /Product surface/);
+    assert.match(html, /Three layers, one source of truth/);
+    assert.match(html, /Evidence you can inspect/);
+    assert.match(html, /<form[^>]+action="\/examples\/"/);
+  } finally {
+    await rm(output, { recursive: true, force: true });
+  }
+});
+
 test("generated pages have one heading, metadata, skip link, and primary navigation", async () => {
   const output = await mkdtemp(join(tmpdir(), "native-ui-site-meta-"));
   try {

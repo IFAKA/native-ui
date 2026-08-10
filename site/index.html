@@ -10,11 +10,54 @@
   <a class="nui-site-skip" href="#main">Skip to content</a>
   <header class="nui-site-header"><div class="nui-site-shell nui-site-header-inner"><nav class="nui-site-nav responsive-navigation" aria-label="Primary"><a class="nui-site-brand" href="/" aria-current="page">Native UI</a><nav class="nui-site-nav-links nui-cluster" aria-label="Site"><a href="/lab/">Lab</a><a href="/examples/">Examples</a><a href="/recipes/">Recipes</a><a href="/guides/">Guides</a><a href="/benchmarks/">Evidence</a><a data-variant="primary" href="https://github.com/IFAKA/native-ui">GitHub</a></nav></nav></div></header>
   <main id="main" class="nui-site-shell nui-site-main nui-stack">
-    <section class="nui-site-hero nui-readable nui-stack"><p class="nui-site-eyebrow">Semantic HTML · zero runtime dependencies</p><h1>Give agents a smaller UI vocabulary.</h1><p class="nui-site-lede">Native UI makes semantic HTML attractive, adaptive, and practical. Start with what the browser understands, then name only the layout and visual relationships your interface actually needs.</p><p class="nui-cluster"><a data-variant="primary" href="/examples/">Try the examples</a><a data-variant="quiet" href="/lab/">Open the comparison lab</a></p></section>
-    <section class="nui-site-band nui-stack"><h2>HTML owns meaning. CSS owns presentation. Your app owns business logic.</h2><p>That boundary gives an AI coding agent a compact authoring contract: native elements first, intrinsic layout second, minimal progressive enhancement only when the platform cannot express the interaction.</p><p class="nui-site-muted">This is a project goal and design thesis, not a claim of exact token savings.</p></section>
-    <section class="nui-site-section nui-stack"><h2>From intent to interface</h2><div class="nui-grid"><article class="card nui-stack"><h3>1. Install the stylesheet</h3><pre><code>npm install @ifaka/native-ui</code></pre><p>There is no component runtime, provider, or generated DOM.</p></article><article class="card nui-stack"><h3>2. Write real HTML</h3><pre><code>&lt;label&gt;Email &lt;input type="email" required&gt;&lt;/label&gt;</code></pre><p>Labels, validation, focus, disclosure, and submission stay native.</p></article><article class="card nui-stack"><h3>3. Add layout intent</h3><pre><code>&lt;section class="nui-grid"&gt;...&lt;/section&gt;</code></pre><p>Classes describe relationships rather than every visual property.</p></article></div></section>
-    <section class="nui-site-section nui-stack"><h2>See the browser do the work</h2><div class="nui-site-proof-grid nui-grid"><p class="nui-site-proof"><strong>Native controls</strong>Forms validate, submit, and report errors without a client runtime.</p><p class="nui-site-proof"><strong>Intrinsic layout</strong>One DOM wraps, grows, and reflows from narrow screens upward.</p><p class="nui-site-proof"><strong>Durable source</strong>Markup remains inspectable, selectable, and useful with JavaScript disabled.</p></div><details><summary>Native disclosure</summary><p>Keyboard behavior, focus, and source order come from the browser. Native UI supplies the visual rhythm around them.</p></details><form class="field-actions" action="/examples/" method="get"><label>Try native validation<input type="email" name="email" required placeholder="name@example.com"></label><button data-variant="primary" type="submit">Continue</button></form></section>
-    <section class="nui-site-section nui-stack"><h2>Explore the contract</h2><p>Compare authoring approaches in the <a href="/lab/">lab</a>, browse every current capability in <a href="/examples/">examples</a>, copy canonical <a href="/recipes/">recipes</a>, and read the <a href="/guides/architecture.html">architecture guide</a>. Accessibility, <a href="/guides/browser-support.html">browser support</a>, <a href="/guides/security.html">security</a>, and <a href="/benchmarks/">benchmarks</a> are public evidence paths.</p></section>
+    <section class="nui-site-hero-grid nui-site-section">
+      <div class="nui-site-hero-copy nui-stack">
+        <p class="nui-site-eyebrow">Semantic HTML · zero runtime dependencies</p>
+        <h1>Give agents a smaller UI vocabulary.</h1>
+        <p class="nui-site-lede">Native UI makes semantic HTML attractive, adaptive, and practical. Start with what the browser understands, then name only the layout and visual relationships your interface actually needs.</p>
+        <p class="nui-cluster"><a data-variant="primary" href="/examples/">Try the examples</a><a data-variant="quiet" href="/lab/">Open the comparison lab</a></p>
+        <p class="nui-site-note">For product teams who want the browser’s behavior to remain visible in the source.</p>
+      </div>
+      <aside class="nui-site-hero-proof" aria-label="Native UI proof points">
+        <p class="nui-site-proof-label">The short version</p>
+        <p class="nui-site-quote">HTML owns meaning. CSS owns presentation. Your app owns business logic.</p>
+        <div class="nui-site-metrics">
+          <p class="nui-site-metric"><strong>0</strong><span>runtime dependencies</span></p>
+          <p class="nui-site-metric"><strong>5</strong><span>layout contracts</span></p>
+          <p class="nui-site-metric"><strong>1</strong><span>semantic source of truth</span></p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="nui-site-section nui-stack" aria-labelledby="surface-title">
+      <header class="nui-site-section-heading nui-stack"><p class="nui-site-eyebrow">Product surface</p><h2 id="surface-title">A real UI, with nothing to hide.</h2><p class="nui-site-lede">The same native elements your product uses are the interface. No provider, generated DOM, or abstraction layer stands between the idea and the source.</p></header>
+      <article class="nui-site-surface">
+        <header class="nui-site-surface-topbar"><span class="nui-site-surface-mark" aria-hidden="true">N</span><strong>Northstar workspace</strong><span class="nui-site-surface-status">All systems ready</span></header>
+        <div class="nui-site-surface-body">
+          <nav class="nui-site-surface-nav nui-stack" aria-label="Workspace preview"><a href="#surface-title" aria-current="page">Overview</a><a href="#layers-title">Projects</a><a href="#evidence-title">Reports</a></nav>
+          <section class="nui-site-surface-main nui-stack"><header class="nui-cluster"><div><p class="nui-site-proof-label">Monday, 10 August 2026</p><h3>Good morning, team.</h3></div><a data-variant="primary" href="/examples/">View patterns</a></header><div class="nui-site-row nui-grid"><article class="nui-site-surface-card nui-stack"><p class="nui-site-proof-label">Projects</p><strong>12 active</strong><span class="nui-site-muted">3 need your attention</span></article><article class="nui-site-surface-card nui-stack"><p class="nui-site-proof-label">This week</p><strong>84% complete</strong><span class="nui-site-muted">Ahead of the plan</span></article></div><form class="nui-site-surface-form field-actions" action="/examples/" method="get"><label>Search projects<input type="search" name="q" placeholder="Try a project name"></label><button data-variant="quiet" type="submit">Search</button></form></section>
+        </div>
+      </article>
+    </section>
+
+    <section class="nui-site-section nui-stack" aria-labelledby="layers-title">
+      <header class="nui-site-section-heading nui-stack"><p class="nui-site-eyebrow">The foundation</p><h2 id="layers-title">Three layers, one source of truth.</h2><p class="nui-site-lede">A compact contract is easier for people and agents to learn, review, and carry into the next screen.</p></header>
+      <div class="nui-site-layer-list">
+        <article class="nui-site-layer"><span class="nui-site-layer-number">01</span><div><h3>Native HTML first</h3><p>Links go places. Buttons perform actions. Forms validate, submit, and report errors. Disclosure, focus, and source order keep their browser meaning.</p></div></article>
+        <article class="nui-site-layer"><span class="nui-site-layer-number">02</span><div><h3>Small CSS contracts</h3><p>Use stack, cluster, grid, readable, and container relationships. Let intrinsic sizing and one DOM handle narrow screens before adding more rules.</p></div></article>
+        <article class="nui-site-layer"><span class="nui-site-layer-number">03</span><div><h3>Progressive behavior</h3><p>Add JavaScript only when HTML cannot express the compound interaction. Keep the no-script path useful and the application’s business logic local.</p></div></article>
+      </div>
+    </section>
+
+    <section class="nui-site-section nui-stack" aria-labelledby="agent-title">
+      <div class="nui-site-callout"><div class="nui-stack"><p class="nui-site-eyebrow">Built for AI-assisted work</p><h2 id="agent-title">Give the agent patterns it can explain.</h2><p>Every current layout, composition, variant, and recipe is discoverable, copyable, and bounded by a public contract. That makes generated UI easier to inspect—and easier to correct.</p><pre><code>npm install @ifaka/native-ui</code></pre></div><a data-variant="primary" href="/recipes/">Browse canonical recipes</a></div>
+    </section>
+
+    <section class="nui-site-section nui-stack" aria-labelledby="evidence-title">
+      <header class="nui-site-section-heading nui-stack"><p class="nui-site-eyebrow">Evidence you can inspect</p><h2 id="evidence-title">Start with the browser. Keep the proof.</h2><p class="nui-site-lede">Compare authoring approaches in the lab, try every current capability, and read the constraints behind the system.</p></header>
+      <div class="nui-site-evidence-grid nui-grid"><a class="nui-site-evidence-card" href="/lab/"><strong>Comparison lab</strong><span>See bare HTML, Native UI, and the trade-offs side by side.</span><span class="nui-site-arrow" aria-hidden="true">→</span></a><a class="nui-site-evidence-card" href="/benchmarks/"><strong>Benchmarks</strong><span>Review payload, class, accessibility, and methodology evidence.</span><span class="nui-site-arrow" aria-hidden="true">→</span></a><a class="nui-site-evidence-card" href="/guides/accessibility.html"><strong>Accessibility guide</strong><span>Check focus, keyboard operation, zoom, contrast, and reduced motion.</span><span class="nui-site-arrow" aria-hidden="true">→</span></a></div>
+      <details><summary>Why native controls matter</summary><p>Keyboard behavior, focus, and source order come from the browser. Native UI supplies the visual rhythm around them, so primary content remains useful with JavaScript disabled.</p></details><form class="nui-site-validation field-actions" action="/examples/" method="get"><label>Try native validation<input type="email" name="email" autocomplete="email" required placeholder="name@example.com"></label><button data-variant="primary" type="submit">Continue</button></form>
+    </section>
   </main>
   <footer class="nui-site-shell nui-site-footer"><small>Native UI · <a href="/changelog.html">Changelog</a> · <a href="/roadmap.html">Roadmap</a> · <a href="https://github.com/IFAKA/native-ui">GitHub</a></small></footer>
 </body></html>
