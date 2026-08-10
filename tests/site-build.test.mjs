@@ -48,3 +48,35 @@ test("vercel configuration is static and points at public", async () => {
   assert.equal(config.buildCommand, "npm run build");
   assert.equal(config.outputDirectory, "public");
 });
+
+test("recipe discovery links to readable recipe detail pages", async () => {
+  const output = await mkdtemp(join(tmpdir(), "native-ui-recipe-"));
+  try {
+    const { buildSite } = await import("../scripts/build-site.mjs");
+    await buildSite({ root, output });
+    const index = await readFile(join(output, "recipes/index.html"), "utf8");
+    assert.match(index, /href="\/recipes\/card\/"/);
+    const detail = await readFile(join(output, "recipes/card/index.html"), "utf8");
+    assert.match(detail, /When to use/);
+    assert.match(detail, /<pre[^>]*><code>/);
+    assert.doesNotMatch(detail, /href="\.\.\/\.\.\/dist\/native-ui\.css"/);
+  } finally {
+    await rm(output, { recursive: true, force: true });
+  }
+});
+
+test("interactive examples start closed and site variants have distinct treatments", async () => {
+  const output = await mkdtemp(join(tmpdir(), "native-ui-example-"));
+  try {
+    const { buildSite } = await import("../scripts/build-site.mjs");
+    await buildSite({ root, output });
+    const lab = await readFile(join(output, "lab/index.html"), "utf8");
+    const css = await readFile(join(output, "styles.css"), "utf8");
+    assert.doesNotMatch(lab, /<dialog[^>]+\sopen(?:=|\s|>)/);
+    assert.doesNotMatch(css, /\[popover\]\s*\{\s*inset:\s*auto/);
+    assert.match(css, /data-variant="primary"/);
+    assert.match(css, /data-variant="quiet"/);
+  } finally {
+    await rm(output, { recursive: true, force: true });
+  }
+});

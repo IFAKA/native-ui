@@ -8,6 +8,10 @@ async function copyTree(source, destination) {
   await cp(source, destination, { recursive: true, force: true });
 }
 
+function escapeHtml(value) {
+  return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+}
+
 async function validateLinks(output) {
   const files = [];
   async function collect(dir) {
@@ -55,11 +59,6 @@ export async function buildSite({ root = resolve(import.meta.dirname, ".."), out
     const title = slug.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
     await writeFile(path, `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${description}"><link rel="canonical" href="https://native-ui.example/guides/${slug}.html"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/native-ui/native-ui.css"><link rel="stylesheet" href="/styles.css"><title>${title} · Native UI</title></head><body><a class="nui-site-skip" href="#main">Skip to content</a><header class="nui-site-header"><div class="nui-site-shell nui-site-header-inner"><nav class="nui-site-nav responsive-navigation" aria-label="Primary"><a class="nui-site-brand" href="/">Native UI</a><nav class="nui-site-nav-links nui-cluster" aria-label="Site"><a href="/lab/">Lab</a><a href="/examples/">Examples</a><a href="/recipes/">Recipes</a><a href="/guides/" aria-current="page">Guides</a><a href="/benchmarks/">Evidence</a></nav></nav></div></header><main id="main" class="nui-site-shell nui-site-main nui-readable nui-stack"><header class="nui-site-route-header"><p class="nui-site-eyebrow">Native UI guide</p><h1>${title}</h1></header><article class="card nui-stack"><p>${description}</p><p><a href="/guides/">Back to all guides</a> · <a href="/examples/">Try an example</a></p></article></main><footer class="nui-site-shell nui-site-footer"><small><a href="/">Home</a> · <a href="/changelog.html">Changelog</a></small></footer></body></html>`);
   }
-  for (const file of ["lab/index.html", "examples/index.html"]) {
-    const path = join(outputRoot, file);
-    const html = await readFile(path, "utf8");
-    await writeFile(path, html.replaceAll('<dialog id="lab-dialog">', '<dialog id="lab-dialog" open>').replaceAll('<dialog id="example-dialog">', '<dialog id="example-dialog" open>'));
-  }
   for (const file of ["index.html", "lab/index.html", "examples/index.html", "recipes/index.html", "guides/index.html", "benchmarks/index.html", "changelog.html", "roadmap.html", ...Object.keys(guideDescriptions).map((slug) => `guides/${slug}.html`)]) {
     const path = join(outputRoot, file);
     const html = await readFile(path, "utf8");
@@ -69,9 +68,14 @@ export async function buildSite({ root = resolve(import.meta.dirname, ".."), out
       await writeFile(path, html.replace("</head>", `<meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:image" content="/assets/social-preview.svg"></head>`));
     }
   }
+  for (const file of ["lab/index.html", "examples/index.html"]) {
+    const path = join(outputRoot, file);
+    const html = await readFile(path, "utf8");
+    await writeFile(path, html.replaceAll('command="show-modal" commandfor="lab-dialog"', 'data-dialog-open="lab-dialog"').replaceAll('command="show-modal" commandfor="example-dialog"', 'data-dialog-open="example-dialog"'));
+  }
   const manifest = JSON.parse(await readFile(join(root, "src/manifest.json"), "utf8"));
   const recipeNames = [...new Set(manifest.recipes.filter((item) => item.endsWith("/metadata.json")).map((item) => item.split("/")[1]))];
-  const recipeCards = recipeNames.map((name) => `<article class="card nui-stack"><h2>${name.replaceAll("-", " ")}</h2><p>Semantic HTML recipe for the <code>${name}</code> relationship.</p><p class="nui-cluster"><a data-variant="primary" href="/assets/recipes/${name}/example.html">Live example</a><a data-variant="quiet" href="/assets/recipes/${name}/snippet.html">HTML snippet</a></p></article>`).join("");
+  const recipeCards = recipeNames.map((name) => `<article class="card nui-stack"><h2>${name.replaceAll("-", " ")}</h2><p>Semantic HTML recipe for the <code>${name}</code> relationship.</p><a data-variant="primary" href="/recipes/${name}/">Open recipe</a></article>`).join("");
   const guideNames = ["architecture", "accessibility", "browser-support", "theming", "migration", "analyzer", "governance", "security", "contributing"];
   const guideCards = guideNames.map((name) => `<article class="card nui-stack"><h2>${name.replaceAll("-", " ")}</h2><p>Practical guidance for a durable HTML-first interface.</p><a href="/guides/${name}.html">Read guide</a></article>`).join("");
   for (const [file, replacement] of [["recipes/index.html", recipeCards], ["guides/index.html", guideCards]]) {
@@ -91,6 +95,26 @@ export async function buildSite({ root = resolve(import.meta.dirname, ".."), out
       await writeFile(example, html.replaceAll("../../dist/native-ui.css", "/assets/native-ui/native-ui.css"));
     } catch {}
   }
+  for (const name of recipeNames) {
+    const metadata = JSON.parse(await readFile(join(root, "recipes", name, "metadata.json"), "utf8"));
+    const snippet = await readFile(join(root, "recipes", name, "snippet.html"), "utf8");
+    const example = await readFile(join(root, "recipes", name, "example.html"), "utf8");
+    const exampleBody = (example.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? example).replace(/<h1>/g, "<h2>").replace(/<\/h1>/g, "</h2>");
+    const title = metadata.name.replaceAll("-", " ");
+    await mkdir(join(outputRoot, "recipes", name), { recursive: true });
+    await writeFile(join(outputRoot, "recipes", name, "index.html"), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escapeHtml(metadata.purpose)}"><link rel="canonical" href="https://native-ui.example/recipes/${name}/"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/native-ui/native-ui.css"><link rel="stylesheet" href="/styles.css"><title>${title} recipe · Native UI</title></head><body><a class="nui-site-skip" href="#main">Skip to content</a><header class="nui-site-header"><div class="nui-site-shell nui-site-header-inner"><nav class="nui-site-nav responsive-navigation" aria-label="Primary"><a class="nui-site-brand" href="/">Native UI</a><nav class="nui-site-nav-links nui-cluster" aria-label="Site"><a href="/lab/">Lab</a><a href="/examples/">Examples</a><a href="/recipes/" aria-current="page">Recipes</a><a href="/guides/">Guides</a><a href="/benchmarks/">Evidence</a></nav></nav></div></header><main id="main" class="nui-site-shell nui-site-main nui-stack"><header class="nui-site-route-header nui-readable"><p class="nui-site-eyebrow">Canonical recipe</p><h1>${title}</h1><p class="nui-site-lede">${escapeHtml(metadata.purpose)}.</p></header><section class="nui-grid"><article class="nui-site-frame"><header><h2>Live example</h2><p class="nui-site-muted">The same semantic markup, rendered with Native UI.</p></header><section>${exampleBody}</section></article><article class="nui-site-frame"><header><h2>HTML snippet</h2><p class="nui-site-muted">Select and copy the source; it has no framework dependency.</p></header><pre class="nui-site-code"><code>${escapeHtml(snippet)}</code></pre></article></section><section class="card nui-stack"><h2>When to use</h2><p>Use this recipe when the named relationship is present and native flow alone does not communicate the intended grouping.</p><h2>When not to use</h2><p>${escapeHtml(metadata.whenNotToUse)}</p><h2>Native alternative</h2><p>${escapeHtml(metadata.nativeAlternative)}</p><p><a href="/recipes/">Back to all recipes</a></p></section></main><footer class="nui-site-shell nui-site-footer"><small><a href="/">Home</a> · <a href="https://github.com/IFAKA/native-ui/tree/main/recipes/${name}">Repository source</a></small></footer></body></html>`);
+  }
+  for (const name of recipeNames) {
+    const path = join(outputRoot, "recipes", name, "index.html");
+    const html = await readFile(path, "utf8");
+    const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? "Native UI recipe";
+    const description = html.match(/<meta name="description" content="([^"]+)">/)?.[1] ?? "Canonical Native UI recipe.";
+    await writeFile(path, html.replace("</head>", `<meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:image" content="/assets/social-preview.svg"></head>`));
+  }
+  const sitemapPath = join(outputRoot, "sitemap.xml");
+  const sitemap = await readFile(sitemapPath, "utf8");
+  const recipeUrls = recipeNames.map((name) => `<url><loc>https://native-ui.example/recipes/${name}/</loc></url>`).join("");
+  await writeFile(sitemapPath, sitemap.replace("</urlset>", `${recipeUrls}</urlset>`));
   await copyTree(join(root, "benchmarks/reports"), join(outputRoot, "assets/benchmarks"));
   await validateLinks(outputRoot);
   return { output: outputRoot, routes: routeFiles };

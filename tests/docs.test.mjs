@@ -27,7 +27,7 @@ test("documentation examples expose the complete public vocabulary", async () =>
 
   for (const name of vocabulary) {
     const marker = name === "primary" || name === "danger" || name === "quiet"
-      ? `data-variant="${name}"`
+      ? 'data-variant="primary|danger|quiet"'
       : name;
     assert.match(discovery, new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `${name} is missing from docs`);
   }

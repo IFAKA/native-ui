@@ -8,3 +8,10 @@ for (const button of copyButtons) {
     catch { if (status) status.textContent = "Copy was unavailable; select the code instead."; }
   });
 }
+
+for (const button of document.querySelectorAll("[data-dialog-open]")) {
+  button.addEventListener("click", () => {
+    const dialog = document.getElementById(button.dataset.dialogOpen);
+    if (dialog?.showModal) dialog.showModal();
+  });
+}
