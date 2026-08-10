@@ -1,0 +1,22 @@
+/* Generated from shadcn-html skeleton. Minimum structural/native styling only. */
+.skeleton {
+  animation: skeleton-pulse 2s ease-in-out infinite;
+}
+
+.skeleton-round {
+  border-radius: 9999px;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.skeleton {
+  display: block;
+  min-block-size: 1rem;
+}

@@ -1,0 +1,59 @@
+/* Generated from shadcn-html context-menu. Minimum structural/native styling only. */
+.context-menu-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  font-size: 0.875rem;
+  cursor: default;
+}
+
+.context-menu {
+  margin: 0;
+  padding: 0.25rem;
+  min-width: 10rem;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 100ms ease, transform 100ms ease, display 100ms allow-discrete;
+}
+
+.context-menu:popover-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@starting-style {
+  .context-menu:popover-open {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.375rem 0.5rem;
+  border: none;
+  background: transparent;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+
+.context-menu-item:focus-visible {
+  outline-offset: -2px;
+}
+
+.context-menu-separator {
+  height: 1px;
+  margin: 0.25rem -0.25rem;
+}
+
+[role="menu"] {
+  max-block-size: min(24rem, calc(100vh - 2rem));
+  overflow-y: auto;
+}

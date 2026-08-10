@@ -1,0 +1,89 @@
+@layer components {
+  dialog.dialog {
+    border: none;
+    border-radius: var(--radius-xl);
+    background-color: var(--popover);
+    color: var(--popover-foreground);
+    padding: 0;
+    margin: auto;
+    position: fixed;
+    inset: 0;
+    max-width: 28rem;
+    width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    box-shadow: 0 25px 80px black;
+  }
+  .dialog-content { padding: 1.5rem; }
+  .dialog-footer { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.5rem; }
+}
+
+.dialog-content {
+  --border: red;
+  color: var(--foreground);
+  display: grid;
+  font-family: "A;B", system-ui;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  background: url("a;b");
+  transition: opacity 150ms;
+  outline-color: var(--outline, color-mix(in srgb, red 50%, blue));
+
+  & > button {
+    color: red;
+    margin-left: auto;
+  }
+
+  @media (min-width: 40rem) {
+    & {
+      grid-template-columns: 1fr auto;
+      background: red;
+    }
+  }
+}
+
+.btn-group, .switch-thumb, .radio-group { display: block; }
+
+.dialog[data-state="open"] {
+  transform: scale(1);
+  transition: transform 150ms ease;
+}
+
+.textarea.input:is([data-state="open"], [data-state="closed"]),
+.input:where(:focus, :hover) {
+  animation: fade-in 150ms ease;
+  text-decoration: underline;
+  outline: 2px solid red;
+  outline-offset: 2px;
+  accent-color: red;
+}
+
+.foo.btn:hover,
+.checkbox:checked,
+.radio:focus-visible,
+.switch:disabled,
+.quoted { margin: var(--missing, 0); content: "var(--ignored, red)"; }
+
+.literal-safe {
+  text-decoration: underline;
+  outline: 2px solid red;
+  outline-offset: 2px;
+  accent-color: red;
+}
+
+textarea.input {
+  min-height: 5rem;
+}
+
+[class~="text-muted-foreground"] {
+  color: gray;
+}
+
+.\!bg-red-500 {
+  background: red;
+}
+
+:root { color: green; }
+.dark { color: blue; }
+.bg-red-500 { background: red; }
+.text-red-500 { display: block; }

@@ -1,0 +1,29 @@
+@layer native-ui.layout {
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space, 1rem);
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space, .5rem);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--min, 16rem), 100%), 1fr));
+    gap: var(--space, 1rem);
+  }
+
+  .container {
+    inline-size: min(100% - 2rem, var(--max, 72rem));
+    margin-inline: auto;
+  }
+
+  .readable {
+    max-inline-size: var(--measure, 65ch);
+  }
+}

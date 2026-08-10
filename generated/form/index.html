@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>form</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>form</h1></header>
+<section><h2>Example 1</h2><form class="form">
+  <div class="form-field">
+    <label class="label" for="form-example-1-f-name">Name</label>
+    <input class="input" type="text" id="form-example-1-f-name" required>
+    <p class="field-description">Your full name.</p>
+  </div>
+  <div class="form-field">
+    <label class="label" for="form-example-1-f-email">Email</label>
+    <input class="input" type="email" id="form-example-1-f-email" required>
+  </div>
+  <div class="form-actions">
+    <button class="btn" type="submit" data-variant="default">Submit</button>
+    <button class="btn" type="reset" data-variant="outline">Reset</button>
+  </div>
+</form>
+</section>
+<section><h2>Example 2</h2><div class="form-field-inline">
+  <input class="checkbox" type="checkbox" id="form-example-2-terms">
+  <label for="form-example-2-terms">Accept terms</label>
+</div>
+</section>
+<section><h2>Example 3</h2><div class="form-field" data-orientation="horizontal">
+  <label class="label" for="form-example-3-f-user">Username</label>
+  <div>
+    <input class="input" type="text" id="form-example-3-f-user">
+    <p class="field-description">Your public display name.</p>
+  </div>
+</div>
+</section>
+<section><h2>Example 4</h2><div class="form-field-row">
+  <div>
+    <label class="label" for="form-example-4-f-marketing">Marketing emails</label>
+    <p class="field-description">Receive emails about new products and features.</p>
+  </div>
+  <input class="switch" type="checkbox" role="switch" id="form-example-4-f-marketing">
+</div>
+</section>
+<section><h2>Example 5</h2><fieldset class="form-fieldset">
+  <legend>Notifications</legend>
+  <p class="field-description">Choose what you want to be notified about.</p>
+  <div class="form-group">
+    <div class="form-field-inline">
+      <input class="checkbox" type="checkbox" id="form-example-5-opt-1">
+      <label for="form-example-5-opt-1">All new messages</label>
+    </div>
+    <div class="form-field-inline">
+      <input class="checkbox" type="checkbox" id="form-example-5-opt-2">
+      <label for="form-example-5-opt-2">Direct messages only</label>
+    </div>
+  </div>
+</fieldset>
+</section>
+<section><h2>Example 6</h2><div class="form-field" data-invalid>
+  <label class="label" for="form-example-6-f-email">Email</label>
+  <input class="input" type="email" id="form-example-6-f-email" aria-invalid="true" aria-describedby="form-example-6-f-email-err">
+  <p class="field-error" id="form-example-6-f-email-err" role="alert">Please enter a valid email address.</p>
+</div>
+</section>
+  </main>
+</body>
+</html>

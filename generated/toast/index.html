@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>toast</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./toast.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>toast</h1></header>
+<section><h2>Example 1</h2><!-- Toast container — place once in the page -->
+<div id="toast-example-1-toast-container"
+     class="toast-container"
+     aria-label="Notifications"
+     data-position="bottom-right" data-toast-region>
+</div>
+
+<!-- Individual toast (injected by JS) -->
+<div class="toast" role="status" aria-live="polite" aria-atomic="true"
+     popover="manual">
+  <div class="toast-content">
+    <div class="toast-text">
+      <p class="toast-title">Event created</p>
+      <p class="toast-description">Monday, January 3rd at 6:00pm</p>
+    </div>
+    <button class="toast-close" aria-label="Dismiss" data-toast-close>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div class="toast-actions">
+    <button class="btn" data-variant="outline" data-size="sm"
+            data-toast-action>Undo</button>
+  </div>
+</div>
+</section>
+<section><h2>Example 2</h2><div class="toast" data-variant="success" role="status"
+     aria-live="polite" popover="manual">
+  <div class="toast-content">
+    <svg class="toast-icon" aria-hidden="true" width="16" height="16">
+      <path d="M20 6 9 17l-5-5"/>
+    </svg>
+    <div class="toast-text">
+      <p class="toast-title">Saved successfully</p>
+    </div>
+    <button class="toast-close" aria-label="Dismiss" data-toast-close>
+      <svg aria-hidden="true" width="14" height="14"><circle cx="12" cy="12" r="8"/></svg>
+    </button>
+  </div>
+</div>
+</section>
+  </main>
+  <script type="module" src="./toast.js"></script>
+</body>
+</html>

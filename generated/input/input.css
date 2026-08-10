@@ -1,0 +1,127 @@
+/* Generated from shadcn-html input. Minimum structural/native styling only. */
+input {
+  height: 2.5rem;
+  width: 100%;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input:read-only:not([type="file"]) {
+  cursor: default;
+  opacity: 0.7;
+}
+
+input[type="file"] {
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+input[type="file"]::file-selector-button {
+  height: 100%;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0 0.75rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  transition: background 150ms;
+}
+
+input {
+  height: 2rem;
+  padding: 0 0.625rem;
+  font-size: 0.8125rem;
+}
+
+input {
+  height: 2.75rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+}
+
+textarea {
+  field-sizing: content;
+  min-height: 5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.field-description {
+  font-size: 0.8125rem;
+  margin: 0.375rem 0 0;
+}
+
+.field-error {
+  font-size: 0.8125rem;
+  margin: 0.375rem 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input[type="file"]::file-selector-button {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  input {
+    border-width: 2px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  input:disabled {
+    opacity: 0.7;
+  }
+}
+
+@media (forced-colors: active) {
+  input {
+    border-color: ButtonBorder;
+    color: ButtonText;
+    background: Field;
+  }
+}
+
+@media (forced-colors: active) {
+  input:focus {
+    outline: 2px solid Highlight;
+    outline-offset: 1px;
+  }
+}
+
+@media (forced-colors: active) {
+  input:disabled {
+    opacity: 1;
+    color: GrayText;
+    border-color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  input:is([aria-invalid="true"], :user-invalid) {
+    border-color: LinkText;
+  }
+}
+
+@media (forced-colors: active) {
+  .field-error {
+    color: LinkText;
+  }
+}
+
+input {
+  max-inline-size: 100%;
+}

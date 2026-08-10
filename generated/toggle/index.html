@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>toggle</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./toggle.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>toggle</h1></header>
+<section><h2>Example 1</h2><button class="toggle" aria-pressed="false" aria-label="Toggle bold">
+  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"/>
+  </svg>
+</button>
+</section>
+<section><h2>Example 2</h2><button class="toggle" aria-pressed="false">
+  <svg aria-hidden="true" width="16" height="16" ...><circle cx="12" cy="12" r="8"/></svg>
+  Italic
+</button>
+</section>
+<section><h2>Example 3</h2><button class="toggle" aria-pressed="false">Default</button>
+<button class="toggle" data-variant="outline" aria-pressed="false">Outline</button>
+</section>
+<section><h2>Example 4</h2><button class="toggle" data-size="sm" aria-pressed="false" aria-label="Bold">
+  <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg>
+</button>
+</section>
+  </main>
+  <script type="module" src="./toggle.js"></script>
+</body>
+</html>

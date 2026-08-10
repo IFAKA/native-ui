@@ -1,0 +1,20 @@
+{
+  "name": "native-ui-v0",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./core.css": "./src/core.css",
+    "./layout.css": "./src/layout.css",
+    "./components.css": "./src/components.css",
+    "./behavior": "./src/behavior/index.js",
+    "./behavior/*": "./src/behavior/*.js"
+  },
+  "scripts": {
+    "test": "node tests/architecture.test.js && node tests/behavior.test.mjs && node tests/native-contracts.test.mjs",
+    "test:converter": "node tests/converter.test.mjs",
+    "sync:shadcn": "node scripts/sync-shadcn-html.mjs",
+    "convert:shadcn": "node scripts/convert-shadcn-html.mjs vendor/shadcn-html generated",
+    "audit:generated": "node scripts/audit-generated.mjs"
+  }
+}

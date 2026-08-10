@@ -1,0 +1,25 @@
+{
+  "source": "/mnt/data/native-ui-v0/tests/fixtures/shadcn-html",
+  "count": 1,
+  "components": [
+    {
+      "component": "dialog",
+      "css": {
+        "component": "dialog",
+        "keptRules": 3,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background-color",
+          "color",
+          "box-shadow"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": []
+    }
+  ]
+}

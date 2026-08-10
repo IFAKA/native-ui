@@ -1,0 +1,30 @@
+/* Generated from shadcn-html file-input. Minimum structural/native styling only. */
+.file-input {
+  width: 100%;
+  height: 2.5rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 150ms, box-shadow 150ms;
+  padding: 0;
+  cursor: pointer;
+}
+
+.file-input::file-selector-button {
+  height: 100%;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0 0.75rem;
+  margin-right: 0.75rem;
+  cursor: pointer;
+  transition: background 150ms;
+}
+
+.file-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type="file"] {
+  max-inline-size: 100%;
+}

@@ -1,0 +1,25 @@
+/* Generated from shadcn-html scroll-area. Minimum structural/native styling only. */
+.scroll-area {
+  overflow: auto;
+  position: relative;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.scroll-area::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}
+
+.scroll-area {
+  max-inline-size: 100%;
+}

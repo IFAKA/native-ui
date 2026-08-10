@@ -1,0 +1,155 @@
+/* Generated from shadcn-html sortable. Minimum structural/native styling only. */
+.sortable {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sortable[data-orientation="horizontal"] {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sortable-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  cursor: grab;
+  transition: box-shadow 150ms ease, opacity 150ms ease, border-color 150ms ease;
+  user-select: none;
+}
+
+.sortable-item:active {
+  cursor: grabbing;
+}
+
+.sortable-item:focus-visible {
+  outline-offset: 2px;
+}
+
+.sortable-item[data-dragging] {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
+.sortable-item[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.sortable-handle {
+  cursor: grab;
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.sortable-handle:active {
+  cursor: grabbing;
+}
+
+.sortable-handle svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.sortable-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sortable-item {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .sortable-item {
+    border-width: 2px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .sortable-item[data-active] {
+    outline: 2px solid LinkText;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .sortable-item[data-over="before"] {
+    border-top-width: 3px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .sortable-item[data-over="after"] {
+    border-bottom-width: 3px;
+  }
+}
+
+@media (forced-colors: active) {
+  .sortable-item {
+    border-color: ButtonBorder;
+    color: ButtonText;
+    background-color: ButtonFace;
+  }
+}
+
+@media (forced-colors: active) {
+  .sortable-item[data-active] {
+    border-color: Highlight;
+    color: HighlightText;
+  }
+}
+
+@media (forced-colors: active) {
+  .sortable-item[data-dragging] {
+    border-color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  .sortable-item[data-over="before"] {
+    border-top-color: Highlight;
+  }
+}
+
+@media (forced-colors: active) {
+  .sortable-item[data-over="after"] {
+    border-bottom-color: Highlight;
+  }
+}
+
+@media (forced-colors: active) {
+  .sortable-item[aria-disabled="true"] {
+    color: GrayText;
+    border-color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  .sortable-handle {
+    color: GrayText;
+  }
+}
+
+[data-sortable] {
+  display: grid;
+  gap: .5rem;
+}

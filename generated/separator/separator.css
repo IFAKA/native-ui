@@ -1,0 +1,57 @@
+/* Generated from shadcn-html separator. Minimum structural/native styling only. */
+.separator {
+  border: none;
+  margin: 0;
+  flex-shrink: 0;
+  height: 1px;
+  width: 100%;
+}
+
+.separator[data-orientation="vertical"] {
+  height: auto;
+  width: 1px;
+  align-self: stretch;
+}
+
+.separator-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.separator-label .separator {
+  flex: 1;
+}
+
+.separator-label span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (forced-colors: active) {
+  .separator {
+    background: CanvasText;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .separator {
+    height: 2px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .separator[data-orientation="vertical"] {
+    width: 2px;
+    height: auto;
+  }
+}
+
+hr {
+  display: block;
+  inline-size: 100%;
+}

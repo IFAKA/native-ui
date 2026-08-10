@@ -1,0 +1,33 @@
+/* Generated from shadcn-html color-picker. Minimum structural/native styling only. */
+.color-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+}
+
+.color-picker input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.color-picker input[type="color"]::-moz-color-swatch {
+  border: none;
+}
+
+.color-picker .color-picker-value {
+  font-size: 0.8125rem;
+}

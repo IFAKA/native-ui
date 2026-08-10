@@ -1,0 +1,108 @@
+/* Generated from shadcn-html toggle-group. Minimum structural/native styling only. */
+.toggle-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.0625rem;
+}
+
+.toggle-group > .toggle {
+  background: transparent;
+}
+
+.toggle-group:not([data-spacing]) > .toggle:not(:first-child) {
+  margin-inline-start: -1px;
+}
+
+.toggle-group:not([data-spacing])[data-orientation="vertical"] > .toggle:not(:first-child) {
+  margin-inline-start: 0;
+  margin-block-start: -1px;
+}
+
+.toggle-group > .toggle {
+  height: 2rem;
+  padding: 0 0.375rem;
+  min-width: 2rem;
+}
+
+.toggle-group > .toggle svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.toggle-group > .toggle {
+  height: 2.5rem;
+  padding: 0 0.625rem;
+  min-width: 2.5rem;
+}
+
+.toggle-group > .toggle svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.toggle-group[data-orientation="vertical"] {
+  flex-direction: column;
+}
+
+.toggle-group > .toggle:not(:first-child) {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+.toggle-group > .toggle:not(:last-child) {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.toggle-group[data-orientation="vertical"] > .toggle:not(:first-child) {
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+}
+
+.toggle-group[data-orientation="vertical"] > .toggle:not(:last-child) {
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.toggle-group[data-spacing] {
+  gap: 0.25rem;
+}
+
+.toggle-group[data-disabled] {
+  pointer-events: none;
+}
+
+.toggle-group[data-disabled] > .toggle {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle-group .toggle {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .toggle-group > .toggle {
+    border-color: ButtonBorder;
+  }
+}
+
+@media (forced-colors: active) {
+  .toggle-group > .toggle[aria-pressed="true"] {
+    background-color: Highlight;
+    color: HighlightText;
+    border-color: Highlight;
+  }
+}
+
+@media (forced-colors: active) {
+  .toggle-group > .toggle:focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+.toggle-group {
+  flex-wrap: wrap;
+}

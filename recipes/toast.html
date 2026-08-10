@@ -1,0 +1,5 @@
+<button type="button" id="toast-demo">Show notification</button>
+<script type="module">
+  import { createToast } from '../src/behavior/toast.js'
+  document.querySelector('#toast-demo').addEventListener('click', () => createToast('Saved'))
+</script>

@@ -1,0 +1,21 @@
+/* Generated from shadcn-html dialog. Visual design declarations intentionally removed. */
+dialog.dialog {
+  padding: 0;
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  max-width: 28rem;
+  width: calc(100vw - 2rem);
+  max-height: calc(100vh - 2rem);
+}
+
+.dialog-content {
+  padding: 1.5rem;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}

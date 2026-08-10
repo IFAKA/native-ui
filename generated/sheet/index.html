@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sheet</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./sheet.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>sheet</h1></header>
+<section><h2>Example 1</h2><!-- Trigger -->
+<button class="btn" data-variant="outline"
+        data-sheet-trigger="sheet-example-1-my-sheet"
+        aria-haspopup="dialog">
+  Open Sheet
+</button>
+
+<!-- Sheet -->
+<dialog id="sheet-example-1-my-sheet"
+        class="sheet"
+        data-side="right"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sheet-example-1-my-sheet-title">
+
+  <div class="sheet-content">
+    <div class="sheet-header">
+      <h2 class="sheet-title" id="sheet-example-1-my-sheet-title">Sheet Title</h2>
+      <p class="sheet-description">Supporting description.</p>
+    </div>
+
+    <div class="sheet-body">
+      <!-- Content goes here -->
+    </div>
+
+    <div class="sheet-footer">
+      <button class="btn" data-variant="outline" data-sheet-close>
+        Cancel
+      </button>
+      <button class="btn" data-variant="default">
+        Save changes
+      </button>
+    </div>
+  </div>
+
+  <button class="sheet-close-x" data-sheet-close aria-label="Close">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12"/>
+    </svg>
+  </button>
+</dialog>
+</section>
+  </main>
+  <script type="module" src="./sheet.js"></script>
+</body>
+</html>

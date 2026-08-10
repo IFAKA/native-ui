@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tabs</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./tabs.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>tabs</h1></header>
+<section><h2>Example 1</h2><div class="tabs">
+  <!-- Tab list -->
+  <div class="tab-list" role="tablist" aria-label="Account settings">
+    <button class="tab-trigger" role="tab"
+            aria-selected="true"
+            aria-controls="tabs-example-1-panel-account"
+            id="tabs-example-1-tab-account">
+      Account
+    </button>
+    <button class="tab-trigger" role="tab"
+            aria-selected="false"
+            aria-controls="tabs-example-1-panel-password"
+            id="tabs-example-1-tab-password"
+            tabindex="-1">
+      Password
+    </button>
+  </div>
+
+  <!-- Tab panels -->
+  <div class="tab-content" role="tabpanel"
+       id="tabs-example-1-panel-account"
+       aria-labelledby="tabs-example-1-tab-account"
+       tabindex="0">
+    Account settings content...
+  </div>
+
+  <div class="tab-content" role="tabpanel"
+       id="tabs-example-1-panel-password"
+       aria-labelledby="tabs-example-1-tab-password"
+       tabindex="0"
+       hidden>
+    Password settings content...
+  </div>
+</div>
+</section>
+<section><h2>Example 2</h2><div class="tabs">
+  <div class="tab-list" role="tablist"
+       aria-orientation="vertical"
+       aria-label="Settings">
+    <button class="tab-trigger" role="tab" aria-selected="true"
+            aria-controls="tabs-example-2-panel-general" id="tabs-example-2-tab-general">General</button>
+    <button class="tab-trigger" role="tab" aria-selected="false"
+            aria-controls="tabs-example-2-panel-security" id="tabs-example-2-tab-security"
+            tabindex="-1">Security</button>
+  </div>
+
+  <div class="tab-content" role="tabpanel"
+       id="tabs-example-2-panel-general" aria-labelledby="tabs-example-2-tab-general" tabindex="0">
+    General settings...
+  </div>
+  <div class="tab-content" role="tabpanel"
+       id="tabs-example-2-panel-security" aria-labelledby="tabs-example-2-tab-security" tabindex="0" hidden>
+    Security settings...
+  </div>
+</div>
+</section>
+  </main>
+  <script type="module" src="./tabs.js"></script>
+</body>
+</html>

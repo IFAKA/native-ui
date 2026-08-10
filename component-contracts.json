@@ -1,0 +1,1665 @@
+[
+  {
+    "name": "accordion",
+    "category": "native composition",
+    "primitive": "details/summary",
+    "minimumStyles": "stack items; preserve open-state disclosure",
+    "behavior": "native disclosure; optional animation",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".accordion-item",
+        "declarations": {
+          "display": "block"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".accordion-item"
+    ],
+    "requiredProperties": [
+      "display"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "alert",
+    "category": "native composition",
+    "primitive": "section/div",
+    "minimumStyles": "readable content and alert semantics",
+    "behavior": "static announcement",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".alert",
+        "declarations": {
+          "padding": ".75rem",
+          "display": "flow-root"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".alert"
+    ],
+    "requiredProperties": [
+      "padding",
+      "display"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "alert-dialog",
+    "category": "native composition",
+    "primitive": "dialog",
+    "minimumStyles": "fixed overlay, readable panel, backdrop, open-state transitions",
+    "behavior": "native dialog plus confirm/cancel recipe",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "dialog.alert-dialog",
+        "declarations": {
+          "maxInlineSize": "calc(100vw - 2rem)",
+          "maxBlockSize": "calc(100vh - 2rem)",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "dialog.alert-dialog"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "maxBlockSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "avatar",
+    "category": "native composition",
+    "primitive": "img",
+    "minimumStyles": "intrinsic square media and fallback content",
+    "behavior": "image fallback",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".avatar",
+        "declarations": {
+          "display": "inline-block",
+          "inlineSize": "3rem",
+          "blockSize": "3rem",
+          "objectFit": "cover",
+          "overflow": "hidden"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".avatar"
+    ],
+    "requiredProperties": [
+      "display",
+      "inlineSize",
+      "blockSize",
+      "objectFit",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "badge",
+    "category": "css-only capability",
+    "primitive": "span",
+    "minimumStyles": "inline-size content wrapper",
+    "behavior": "static label",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".badge",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "whiteSpace": "nowrap",
+          "border": "1px solid ButtonText",
+          "borderRadius": "9999px",
+          "padding": ".125rem .625rem",
+          "background": "ButtonFace",
+          "color": "ButtonText"
+        }
+      },
+      {
+        "selector": ".badge[data-variant=\"outline\"]",
+        "declarations": {
+          "background": "Canvas",
+          "color": "CanvasText"
+        }
+      },
+      {
+        "selector": ".badge[data-variant=\"secondary\"]",
+        "declarations": {
+          "background": "ButtonFace",
+          "color": "ButtonText"
+        }
+      },
+      {
+        "selector": ".badge[data-variant=\"default\"]",
+        "declarations": {
+          "background": "ButtonFace",
+          "color": "ButtonText"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".badge",
+      ".badge[data-variant=\"outline\"]",
+      ".badge[data-variant=\"secondary\"]",
+      ".badge[data-variant=\"default\"]"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "whiteSpace",
+      "border",
+      "borderRadius",
+      "padding",
+      "background",
+      "color"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "breadcrumb",
+    "category": "native composition",
+    "primitive": "nav/ol/a",
+    "minimumStyles": "inline navigation spacing and wrapping",
+    "behavior": "real links",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".breadcrumb",
+        "declarations": {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "gap": ".5rem",
+          "alignItems": "center"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".breadcrumb"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexWrap",
+      "gap",
+      "alignItems"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "button",
+    "category": "native HTML",
+    "primitive": "button",
+    "minimumStyles": "native button sizing and inline alignment",
+    "behavior": "native button activation",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "button",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "button"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "justifyContent",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "button-group",
+    "category": "native composition",
+    "primitive": "div/button",
+    "minimumStyles": "inline grouping and wrapping",
+    "behavior": "native buttons",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".button-group",
+        "declarations": {
+          "display": "inline-flex",
+          "flexWrap": "wrap",
+          "alignItems": "center",
+          "gap": ".25rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".button-group"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexWrap",
+      "alignItems",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "calendar",
+    "category": "higher-level module",
+    "primitive": "table/time",
+    "minimumStyles": "readable grid and overflow handling",
+    "behavior": "date navigation recipe",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".calendar",
+        "declarations": {
+          "maxInlineSize": "100%",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".calendar"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "card",
+    "category": "native composition",
+    "primitive": "article",
+    "minimumStyles": "content flow and readable composition",
+    "behavior": "static composition",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".card",
+        "declarations": {
+          "display": "flex",
+          "flexDirection": "column",
+          "gap": "1rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".card"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexDirection",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "carousel",
+    "category": "progressive JS behavior",
+    "primitive": "section",
+    "minimumStyles": "horizontal overflow, snap, controls",
+    "behavior": "keyboard and button-controlled slides",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[data-carousel-track]",
+        "declarations": {
+          "display": "flex",
+          "overflowX": "auto",
+          "scrollSnapType": "x mandatory",
+          "touchAction": "pan-x"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[data-carousel-track]"
+    ],
+    "requiredProperties": [
+      "display",
+      "overflowX",
+      "scrollSnapType",
+      "touchAction"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "checkbox",
+    "category": "native HTML",
+    "primitive": "input[type=checkbox]",
+    "minimumStyles": "label alignment and state layout",
+    "behavior": "native checked/indeterminate form state",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "label",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "label"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "collapsible",
+    "category": "native composition",
+    "primitive": "details/summary",
+    "minimumStyles": "stacked disclosure content",
+    "behavior": "native disclosure",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "details",
+        "declarations": {
+          "display": "block"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "details"
+    ],
+    "requiredProperties": [
+      "display"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "color-picker",
+    "category": "progressive JS behavior",
+    "primitive": "input[type=color]/popover",
+    "minimumStyles": "control grouping and overlay positioning",
+    "behavior": "native color input plus optional popover",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".color-picker",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".color-picker"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "combobox",
+    "category": "progressive JS behavior",
+    "primitive": "input/listbox",
+    "minimumStyles": "field width, list positioning, scrollable options",
+    "behavior": "keyboard filtering and active option",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[role=\"listbox\"]",
+        "declarations": {
+          "maxBlockSize": "16rem",
+          "overflowY": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[role=\"listbox\"]"
+    ],
+    "requiredProperties": [
+      "maxBlockSize",
+      "overflowY"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "command",
+    "category": "progressive JS behavior",
+    "primitive": "dialog/input/list",
+    "minimumStyles": "search field, list flow, overlay panel",
+    "behavior": "keyboard command palette",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[role=\"dialog\"]",
+        "declarations": {
+          "maxInlineSize": "calc(100vw - 2rem)",
+          "maxBlockSize": "calc(100vh - 2rem)",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[role=\"dialog\"]"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "maxBlockSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "context-menu",
+    "category": "progressive JS behavior",
+    "primitive": "menu/popover",
+    "minimumStyles": "overlay positioning and menu item layout",
+    "behavior": "context-menu keyboard and pointer behavior",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[role=\"menu\"]",
+        "declarations": {
+          "maxBlockSize": "min(24rem, calc(100vh - 2rem))",
+          "overflowY": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[role=\"menu\"]"
+    ],
+    "requiredProperties": [
+      "maxBlockSize",
+      "overflowY"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "date-picker",
+    "category": "native composition",
+    "primitive": "input[type=date]/popover",
+    "minimumStyles": "field and calendar overlay layout",
+    "behavior": "native date input with optional picker",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".date-picker",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".date-picker"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "dialog",
+    "category": "native HTML",
+    "primitive": "dialog",
+    "minimumStyles": "fixed overlay, readable panel, backdrop, open-state transitions",
+    "behavior": "showModal/close and Escape",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "dialog",
+        "declarations": {
+          "maxInlineSize": "calc(100vw - 2rem)",
+          "maxBlockSize": "calc(100vh - 2rem)",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "dialog"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "maxBlockSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "dropdown",
+    "category": "progressive JS behavior",
+    "primitive": "button/popover/menu",
+    "minimumStyles": "anchored overlay and menu item layout",
+    "behavior": "keyboard menu navigation",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[role=\"menu\"]",
+        "declarations": {
+          "maxBlockSize": "min(24rem, calc(100vh - 2rem))",
+          "overflowY": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[role=\"menu\"]"
+    ],
+    "requiredProperties": [
+      "maxBlockSize",
+      "overflowY"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "file-input",
+    "category": "native HTML",
+    "primitive": "input[type=file]",
+    "minimumStyles": "field and helper text flow",
+    "behavior": "native file selection",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "input[type=\"file\"]",
+        "declarations": {
+          "maxInlineSize": "100%"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "input[type=\"file\"]"
+    ],
+    "requiredProperties": [
+      "maxInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "form",
+    "category": "native composition",
+    "primitive": "form/fieldset",
+    "minimumStyles": "field stack, labels, errors, actions",
+    "behavior": "native validation and submit",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "form",
+        "declarations": {
+          "display": "grid",
+          "gap": "1rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "form"
+    ],
+    "requiredProperties": [
+      "display",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "icon",
+    "category": "native composition",
+    "primitive": "svg",
+    "minimumStyles": "inline box alignment and accessible sizing",
+    "behavior": "decorative or labelled SVG",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "svg",
+        "declarations": {
+          "inlineSize": "1em",
+          "blockSize": "1em",
+          "flex": "none"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "svg"
+    ],
+    "requiredProperties": [
+      "inlineSize",
+      "blockSize",
+      "flex"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "image",
+    "category": "native composition",
+    "primitive": "img/figure",
+    "minimumStyles": "intrinsic sizing, object fit, fallback placeholder",
+    "behavior": "native loading and optional lightbox",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "assets": [
+      "placeholder.svg"
+    ],
+    "minimumRules": [
+      {
+        "selector": "figure",
+        "declarations": {
+          "margin": "0",
+          "maxInlineSize": "100%"
+        }
+      },
+      {
+        "selector": "img",
+        "declarations": {
+          "display": "block",
+          "maxInlineSize": "100%",
+          "blockSize": "auto",
+          "objectFit": "cover"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "figure",
+      "img"
+    ],
+    "requiredProperties": [
+      "margin",
+      "maxInlineSize",
+      "display",
+      "blockSize",
+      "objectFit"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "input",
+    "category": "native HTML",
+    "primitive": "input",
+    "minimumStyles": "native field sizing and readable width",
+    "behavior": "native input states",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "input",
+        "declarations": {
+          "maxInlineSize": "100%"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "input"
+    ],
+    "requiredProperties": [
+      "maxInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "label",
+    "category": "native HTML",
+    "primitive": "label",
+    "minimumStyles": "association and readable field flow",
+    "behavior": "native label activation",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "label",
+        "declarations": {
+          "display": "inline-block"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "label"
+    ],
+    "requiredProperties": [
+      "display"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "navigation-menu",
+    "category": "native HTML",
+    "primitive": "nav/details",
+    "minimumStyles": "navigation flow and anchored submenu",
+    "behavior": "native popover disclosure and real links",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "nav",
+        "declarations": {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "gap": "1rem",
+          "alignItems": "center"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "nav"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexWrap",
+      "gap",
+      "alignItems"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "number-input",
+    "category": "native HTML",
+    "primitive": "input[type=number]",
+    "minimumStyles": "field and stepper grouping",
+    "behavior": "native numeric validation and steppers",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "input[type=\"number\"]",
+        "declarations": {
+          "maxInlineSize": "100%"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "input[type=\"number\"]"
+    ],
+    "requiredProperties": [
+      "maxInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "pagination",
+    "category": "native composition",
+    "primitive": "nav/a",
+    "minimumStyles": "inline links with wrapping",
+    "behavior": "real page links",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "nav",
+        "declarations": {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "gap": ".5rem",
+          "alignItems": "center"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "nav"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexWrap",
+      "gap",
+      "alignItems"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "popover",
+    "category": "native composition",
+    "primitive": "button/popover",
+    "minimumStyles": "anchored overlay, panel flow, open-state transitions",
+    "behavior": "native popover and light-dismiss",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[popover]",
+        "declarations": {
+          "margin": "0",
+          "maxInlineSize": "calc(100vw - 2rem)",
+          "maxBlockSize": "calc(100vh - 2rem)",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[popover]"
+    ],
+    "requiredProperties": [
+      "margin",
+      "maxInlineSize",
+      "maxBlockSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "progress",
+    "category": "native HTML",
+    "primitive": "progress",
+    "minimumStyles": "intrinsic progress sizing",
+    "behavior": "native progress semantics",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "progress",
+        "declarations": {
+          "maxInlineSize": "100%"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "progress"
+    ],
+    "requiredProperties": [
+      "maxInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "radio",
+    "category": "native HTML",
+    "primitive": "input[type=radio]",
+    "minimumStyles": "label alignment and group layout",
+    "behavior": "native mutually exclusive form state",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "label",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "label"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "scroll-area",
+    "category": "css-only capability",
+    "primitive": "div",
+    "minimumStyles": "bounded overflow and scroll behavior",
+    "behavior": "native scrolling",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".scroll-area",
+        "declarations": {
+          "maxInlineSize": "100%",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".scroll-area"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "select",
+    "category": "native HTML",
+    "primitive": "select",
+    "minimumStyles": "native select sizing",
+    "behavior": "native select popup",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "select",
+        "declarations": {
+          "maxInlineSize": "100%"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "select"
+    ],
+    "requiredProperties": [
+      "maxInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "separator",
+    "category": "css-only capability",
+    "primitive": "hr",
+    "minimumStyles": "visible horizontal or vertical separator",
+    "behavior": "static separator semantics",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "hr",
+        "declarations": {
+          "display": "block",
+          "inlineSize": "100%"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "hr"
+    ],
+    "requiredProperties": [
+      "display",
+      "inlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "sheet",
+    "category": "native composition",
+    "primitive": "dialog",
+    "minimumStyles": "edge-attached overlay, panel sizing, backdrop",
+    "behavior": "native dialog drawer recipe",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "dialog",
+        "declarations": {
+          "maxInlineSize": "min(28rem, calc(100vw - 2rem))",
+          "maxBlockSize": "calc(100vh - 2rem)",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "dialog"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "maxBlockSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "sidebar",
+    "category": "native composition",
+    "primitive": "aside/nav",
+    "minimumStyles": "responsive navigation layout and overflow",
+    "behavior": "responsive disclosure recipe",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "aside",
+        "declarations": {
+          "display": "flex",
+          "flexDirection": "column",
+          "minInlineSize": "0",
+          "overflow": "auto"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "aside"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexDirection",
+      "minInlineSize",
+      "overflow"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "skeleton",
+    "category": "css-only capability",
+    "primitive": "div",
+    "minimumStyles": "visible placeholder block and optional animation",
+    "behavior": "reduced-motion-safe loading state",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".skeleton",
+        "declarations": {
+          "display": "block",
+          "minBlockSize": "1rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".skeleton"
+    ],
+    "requiredProperties": [
+      "display",
+      "minBlockSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "slider",
+    "category": "native HTML",
+    "primitive": "input[type=range]",
+    "minimumStyles": "track/container sizing",
+    "behavior": "native range keyboard behavior",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "input[type=\"range\"]",
+        "declarations": {
+          "maxInlineSize": "100%"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "input[type=\"range\"]"
+    ],
+    "requiredProperties": [
+      "maxInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "sortable",
+    "category": "progressive JS behavior",
+    "primitive": "ol/li",
+    "minimumStyles": "list layout and drag affordance",
+    "behavior": "keyboard/pointer reorder recipe",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[data-sortable]",
+        "declarations": {
+          "display": "grid",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[data-sortable]"
+    ],
+    "requiredProperties": [
+      "display",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "spinner",
+    "category": "css-only capability",
+    "primitive": "output/progress",
+    "minimumStyles": "visible indicator sizing and animation",
+    "behavior": "reduced-motion-safe busy state",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".spinner",
+        "declarations": {
+          "display": "inline-block",
+          "inlineSize": "1em",
+          "blockSize": "1em"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".spinner"
+    ],
+    "requiredProperties": [
+      "display",
+      "inlineSize",
+      "blockSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "statistic",
+    "category": "native composition",
+    "primitive": "dl",
+    "minimumStyles": "label/value alignment",
+    "behavior": "static data presentation",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "dl",
+        "declarations": {
+          "display": "grid",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "dl"
+    ],
+    "requiredProperties": [
+      "display",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "steps",
+    "category": "native composition",
+    "primitive": "ol",
+    "minimumStyles": "ordered step layout and wrapping",
+    "behavior": "static or link-based progress",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "ol",
+        "declarations": {
+          "display": "grid",
+          "gap": ".75rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "ol"
+    ],
+    "requiredProperties": [
+      "display",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "switch",
+    "category": "native HTML",
+    "primitive": "input[type=checkbox]",
+    "minimumStyles": "label alignment and state layout",
+    "behavior": "native checked form state",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "label",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "gap": ".5rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "label"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "table",
+    "category": "native HTML",
+    "primitive": "table",
+    "minimumStyles": "readable table flow and horizontal overflow",
+    "behavior": "native table semantics",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "table",
+        "declarations": {
+          "maxInlineSize": "100%",
+          "borderCollapse": "collapse"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "table"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "borderCollapse"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "tabs",
+    "category": "progressive JS behavior",
+    "primitive": "button/panel",
+    "minimumStyles": "tablist flow, panel visibility, active-state behavior",
+    "behavior": "keyboard tab activation",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[role=\"tabpanel\"]",
+        "declarations": {
+          "minInlineSize": "0"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[role=\"tabpanel\"]"
+    ],
+    "requiredProperties": [
+      "minInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "textarea",
+    "category": "native HTML",
+    "primitive": "textarea",
+    "minimumStyles": "native multiline field sizing and resize",
+    "behavior": "native text input states",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "textarea",
+        "declarations": {
+          "maxInlineSize": "100%",
+          "minBlockSize": "5rem",
+          "resize": "vertical"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "textarea"
+    ],
+    "requiredProperties": [
+      "maxInlineSize",
+      "minBlockSize",
+      "resize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "timeline",
+    "category": "native composition",
+    "primitive": "ol",
+    "minimumStyles": "vertical event flow and markers",
+    "behavior": "static timeline composition",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "ol",
+        "declarations": {
+          "display": "grid",
+          "gap": "1rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "ol"
+    ],
+    "requiredProperties": [
+      "display",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "toast",
+    "category": "progressive JS behavior",
+    "primitive": "output/live region",
+    "minimumStyles": "fixed region, stacking, dismiss action",
+    "behavior": "live announcement and timeout recipe",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[data-toast-region]",
+        "declarations": {
+          "position": "fixed",
+          "insetInlineEnd": "1rem",
+          "insetBlockEnd": "1rem",
+          "display": "grid",
+          "gap": ".5rem",
+          "zIndex": "1000"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[data-toast-region]"
+    ],
+    "requiredProperties": [
+      "position",
+      "insetInlineEnd",
+      "insetBlockEnd",
+      "display",
+      "gap",
+      "zIndex"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "toggle",
+    "category": "progressive JS behavior",
+    "primitive": "button",
+    "minimumStyles": "native button with pressed-state layout",
+    "behavior": "aria-pressed toggle state",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "button",
+        "declarations": {
+          "display": "inline-flex",
+          "alignItems": "center",
+          "justifyContent": "center"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "button"
+    ],
+    "requiredProperties": [
+      "display",
+      "alignItems",
+      "justifyContent"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "toggle-group",
+    "category": "progressive JS behavior",
+    "primitive": "div/button",
+    "minimumStyles": "inline grouped controls",
+    "behavior": "single or multiple pressed states",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": ".toggle-group",
+        "declarations": {
+          "display": "inline-flex",
+          "flexWrap": "wrap",
+          "gap": ".25rem"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      ".toggle-group"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexWrap",
+      "gap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "toolbar",
+    "category": "native composition",
+    "primitive": "div/button",
+    "minimumStyles": "inline control grouping and wrapping",
+    "behavior": "roving toolbar keyboard recipe",
+    "requiredFiles": [
+      "html",
+      "css",
+      "js"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[role=\"toolbar\"]",
+        "declarations": {
+          "display": "flex",
+          "flexWrap": "wrap",
+          "gap": ".5rem",
+          "alignItems": "center"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[role=\"toolbar\"]"
+    ],
+    "requiredProperties": [
+      "display",
+      "flexWrap",
+      "gap",
+      "alignItems"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "tooltip",
+    "category": "progressive JS behavior",
+    "primitive": "button/popover",
+    "minimumStyles": "anchored overlay and readable text",
+    "behavior": "hover/focus tooltip with Escape dismissal",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "[popover]",
+        "declarations": {
+          "margin": "0",
+          "maxInlineSize": "min(20rem, calc(100vw - 2rem))",
+          "overflowWrap": "anywhere"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "[popover]"
+    ],
+    "requiredProperties": [
+      "margin",
+      "maxInlineSize",
+      "overflowWrap"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "tree-view",
+    "category": "native composition",
+    "primitive": "details/summary/ol",
+    "minimumStyles": "nested disclosure and indentation",
+    "behavior": "native details disclosure and tree semantics without a duplicated aria-expanded mirror",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "details",
+        "declarations": {
+          "display": "block"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "details"
+    ],
+    "requiredProperties": [
+      "display"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  },
+  {
+    "name": "typography",
+    "category": "native HTML",
+    "primitive": "heading/p/blockquote",
+    "minimumStyles": "readable text flow and wrapping",
+    "behavior": "native document semantics",
+    "requiredFiles": [
+      "html",
+      "css"
+    ],
+    "minimumRules": [
+      {
+        "selector": "article",
+        "declarations": {
+          "maxInlineSize": "65ch"
+        }
+      }
+    ],
+    "requiredSelectors": [
+      "article"
+    ],
+    "requiredProperties": [
+      "maxInlineSize"
+    ],
+    "cssPolicy": "native-visual-denylist"
+  }
+]

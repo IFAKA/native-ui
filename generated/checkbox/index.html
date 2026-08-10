@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>checkbox</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./checkbox.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>checkbox</h1></header>
+<section><h2>Example 1</h2><div class="flex items-center gap-2">
+  <input class="checkbox" type="checkbox" id="checkbox-example-1-terms">
+  <label class="label" for="checkbox-example-1-terms">Accept terms and conditions</label>
+</div>
+</section>
+<section><h2>Example 2</h2><div>
+  <input class="checkbox" type="checkbox" id="checkbox-example-2-notify">
+  <div>
+    <label class="label" for="checkbox-example-2-notify">Enable notifications</label>
+    <p class="field-description">You can enable or disable notifications at any time.</p>
+  </div>
+</div>
+</section>
+<section><h2>Example 3</h2><input class="checkbox" type="checkbox" id="checkbox-example-3-checked" checked>
+</section>
+<section><h2>Example 4</h2><input class="checkbox" type="checkbox" disabled>
+<input class="checkbox" type="checkbox" disabled checked>
+</section>
+<section><h2>Example 5</h2><input class="checkbox" type="checkbox" aria-invalid="true" required>
+</section>
+<section><h2>Example 6</h2><fieldset>
+  <legend>Select items to display</legend>
+  <div class="flex items-center gap-2">
+    <input class="checkbox" type="checkbox" id="checkbox-example-6-item-1" checked>
+    <label for="checkbox-example-6-item-1">Item 1</label>
+  </div>
+  <div class="flex items-center gap-2">
+    <input class="checkbox" type="checkbox" id="checkbox-example-6-item-2">
+    <label for="checkbox-example-6-item-2">Item 2</label>
+  </div>
+</fieldset>
+</section>
+  </main>
+</body>
+</html>

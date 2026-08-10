@@ -1,0 +1,1833 @@
+{
+  "source": "vendor/shadcn-html",
+  "count": 55,
+  "components": [
+    {
+      "component": "accordion",
+      "css": {
+        "component": "accordion",
+        "keptRules": 13,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "border-bottom",
+          "color",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "details/summary",
+        "minimumStyles": "stack items; preserve open-state disclosure",
+        "behavior": "native disclosure; optional animation",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "alert",
+      "css": {
+        "component": "alert",
+        "keptRules": 7,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "color",
+          "background-color",
+          "border-color",
+          "color",
+          "color",
+          "color",
+          "color",
+          "color",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "section/div",
+        "minimumStyles": "readable content and alert semantics",
+        "behavior": "static announcement",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "alert-dialog",
+      "css": {
+        "component": "alert-dialog",
+        "keptRules": 12,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "border-radius",
+          "background",
+          "color",
+          "box-shadow",
+          "background",
+          "background",
+          "background",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "dialog",
+        "minimumStyles": "fixed overlay, readable panel, backdrop, open-state transitions",
+        "behavior": "native dialog plus confirm/cancel recipe",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "avatar",
+      "css": {
+        "component": "avatar",
+        "keptRules": 11,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "background-color",
+          "color",
+          "background-color",
+          "background-color",
+          "border",
+          "border",
+          "background-color",
+          "color",
+          "border"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "img",
+        "minimumStyles": "intrinsic square media and fallback content",
+        "behavior": "image fallback",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "badge",
+      "css": {
+        "component": "badge",
+        "keptRules": 1,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "border",
+          "color",
+          "background",
+          "color",
+          "background",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "css-only capability",
+        "primitive": "span",
+        "minimumStyles": "inline-size content wrapper",
+        "behavior": "static label",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "breadcrumb",
+      "css": {
+        "component": "breadcrumb",
+        "keptRules": 16,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "color",
+          "border-radius",
+          "color",
+          "outline",
+          "color",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "nav/ol/a",
+        "minimumStyles": "inline navigation spacing and wrapping",
+        "behavior": "real links",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "button",
+      "css": {
+        "component": "button",
+        "keptRules": 24,
+        "droppedRules": 8,
+        "droppedDeclarations": [
+          "font-family",
+          "border-radius",
+          "background-color",
+          "color",
+          "outline",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "border",
+          "box-shadow",
+          "background-color",
+          "color",
+          "color",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "color",
+          "border-radius",
+          "border-radius",
+          "border-color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "button",
+        "minimumStyles": "native button sizing and inline alignment",
+        "behavior": "native button activation",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "button-group",
+      "css": {
+        "component": "button-group",
+        "keptRules": 13,
+        "droppedRules": 4,
+        "droppedDeclarations": [
+          "border-start-start-radius",
+          "border-end-start-radius",
+          "border-start-end-radius",
+          "border-end-end-radius",
+          "background",
+          "border-end-start-radius",
+          "border-start-end-radius",
+          "border-start-start-radius",
+          "border-start-end-radius",
+          "border-end-start-radius",
+          "border-end-end-radius"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "div/button",
+        "minimumStyles": "inline grouping and wrapping",
+        "behavior": "native buttons",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "calendar",
+      "css": {
+        "component": "calendar",
+        "keptRules": 15,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background-color",
+          "color",
+          "border",
+          "border-radius",
+          "color",
+          "background-color",
+          "outline",
+          "color",
+          "border-radius",
+          "color",
+          "background-color",
+          "outline",
+          "background-color",
+          "background-color",
+          "color",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "higher-level module",
+        "primitive": "table/time",
+        "minimumStyles": "readable grid and overflow handling",
+        "behavior": "date navigation recipe",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "card",
+      "css": {
+        "component": "card",
+        "keptRules": 10,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "background-color",
+          "color",
+          "border",
+          "border-radius",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "article",
+        "minimumStyles": "content flow and readable composition",
+        "behavior": "static composition",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "carousel",
+      "css": {
+        "component": "carousel",
+        "keptRules": 35,
+        "droppedRules": 4,
+        "droppedDeclarations": [
+          "border",
+          "background-color",
+          "color",
+          "box-shadow",
+          "background-color",
+          "outline",
+          "background-color",
+          "background-color",
+          "background-color",
+          "outline",
+          "color",
+          "border"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "section",
+        "minimumStyles": "horizontal overflow, snap, controls",
+        "behavior": "keyboard and button-controlled slides",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "checkbox",
+      "css": {
+        "component": "checkbox",
+        "keptRules": 16,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "background-color",
+          "border-color",
+          "border",
+          "background-color",
+          "border-color",
+          "background",
+          "outline",
+          "border-color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "input[type=checkbox]",
+        "minimumStyles": "label alignment and state layout",
+        "behavior": "native checked/indeterminate form state",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "collapsible",
+      "css": {
+        "component": "collapsible",
+        "keptRules": 10,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "color",
+          "background-color",
+          "outline",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "details/summary",
+        "minimumStyles": "stacked disclosure content",
+        "behavior": "native disclosure",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "color-picker",
+      "css": {
+        "component": "color-picker",
+        "keptRules": 6,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "box-shadow",
+          "border",
+          "border-radius",
+          "border-radius",
+          "border-radius",
+          "font-family",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "input[type=color]/popover",
+        "minimumStyles": "control grouping and overlay positioning",
+        "behavior": "native color input plus optional popover",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "combobox",
+      "css": {
+        "component": "combobox",
+        "keptRules": 22,
+        "droppedRules": 4,
+        "droppedDeclarations": [
+          "color",
+          "color",
+          "background-color",
+          "color",
+          "border",
+          "border-radius",
+          "box-shadow",
+          "border-bottom",
+          "color",
+          "font-family",
+          "color",
+          "color",
+          "border-radius",
+          "background-color",
+          "color",
+          "color",
+          "color",
+          "background"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "input/listbox",
+        "minimumStyles": "field width, list positioning, scrollable options",
+        "behavior": "keyboard filtering and active option",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "command",
+      "css": {
+        "component": "command",
+        "keptRules": 23,
+        "droppedRules": 8,
+        "droppedDeclarations": [
+          "border-radius",
+          "background",
+          "color",
+          "box-shadow",
+          "background",
+          "background",
+          "background",
+          "border-bottom",
+          "color",
+          "color",
+          "color",
+          "color",
+          "border-radius",
+          "color",
+          "background-color",
+          "outline",
+          "color",
+          "background-color",
+          "color",
+          "font-family",
+          "color",
+          "border",
+          "outline"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "dialog/input/list",
+        "minimumStyles": "search field, list flow, overlay panel",
+        "behavior": "keyboard command palette",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "context-menu",
+      "css": {
+        "component": "context-menu",
+        "keptRules": 7,
+        "droppedRules": 2,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "color",
+          "border",
+          "border-radius",
+          "background-color",
+          "color",
+          "box-shadow",
+          "border-radius",
+          "color",
+          "background-color",
+          "color",
+          "outline",
+          "background-color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "menu/popover",
+        "minimumStyles": "overlay positioning and menu item layout",
+        "behavior": "context-menu keyboard and pointer behavior",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "date-picker",
+      "css": {
+        "component": "date-picker",
+        "keptRules": 4,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "font-family",
+          "color",
+          "box-shadow",
+          "border-color",
+          "box-shadow"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "input[type=date]/popover",
+        "minimumStyles": "field and calendar overlay layout",
+        "behavior": "native date input with optional picker",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "dialog",
+      "css": {
+        "component": "dialog",
+        "keptRules": 16,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "border-radius",
+          "background-color",
+          "color",
+          "box-shadow",
+          "background",
+          "background",
+          "background",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "dialog",
+        "minimumStyles": "fixed overlay, readable panel, backdrop, open-state transitions",
+        "behavior": "showModal/close and Escape",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "dropdown",
+      "css": {
+        "component": "dropdown",
+        "keptRules": 19,
+        "droppedRules": 4,
+        "droppedDeclarations": [
+          "background-color",
+          "color",
+          "border",
+          "border-radius",
+          "box-shadow",
+          "border-radius",
+          "color",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "background",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "button/popover/menu",
+        "minimumStyles": "anchored overlay and menu item layout",
+        "behavior": "keyboard menu navigation",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "file-input",
+      "css": {
+        "component": "file-input",
+        "keptRules": 3,
+        "droppedRules": 2,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "font-family",
+          "color",
+          "box-shadow",
+          "border-right",
+          "background",
+          "color",
+          "font-family",
+          "background",
+          "border-color",
+          "box-shadow"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "input[type=file]",
+        "minimumStyles": "field and helper text flow",
+        "behavior": "native file selection",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "form",
+      "css": {
+        "component": "form",
+        "keptRules": 19,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "color",
+          "border",
+          "border-radius",
+          "box-shadow",
+          "font-family",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "form/fieldset",
+        "minimumStyles": "field stack, labels, errors, actions",
+        "behavior": "native validation and submit",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "icon",
+      "css": {
+        "component": "icon",
+        "keptRules": 10,
+        "droppedRules": 0,
+        "droppedDeclarations": [],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "svg",
+        "minimumStyles": "inline box alignment and accessible sizing",
+        "behavior": "decorative or labelled SVG",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "image",
+      "css": {
+        "component": "image",
+        "keptRules": 31,
+        "droppedRules": 5,
+        "droppedDeclarations": [
+          "border-radius",
+          "border-radius",
+          "border-radius",
+          "background-color",
+          "color",
+          "color",
+          "background",
+          "background",
+          "background",
+          "border-radius",
+          "border-radius",
+          "background",
+          "color",
+          "background",
+          "outline"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "img/figure",
+        "minimumStyles": "intrinsic sizing, object fit, fallback placeholder",
+        "behavior": "native loading and optional lightbox",
+        "assets": [
+          "placeholder.svg"
+        ],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "input",
+      "css": {
+        "component": "input",
+        "keptRules": 19,
+        "droppedRules": 6,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "font-family",
+          "color",
+          "box-shadow",
+          "border-color",
+          "box-shadow",
+          "color",
+          "background",
+          "border-color",
+          "box-shadow",
+          "border-color",
+          "border-color",
+          "box-shadow",
+          "border-right",
+          "background",
+          "color",
+          "font-family",
+          "background",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "input",
+        "minimumStyles": "native field sizing and readable width",
+        "behavior": "native input states",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "label",
+      "css": {
+        "component": "label",
+        "keptRules": 12,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "font-family",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "label",
+        "minimumStyles": "association and readable field flow",
+        "behavior": "native label activation",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "navigation-menu",
+      "css": {
+        "component": "navigation-menu",
+        "keptRules": 20,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "border-radius",
+          "color",
+          "background-color",
+          "color",
+          "outline",
+          "color",
+          "border",
+          "border-radius",
+          "background-color",
+          "color",
+          "box-shadow",
+          "border-radius",
+          "color",
+          "background-color",
+          "outline",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "nav/details",
+        "minimumStyles": "navigation flow and anchored submenu",
+        "behavior": "native popover disclosure and real links",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "number-input",
+      "css": {
+        "component": "number-input",
+        "keptRules": 5,
+        "droppedRules": 4,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "box-shadow",
+          "font-family",
+          "color",
+          "color",
+          "font-family",
+          "background",
+          "color",
+          "border-right",
+          "border-left",
+          "border-color",
+          "box-shadow"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "input[type=number]",
+        "minimumStyles": "field and stepper grouping",
+        "behavior": "native numeric validation and steppers",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "pagination",
+      "css": {
+        "component": "pagination",
+        "keptRules": 30,
+        "droppedRules": 9,
+        "droppedDeclarations": [
+          "border-radius",
+          "color",
+          "background-color",
+          "outline",
+          "border-color",
+          "background-color",
+          "color",
+          "border-color",
+          "border-color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "nav/a",
+        "minimumStyles": "inline links with wrapping",
+        "behavior": "real page links",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "popover",
+      "css": {
+        "component": "popover",
+        "keptRules": 25,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background-color",
+          "color",
+          "box-shadow",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "button/popover",
+        "minimumStyles": "anchored overlay, panel flow, open-state transitions",
+        "behavior": "native popover and light-dismiss",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "progress",
+      "css": {
+        "component": "progress",
+        "keptRules": 7,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "background-color",
+          "background-color",
+          "background-color",
+          "background-color",
+          "background"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "progress",
+        "minimumStyles": "intrinsic progress sizing",
+        "behavior": "native progress semantics",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "radio",
+      "css": {
+        "component": "radio",
+        "keptRules": 30,
+        "droppedRules": 6,
+        "droppedDeclarations": [
+          "color",
+          "border",
+          "border-radius",
+          "background",
+          "border-color",
+          "outline",
+          "color",
+          "border",
+          "background",
+          "border-color",
+          "background",
+          "outline",
+          "border-color",
+          "border-color",
+          "background",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "input[type=radio]",
+        "minimumStyles": "label alignment and group layout",
+        "behavior": "native mutually exclusive form state",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "scroll-area",
+      "css": {
+        "component": "scroll-area",
+        "keptRules": 4,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "scrollbar-color",
+          "background-color",
+          "background-color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "css-only capability",
+        "primitive": "div",
+        "minimumStyles": "bounded overflow and scroll behavior",
+        "behavior": "native scrolling",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "select",
+      "css": {
+        "component": "select",
+        "keptRules": 4,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "font-family",
+          "color",
+          "box-shadow",
+          "border-color",
+          "box-shadow",
+          "border-color",
+          "border-color",
+          "box-shadow"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "select",
+        "minimumStyles": "native select sizing",
+        "behavior": "native select popup",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "separator",
+      "css": {
+        "component": "separator",
+        "keptRules": 8,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "background",
+          "color",
+          "background"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "css-only capability",
+        "primitive": "hr",
+        "minimumStyles": "visible horizontal or vertical separator",
+        "behavior": "static separator semantics",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "sheet",
+      "css": {
+        "component": "sheet",
+        "keptRules": 27,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "background-color",
+          "color",
+          "border-left",
+          "border-right",
+          "border-bottom",
+          "border-top",
+          "background",
+          "background",
+          "background",
+          "color",
+          "color",
+          "border-radius",
+          "color",
+          "background-color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "dialog",
+        "minimumStyles": "edge-attached overlay, panel sizing, backdrop",
+        "behavior": "native dialog drawer recipe",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "sidebar",
+      "css": {
+        "component": "sidebar",
+        "keptRules": 60,
+        "droppedRules": 6,
+        "droppedDeclarations": [
+          "background-color",
+          "border-right",
+          "border-left",
+          "border-bottom",
+          "color",
+          "scrollbar-color",
+          "border-radius",
+          "color",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "outline",
+          "border-radius",
+          "background-color",
+          "color",
+          "color",
+          "color",
+          "border-radius",
+          "background-color",
+          "border-radius",
+          "color",
+          "background-color",
+          "color",
+          "border-left",
+          "color",
+          "border-radius",
+          "color",
+          "background-color",
+          "border-top",
+          "color",
+          "color",
+          "border-radius",
+          "background-color",
+          "outline",
+          "background-color",
+          "color",
+          "background",
+          "color",
+          "border-radius",
+          "background-color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "aside/nav",
+        "minimumStyles": "responsive navigation layout and overflow",
+        "behavior": "responsive disclosure recipe",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "skeleton",
+      "css": {
+        "component": "skeleton",
+        "keptRules": 2,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "background-color",
+          "border-radius"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "css-only capability",
+        "primitive": "div",
+        "minimumStyles": "visible placeholder block and optional animation",
+        "behavior": "reduced-motion-safe loading state",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "slider",
+      "css": {
+        "component": "slider",
+        "keptRules": 25,
+        "droppedRules": 2,
+        "droppedDeclarations": [
+          "--slider-value",
+          "background",
+          "accent-color",
+          "background",
+          "background",
+          "background",
+          "background",
+          "border",
+          "background",
+          "border",
+          "box-shadow",
+          "box-shadow",
+          "outline",
+          "outline",
+          "background"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "input[type=range]",
+        "minimumStyles": "track/container sizing",
+        "behavior": "native range keyboard behavior",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "sortable",
+      "css": {
+        "component": "sortable",
+        "keptRules": 23,
+        "droppedRules": 5,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background-color",
+          "color",
+          "outline",
+          "border-color",
+          "background-color",
+          "color",
+          "box-shadow",
+          "border-top",
+          "border-bottom",
+          "border-top",
+          "border-inline-start",
+          "border-bottom",
+          "border-inline-end",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "ol/li",
+        "minimumStyles": "list layout and drag affordance",
+        "behavior": "keyboard/pointer reorder recipe",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "spinner",
+      "css": {
+        "component": "spinner",
+        "keptRules": 4,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "css-only capability",
+        "primitive": "output/progress",
+        "minimumStyles": "visible indicator sizing and animation",
+        "behavior": "reduced-motion-safe busy state",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "statistic",
+      "css": {
+        "component": "statistic",
+        "keptRules": 6,
+        "droppedRules": 2,
+        "droppedDeclarations": [
+          "color",
+          "color",
+          "color",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "dl",
+        "minimumStyles": "label/value alignment",
+        "behavior": "static data presentation",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "steps",
+      "css": {
+        "component": "steps",
+        "keptRules": 38,
+        "droppedRules": 5,
+        "droppedDeclarations": [
+          "background-color",
+          "background-color",
+          "background-color",
+          "border",
+          "color",
+          "background-color",
+          "border-color",
+          "color",
+          "border-color",
+          "background-color",
+          "color",
+          "border-color",
+          "background-color",
+          "color",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "ol",
+        "minimumStyles": "ordered step layout and wrapping",
+        "behavior": "static or link-based progress",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "switch",
+      "css": {
+        "component": "switch",
+        "keptRules": 24,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "background",
+          "background",
+          "box-shadow",
+          "background",
+          "outline",
+          "background",
+          "background",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "input[type=checkbox]",
+        "minimumStyles": "label alignment and state layout",
+        "behavior": "native checked form state",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "table",
+      "css": {
+        "component": "table",
+        "keptRules": 10,
+        "droppedRules": 5,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "color",
+          "color",
+          "background-color",
+          "border-bottom",
+          "border-top-left-radius",
+          "border-top-right-radius",
+          "border-bottom",
+          "background-color",
+          "color",
+          "background-color",
+          "border-top",
+          "border-bottom-left-radius",
+          "border-bottom-right-radius"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "table",
+        "minimumStyles": "readable table flow and horizontal overflow",
+        "behavior": "native table semantics",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "tabs",
+      "css": {
+        "component": "tabs",
+        "keptRules": 17,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "background",
+          "border-radius",
+          "border-bottom",
+          "color",
+          "border-bottom-color",
+          "border-radius",
+          "color",
+          "background",
+          "color",
+          "box-shadow",
+          "outline",
+          "outline"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "button/panel",
+        "minimumStyles": "tablist flow, panel visibility, active-state behavior",
+        "behavior": "keyboard tab activation",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "textarea",
+      "css": {
+        "component": "textarea",
+        "keptRules": 9,
+        "droppedRules": 4,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background",
+          "font-family",
+          "color",
+          "box-shadow",
+          "border-color",
+          "box-shadow",
+          "color",
+          "border-color",
+          "border-color",
+          "box-shadow"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "textarea",
+        "minimumStyles": "native multiline field sizing and resize",
+        "behavior": "native text input states",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "timeline",
+      "css": {
+        "component": "timeline",
+        "keptRules": 10,
+        "droppedRules": 1,
+        "droppedDeclarations": [
+          "background-color",
+          "background-color",
+          "background-color",
+          "color",
+          "color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "ol",
+        "minimumStyles": "vertical event flow and markers",
+        "behavior": "static timeline composition",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "toast",
+      "css": {
+        "component": "toast",
+        "keptRules": 18,
+        "droppedRules": 8,
+        "droppedDeclarations": [
+          "background-color",
+          "color",
+          "border",
+          "border-radius",
+          "box-shadow",
+          "background-color",
+          "color",
+          "border-color",
+          "color",
+          "border-color",
+          "color",
+          "border-color",
+          "color",
+          "border-color",
+          "color",
+          "color",
+          "color",
+          "border-radius",
+          "color",
+          "background"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "output/live region",
+        "minimumStyles": "fixed region, stacking, dismiss action",
+        "behavior": "live announcement and timeout recipe",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "toggle",
+      "css": {
+        "component": "toggle",
+        "keptRules": 13,
+        "droppedRules": 8,
+        "droppedDeclarations": [
+          "font-family",
+          "border-radius",
+          "color",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "background-color",
+          "outline",
+          "border",
+          "box-shadow",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "background-color",
+          "border-color"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "button",
+        "minimumStyles": "native button with pressed-state layout",
+        "behavior": "aria-pressed toggle state",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "toggle-group",
+      "css": {
+        "component": "toggle-group",
+        "keptRules": 20,
+        "droppedRules": 3,
+        "droppedDeclarations": [
+          "border",
+          "box-shadow",
+          "background-color",
+          "color",
+          "background-color",
+          "color",
+          "border-end-start-radius",
+          "border-start-end-radius",
+          "border-radius"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "div/button",
+        "minimumStyles": "inline grouped controls",
+        "behavior": "single or multiple pressed states",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "toolbar",
+      "css": {
+        "component": "toolbar",
+        "keptRules": 6,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "border",
+          "border-radius",
+          "background"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "div/button",
+        "minimumStyles": "inline control grouping and wrapping",
+        "behavior": "roving toolbar keyboard recipe",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "tooltip",
+      "css": {
+        "component": "tooltip",
+        "keptRules": 26,
+        "droppedRules": 0,
+        "droppedDeclarations": [
+          "border-radius",
+          "background-color",
+          "color",
+          "box-shadow"
+        ],
+        "warnings": []
+      },
+      "js": true,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "progressive JS behavior",
+        "primitive": "button/popover",
+        "minimumStyles": "anchored overlay and readable text",
+        "behavior": "hover/focus tooltip with Escape dismissal",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "tree-view",
+      "css": {
+        "component": "tree-view",
+        "keptRules": 15,
+        "droppedRules": 2,
+        "droppedDeclarations": [
+          "border-radius",
+          "color",
+          "background-color",
+          "outline",
+          "color",
+          "border-radius",
+          "color",
+          "background-color",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native composition",
+        "primitive": "details/summary/ol",
+        "minimumStyles": "nested disclosure and indentation",
+        "behavior": "native details disclosure and tree semantics without a duplicated aria-expanded mirror",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    },
+    {
+      "component": "typography",
+      "css": {
+        "component": "typography",
+        "keptRules": 22,
+        "droppedRules": 2,
+        "droppedDeclarations": [
+          "color",
+          "color",
+          "border-bottom",
+          "color",
+          "color",
+          "color",
+          "color",
+          "color",
+          "color",
+          "color",
+          "border-inline-start",
+          "color",
+          "border-radius",
+          "background",
+          "font-family",
+          "color",
+          "outline",
+          "color"
+        ],
+        "warnings": []
+      },
+      "js": false,
+      "recipe": true,
+      "warnings": [],
+      "contract": {
+        "category": "native HTML",
+        "primitive": "heading/p/blockquote",
+        "minimumStyles": "readable text flow and wrapping",
+        "behavior": "native document semantics",
+        "assets": [],
+        "cssPolicy": "native-visual-denylist"
+      }
+    }
+  ]
+}

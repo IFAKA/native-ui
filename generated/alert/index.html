@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>alert</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./alert.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>alert</h1></header>
+<section><h2>Example 1</h2><!-- Default alert -->
+<div class="alert" role="alert">
+  <svg class="alert-icon"><circle cx="12" cy="12" r="8"/></svg>
+  <div class="alert-content">
+    <h5 class="alert-title">Heads up!</h5>
+    <p class="alert-description">You can add components using the CLI.</p>
+  </div>
+</div>
+
+<!-- Destructive alert -->
+<div class="alert" data-variant="destructive" role="alert">
+  <svg class="alert-icon"><circle cx="12" cy="12" r="8"/></svg>
+  <div class="alert-content">
+    <h5 class="alert-title">Error</h5>
+    <p class="alert-description">Your session has expired.</p>
+  </div>
+</div>
+
+<!-- Alert with action -->
+<div class="alert" role="alert">
+  <svg class="alert-icon"><circle cx="12" cy="12" r="8"/></svg>
+  <div class="alert-content">
+    <h5 class="alert-title">New feature available</h5>
+    <p class="alert-description">Dark mode is now available.</p>
+  </div>
+  <div class="alert-action">
+    <button class="btn" data-variant="outline" data-size="sm">Enable</button>
+  </div>
+</div>
+</section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>toggle-group</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./toggle-group.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>toggle-group</h1></header>
+<section><h2>Example 1</h2><div class="toggle-group" role="group" aria-label="Text alignment" data-type="single">
+  <button class="toggle" aria-pressed="true" value="left">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg>
+  </button>
+  <button class="toggle" aria-pressed="false" value="center">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg>
+  </button>
+  <button class="toggle" aria-pressed="false" value="right">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg>
+  </button>
+</div>
+</section>
+<section><h2>Example 2</h2><div class="toggle-group" role="group" aria-label="Text formatting" data-type="multiple">
+  <button class="toggle" aria-pressed="true" value="bold">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg>
+  </button>
+  <button class="toggle" aria-pressed="false" value="italic">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg>
+  </button>
+  <button class="toggle" aria-pressed="false" value="underline">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg>
+  </button>
+</div>
+</section>
+<section><h2>Example 3</h2><div class="toggle-group" role="group" aria-label="View mode" data-type="single" data-variant="outline">
+  <button class="toggle" aria-pressed="true" value="list">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg> List
+  </button>
+  <button class="toggle" aria-pressed="false" value="grid">
+    <svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg> Grid
+  </button>
+</div>
+</section>
+<section><h2>Example 4</h2><div class="toggle-group" role="group" aria-label="Alignment" data-type="single" data-orientation="vertical">
+  <button class="toggle" aria-pressed="true"><svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg></button>
+  <button class="toggle" aria-pressed="false"><svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg></button>
+  <button class="toggle" aria-pressed="false"><svg aria-hidden="true" ...><circle cx="12" cy="12" r="8"/></svg></button>
+</div>
+</section>
+<section><h2>Example 5</h2><div class="toggle-group" role="group" aria-label="Formatting" data-type="multiple" data-disabled>
+  <button class="toggle" aria-pressed="true" disabled>...</button>
+  <button class="toggle" aria-pressed="false" disabled>...</button>
+  <button class="toggle" aria-pressed="false" disabled>...</button>
+</div>
+</section>
+  </main>
+  <script type="module" src="./toggle-group.js"></script>
+</body>
+</html>

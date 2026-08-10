@@ -1,0 +1,65 @@
+<div class="accordion">
+  <details class="accordion-item" open>
+    <summary class="accordion-trigger">
+      <span>Is it accessible?</span>
+      <svg class="accordion-chevron" aria-hidden="true" width="16" height="16"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </summary>
+    <div class="accordion-content">
+      <p>Yes. It uses native HTML details/summary which are fully accessible
+         by default. Keyboard and screen reader support are built in.</p>
+    </div>
+  </details>
+
+  <details class="accordion-item">
+    <summary class="accordion-trigger">
+      <span>Is it styled?</span>
+      <svg class="accordion-chevron" aria-hidden="true" width="16" height="16"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </summary>
+    <div class="accordion-content">
+      <p>Yes. It follows the shadcn/ui token system for consistent theming.</p>
+    </div>
+  </details>
+
+  <details class="accordion-item">
+    <summary class="accordion-trigger">
+      <span>Is it animated?</span>
+      <svg class="accordion-chevron" aria-hidden="true" width="16" height="16"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </summary>
+    <div class="accordion-content">
+      <p>Yes. The chevron rotates and content can use CSS transitions.</p>
+    </div>
+  </details>
+</div>
+
+<div class="accordion" data-type="single">
+  <!-- same structure — JS closes siblings on open -->
+</div>
+
+<div class="accordion" data-type="single" data-collapsible>
+  <!-- same structure — can close active item -->
+</div>
+
+<div class="accordion">
+  <!-- items -->
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">FAQ</h3>
+    <p class="card-description">Frequently asked questions.</p>
+  </div>
+  <div class="card-content">
+    <div class="accordion">
+      <!-- items -->
+    </div>
+  </div>
+</div>

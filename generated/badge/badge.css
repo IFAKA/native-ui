@@ -1,0 +1,33 @@
+/* Generated from shadcn-html badge. Minimum structural/native styling only. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.5rem;
+}
+
+.badge {
+  white-space: nowrap;
+  border: 1px solid ButtonText;
+  background: ButtonFace;
+  color: ButtonText;
+}
+
+.badge[data-variant="outline"] {
+  background: Canvas;
+  color: CanvasText;
+}
+
+.badge[data-variant="secondary"] {
+  background: ButtonFace;
+  color: ButtonText;
+}
+
+.badge[data-variant="default"] {
+  background: ButtonFace;
+  color: ButtonText;
+}

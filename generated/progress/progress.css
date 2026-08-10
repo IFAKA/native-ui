@@ -1,0 +1,50 @@
+/* Generated from shadcn-html progress. Minimum structural/native styling only. */
+.progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  border: none;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress::-webkit-progress-bar {
+  border-radius: 9999px;
+}
+
+.progress::-webkit-progress-value {
+  border-radius: 9999px;
+  transition: width 300ms ease;
+}
+
+.progress::-moz-progress-bar {
+  border-radius: 9999px;
+}
+
+.progress:indeterminate {
+  background-size: 200% 100%;
+  animation: progress-indeterminate 1.5s linear infinite;
+}
+
+.progress:indeterminate::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.progress:indeterminate::-moz-progress-bar {
+  background-color: transparent;
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+progress {
+  max-inline-size: 100%;
+}

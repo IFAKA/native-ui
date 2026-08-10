@@ -1,0 +1,146 @@
+/* Generated from shadcn-html button. Minimum structural/native styling only. */
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 150ms ease;
+  outline: none;
+  flex-shrink: 0;
+  height: 2.25rem;
+  padding: 0 1rem;
+}
+
+button svg {
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+button:focus-visible {
+  outline-offset: 2px;
+}
+
+button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+button[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button {
+  background-color: transparent;
+  height: auto;
+  padding: 0;
+  text-underline-offset: 4px;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+button {
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+}
+
+button {
+  height: 2rem;
+  padding: 0 0.75rem;
+  font-size: 0.8125rem;
+}
+
+button {
+  height: 2.75rem;
+  padding: 0 2rem;
+  font-size: 1rem;
+}
+
+button {
+  height: 2.25rem;
+  width: 2.25rem;
+  padding: 0;
+}
+
+button {
+  height: 1.75rem;
+  width: 1.75rem;
+  padding: 0;
+}
+
+button {
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+}
+
+button {
+  height: 2.75rem;
+  width: 2.75rem;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  button {
+    border: 2px solid transparent;
+  }
+}
+
+@media (prefers-contrast: more) {
+  button {
+    border-color: currentColor;
+  }
+}
+
+@media (forced-colors: active) {
+  button {
+    border: 1px solid ButtonText;
+  }
+}
+
+@media (forced-colors: active) {
+  button:disabled {
+    border-color: GrayText;
+    color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  button[aria-disabled="true"] {
+    border-color: GrayText;
+    color: GrayText;
+  }
+}

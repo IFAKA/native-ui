@@ -1,0 +1,61 @@
+/* Generated from shadcn-html table. Minimum structural/native styling only. */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  container-type: inline-size;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: left;
+  caption-side: bottom;
+}
+
+.table-caption {
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.table-head {
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.table-row {
+  transition: background-color 150ms ease;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+}
+
+tfoot .table-row {
+  font-weight: 500;
+}
+
+@container (max-width: 480px) {
+  .table-head {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@container (max-width: 480px) {
+  .table-cell {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+}
+
+table {
+  max-inline-size: 100%;
+}

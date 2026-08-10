@@ -1,0 +1,240 @@
+/* Generated from shadcn-html steps. Minimum structural/native styling only. */
+.steps {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: calc(50% + 1.25rem);
+  right: calc(-50% + 1.25rem);
+  height: 2px;
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.step-indicator svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  pointer-events: none;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.step-title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.step-description {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.step[data-clickable] .step-indicator {
+  cursor: pointer;
+}
+
+.step[data-clickable] .step-indicator:hover {
+  opacity: 0.85;
+}
+
+.steps .step:not(:last-child)::after {
+  top: 0.75rem;
+  left: calc(50% + 1rem);
+  right: calc(-50% + 1rem);
+}
+
+.steps .step-indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.6875rem;
+}
+
+.steps .step-indicator svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.steps .step-title {
+  font-size: 0.75rem;
+}
+
+.steps .step-description {
+  font-size: 0.6875rem;
+}
+
+.steps[data-orientation='vertical'] .step:not(:last-child)::after {
+  top: 1.75rem;
+  left: 0.6875rem;
+  height: calc(100% - 1.75rem);
+}
+
+.steps .step:not(:last-child)::after {
+  top: 1.25rem;
+  left: calc(50% + 1.5rem);
+  right: calc(-50% + 1.5rem);
+}
+
+.steps .step-indicator {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+}
+
+.steps .step-indicator svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.steps .step-title {
+  font-size: 0.9375rem;
+}
+
+.steps .step-description {
+  font-size: 0.8125rem;
+}
+
+.steps[data-orientation='vertical'] .step:not(:last-child)::after {
+  top: 2.75rem;
+  left: 1.1875rem;
+  height: calc(100% - 2.75rem);
+}
+
+.steps[data-orientation="vertical"] {
+  flex-direction: column;
+  gap: 0;
+}
+
+.steps[data-orientation="vertical"] .step {
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+  padding-bottom: 1.5rem;
+}
+
+.steps[data-orientation="vertical"] .step:not(:last-child)::after {
+  top: 2.25rem;
+  left: 0.9375rem;
+  right: auto;
+  width: 2px;
+  height: calc(100% - 2.25rem);
+}
+
+.steps[data-orientation="vertical"] .step-content {
+  padding-top: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-indicator {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step:not(:last-child)::after {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .step-indicator {
+    border-width: 3px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .step:not(:last-child)::after {
+    height: 3px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .steps[data-orientation="vertical"] .step:not(:last-child)::after {
+    width: 3px;
+    height: calc(100% - 2.25rem);
+  }
+}
+
+@media (forced-colors: active) {
+  .step-indicator {
+    border-color: ButtonText;
+  }
+}
+
+@media (forced-colors: active) {
+  .step[data-status='current'] .step-indicator {
+    border-color: Highlight;
+    color: Highlight;
+  }
+}
+
+@media (forced-colors: active) {
+  .step[data-status='complete'] .step-indicator {
+    border-color: Highlight;
+    background: Highlight;
+    color: HighlightText;
+  }
+}
+
+@media (forced-colors: active) {
+  .step[data-status='error'] .step-indicator {
+    border-color: Mark;
+    background: Mark;
+    color: MarkText;
+  }
+}
+
+@media (forced-colors: active) {
+  .step:not(:last-child)::after {
+    background: ButtonText;
+  }
+}
+
+@media (forced-colors: active) {
+  .step[data-status='complete']:not(:last-child)::after {
+    background: Highlight;
+  }
+}
+
+@media (forced-colors: active) {
+  .step[data-status='error']:not(:last-child)::after {
+    background: Mark;
+  }
+}
+
+ol {
+  display: grid;
+  gap: .75rem;
+}

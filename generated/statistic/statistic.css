@@ -1,0 +1,46 @@
+/* Generated from shadcn-html statistic. Minimum structural/native styling only. */
+.statistic {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.statistic-title {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.statistic-value {
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.statistic-description {
+  margin: 0;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statistic-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  font-weight: 500;
+}
+
+.statistic-trend svg {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+dl {
+  display: grid;
+  gap: .5rem;
+}

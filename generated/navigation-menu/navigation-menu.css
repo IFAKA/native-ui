@@ -1,0 +1,153 @@
+/* Generated from shadcn-html navigation-menu. Minimum structural/native styling only. */
+.nav-menu-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+  outline: none;
+}
+
+.nav-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+  outline: none;
+}
+
+.nav-menu-link:focus-visible {
+  outline-offset: 2px;
+}
+
+.nav-menu-trigger:focus-visible {
+  outline-offset: 2px;
+}
+
+.nav-menu-link svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: transform 200ms ease;
+}
+
+.nav-menu-trigger svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: transform 200ms ease;
+}
+
+.nav-menu-trigger:has(+ .nav-menu-content:popover-open) svg {
+  transform: rotate(180deg);
+}
+
+.nav-menu-content {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: 1rem;
+  min-width: 14rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 150ms ease, transform 150ms ease, display 150ms allow-discrete;
+  top: anchor(bottom);
+  left: anchor(left);
+  margin-top: 4px;
+  position-try-fallbacks: flip-block;
+}
+
+.nav-menu-content:popover-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@starting-style {
+  .nav-menu-content:popover-open {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.nav-menu-content-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background-color 150ms ease;
+}
+
+.nav-menu-content-link:focus-visible {
+  outline-offset: 2px;
+}
+
+.nav-menu-content-link p {
+  margin: 0.125rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu-link {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu-trigger {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu-content {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu-content-link {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu-trigger svg {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .nav-menu-content {
+    border-color: ButtonText;
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}

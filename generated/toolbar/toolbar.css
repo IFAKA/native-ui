@@ -1,0 +1,43 @@
+/* Generated from shadcn-html toolbar. Minimum structural/native styling only. */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  width: fit-content;
+}
+
+.toolbar > .separator[data-orientation="vertical"] {
+  align-self: stretch;
+  height: auto;
+  margin: 0.25rem 0.25rem;
+}
+
+.toolbar[aria-orientation="vertical"] {
+  flex-direction: column;
+}
+
+.toolbar[aria-orientation="vertical"] > .separator[data-orientation="horizontal"] {
+  height: 1px;
+  width: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+.toolbar[aria-orientation="vertical"] > .separator:not([data-orientation]) {
+  height: 1px;
+  width: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+@media (forced-colors: active) {
+  .toolbar {
+    border-color: ButtonText;
+  }
+}
+
+[role="toolbar"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+}

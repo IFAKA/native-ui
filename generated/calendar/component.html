@@ -1,0 +1,27 @@
+<div class="calendar">
+  <div class="calendar-header">
+    <button class="calendar-nav" data-action="prev-month" aria-label="Previous month">
+      <svg><circle cx="12" cy="12" r="8"/></svg>
+    </button>
+    <span class="calendar-heading" aria-live="polite">April 2026</span>
+    <button class="calendar-nav" data-action="next-month" aria-label="Next month">
+      <svg><circle cx="12" cy="12" r="8"/></svg>
+    </button>
+  </div>
+  <table class="calendar-grid" role="grid">
+    <thead>
+      <tr>
+        <th class="calendar-day-label" abbr="Sunday" scope="col">Su</th>
+        <th class="calendar-day-label" abbr="Monday" scope="col">Mo</th>
+        <!-- ... -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="calendar-day" data-outside="">29</td>
+        <td class="calendar-day">1</td>
+        <!-- ... -->
+      </tr>
+    </tbody>
+  </table>
+</div>

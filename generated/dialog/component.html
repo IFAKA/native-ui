@@ -1,0 +1,34 @@
+<!-- Trigger -->
+<button class="btn" data-variant="default"
+        data-dialog-trigger="dialog-example-1-my-dialog"
+        aria-haspopup="dialog">
+  Open
+</button>
+
+<!-- Dialog -->
+<dialog id="dialog-example-1-my-dialog"
+        class="dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="dialog-example-1-my-dialog-title">
+
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <h2 class="dialog-title" id="dialog-example-1-my-dialog-title">Dialog Title</h2>
+      <p class="dialog-description">Supporting description.</p>
+    </div>
+
+    <div class="dialog-body">
+      <!-- Content goes here -->
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn" data-variant="outline" data-dialog-close>
+        Cancel
+      </button>
+      <button class="btn" data-variant="default">
+        Confirm
+      </button>
+    </div>
+  </div>
+</dialog>

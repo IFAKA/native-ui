@@ -1,0 +1,34 @@
+/* Generated from shadcn-html spinner. Minimum structural/native styling only. */
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  animation: spinner-rotate 1s linear infinite;
+  flex-shrink: 0;
+}
+
+.spinner {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  inline-size: 1em;
+  block-size: 1em;
+}

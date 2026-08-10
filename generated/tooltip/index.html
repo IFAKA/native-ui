@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tooltip</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./tooltip.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>tooltip</h1></header>
+<section><h2>Example 1</h2><button class="btn" data-tooltip-trigger="tooltip-example-1-my-tip" popovertarget="tooltip-example-1-my-tip" aria-describedby="tooltip-example-1-my-tip">Hover me</button>
+<div class="tooltip" id="tooltip-example-1-my-tip" popover="hint" role="tooltip">Tooltip text</div>
+</section>
+<section><h2>Example 2</h2><button class="btn" data-tooltip-trigger="tooltip-example-2-my-tip" popovertarget="tooltip-example-2-my-tip" aria-describedby="tooltip-example-2-my-tip">Hover me</button>
+<div class="tooltip" id="tooltip-example-2-my-tip" popover="hint" role="tooltip">
+  Tooltip text
+  <div data-arrow></div>
+</div>
+</section>
+<section><h2>Example 3</h2><div class="tooltip" id="tooltip-example-3-tip-bottom" popover="hint" role="tooltip" data-side="bottom">Below</div>
+<div class="tooltip" id="tooltip-example-3-tip-left" popover="hint" role="tooltip" data-side="left">Left</div>
+<div class="tooltip" id="tooltip-example-3-tip-right" popover="hint" role="tooltip" data-side="right">Right</div>
+</section>
+<section><h2>Example 4</h2><div class="tooltip" id="tooltip-example-4-tip-top-start" popover="hint" role="tooltip" data-align="start">Top start</div>
+<div class="tooltip" id="tooltip-example-4-tip-bottom-end" popover="hint" role="tooltip" data-side="bottom" data-align="end">Bottom end</div>
+</section>
+<section><h2>Example 5</h2><button class="btn" data-tooltip-trigger="my-tip" data-delay="300" popovertarget="my-tip" aria-describedby="my-tip">Fast tooltip</button>
+<button class="btn" data-tooltip-trigger="my-tip2" data-delay="0" popovertarget="my-tip2" aria-describedby="my-tip2">Instant tooltip</button>
+
+<div class="tooltip" id="my-tip" popover="hint" role="tooltip">Tooltip</div>
+<div class="tooltip" id="my-tip2" popover="hint" role="tooltip">Tooltip</div></section>
+  </main>
+  <script type="module" src="./tooltip.js"></script>
+</body>
+</html>

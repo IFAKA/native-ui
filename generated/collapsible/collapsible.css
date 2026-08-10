@@ -1,0 +1,61 @@
+/* Generated from shadcn-html collapsible. Minimum structural/native styling only. */
+.collapsible {
+  overflow: hidden;
+}
+
+.collapsible ::details-content {
+  block-size: 0;
+  overflow-y: clip;
+  transition: block-size 200ms ease, content-visibility 200ms allow-discrete;
+}
+
+.collapsible[open] ::details-content {
+  block-size: auto;
+}
+
+@starting-style {
+  .collapsible[open] ::details-content {
+    block-size: 0;
+  }
+}
+
+.collapsible-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+
+.collapsible-trigger:focus-visible {
+  outline-offset: -2px;
+}
+
+.collapsible-trigger::-webkit-details-marker {
+  display: none;
+}
+
+.collapsible-chevron {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 200ms ease;
+  flex-shrink: 0;
+}
+
+details[open] > summary > .collapsible-chevron {
+  transform: rotate(180deg);
+}
+
+.collapsible-content {
+  padding: 0 1rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+details {
+  display: block;
+}

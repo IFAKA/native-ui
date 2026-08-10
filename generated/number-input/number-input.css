@@ -1,0 +1,45 @@
+/* Generated from shadcn-html number-input. Minimum structural/native styling only. */
+.number-input {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.number-input input {
+  border: none;
+  outline: none;
+  background: transparent;
+  height: 2.5rem;
+  width: 4rem;
+  text-align: center;
+  font-size: 0.875rem;
+  -moz-appearance: textfield;
+}
+
+.number-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-input button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 150ms, color 150ms;
+  flex-shrink: 0;
+}
+
+input[type="number"] {
+  max-inline-size: 100%;
+}

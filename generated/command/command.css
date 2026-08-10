@@ -1,0 +1,166 @@
+/* Generated from shadcn-html command. Minimum structural/native styling only. */
+dialog.command {
+  border: none;
+  padding: 0;
+  max-width: 32rem;
+  width: calc(100% - 2rem);
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  top: 15%;
+  bottom: auto;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 150ms ease, transform 150ms ease, display 150ms allow-discrete;
+}
+
+dialog.command[open] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+dialog.command::backdrop {
+  transition: all 150ms ease, display 150ms allow-discrete;
+}
+
+@starting-style {
+  dialog.command[open] {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+.command-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.command-input-wrapper svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.command-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.875rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.command-list {
+  max-height: 18rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.25rem;
+}
+
+.command-group {
+  padding: 0.25rem 0;
+}
+
+.command-group-heading {
+  margin: 0;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.command-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  background: transparent;
+  font-size: 0.8125rem;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.command-item:focus-visible {
+  outline-offset: -2px;
+}
+
+.command-item[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.command-item svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.command-separator {
+  height: 1px;
+  margin: 0.25rem -0.25rem;
+}
+
+.command-shortcut {
+  margin-inline-start: auto;
+  font-size: 0.6875rem;
+}
+
+.command-empty {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.command {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.command::backdrop {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  dialog.command {
+    border: 2px solid CanvasText;
+  }
+}
+
+@media (forced-colors: active) {
+  .command-item:hover {
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+  }
+}
+
+@media (forced-colors: active) {
+  .command-item[data-highlighted] {
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+  }
+}
+
+@media (forced-colors: active) {
+  .command-separator {
+    background-color: CanvasText;
+  }
+}
+
+[role="dialog"] {
+  max-inline-size: calc(100vw - 2rem);
+  max-block-size: calc(100vh - 2rem);
+  overflow: auto;
+}

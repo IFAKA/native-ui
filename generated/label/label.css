@@ -1,0 +1,74 @@
+/* Generated from shadcn-html label. Minimum structural/native styling only. */
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.375rem;
+  cursor: default;
+}
+
+label[data-disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+label:has(+ :disabled) {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+label:has(+ [data-disabled]) {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.label-hint {
+  font-weight: 400;
+  font-size: 0.8125rem;
+}
+
+@media (prefers-contrast: more) {
+  label[data-disabled] {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-contrast: more) {
+  label:has(+ :disabled) {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-contrast: more) {
+  label:has(+ [data-disabled]) {
+    opacity: 0.85;
+  }
+}
+
+@media (forced-colors: active) {
+  label {
+    color: LinkText;
+  }
+}
+
+@media (forced-colors: active) {
+  label[data-disabled] {
+    opacity: 1;
+    color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  label:has(+ :disabled) {
+    opacity: 1;
+    color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  label:has(+ [data-disabled]) {
+    opacity: 1;
+    color: GrayText;
+  }
+}

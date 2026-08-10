@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>avatar</title>
+  <link rel="stylesheet" href="../native-ui/core.css">
+  <link rel="stylesheet" href="../native-ui/layout.css">
+  <link rel="stylesheet" href="../native-ui/components.css">
+  <link rel="stylesheet" href="./avatar.css">
+</head>
+<body>
+  <main class="container readable stack">
+  <nav><a href="../index.html">All components</a></nav>
+  <header class="stack"><h1>avatar</h1></header>
+<section><h2>Example 1</h2><!-- Avatar with image -->
+<span class="avatar" data-size="default">
+  <img class="avatar-image" src="../assets/placeholder.svg" alt="@username" />
+  <span class="avatar-fallback">CN</span>
+</span>
+
+<!-- Avatar with fallback only -->
+<span class="avatar" data-size="default">
+  <span class="avatar-fallback">CN</span>
+</span>
+
+<!-- Avatar with badge (status indicator) -->
+<span class="avatar" data-size="default">
+  <img class="avatar-image" src="../assets/placeholder.svg" alt="@username" />
+  <span class="avatar-fallback">CN</span>
+  <span class="avatar-badge"></span>
+</span>
+
+<!-- Avatar group -->
+<div class="avatar-group">
+  <span class="avatar">
+    <img class="avatar-image" src="../assets/placeholder.svg" alt="..." />
+    <span class="avatar-fallback">A</span>
+  </span>
+  <span class="avatar">
+    <img class="avatar-image" src="../assets/placeholder.svg" alt="..." />
+    <span class="avatar-fallback">B</span>
+  </span>
+  <span class="avatar-group-count">+3</span>
+</div>
+</section>
+  </main>
+</body>
+</html>
