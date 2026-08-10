@@ -96,3 +96,11 @@ test("shared site template owns the shell instead of route pages", async () => {
   assert.match(html, /<footer[^>]*nui-site-footer/);
   assert.match(html, /aria-current="page"[^>]*>Examples/);
 });
+
+test("site components are defined once and render data-driven cards and detail pages", async () => {
+  const { renderCard, renderGuidePage, renderRecipePage } = await import("../scripts/site-components.mjs");
+  assert.match(renderCard({ title: "Card", description: "Description", href: "/card/", label: "Open" }), /class="card nui-stack"/);
+  assert.match(renderCard({ title: "Card", description: "Description", href: "/card/", label: "Open", variant: "primary" }), /data-variant="primary"/);
+  assert.match(renderGuidePage({ title: "Architecture", description: "HTML owns meaning.", body: "Use native elements." }), /Native UI guide/);
+  assert.match(renderRecipePage({ title: "Card", purpose: "A card relationship.", exampleBody: "<p>Live<\/p>", snippet: "<article>" }), /HTML snippet/);
+});

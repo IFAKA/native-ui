@@ -1,16 +1,13 @@
 import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
 import { renderPage } from "./site-template.mjs";
+import { escapeHtml, renderCard, renderGuidePage, renderRecipePage } from "./site-components.mjs";
 
 const routeFiles = ["index.html", "lab/index.html", "examples/index.html", "recipes/index.html", "guides/index.html", "benchmarks/index.html", "changelog.html", "roadmap.html"];
 
 async function copyTree(source, destination) {
   await mkdir(destination, { recursive: true });
   await cp(source, destination, { recursive: true, force: true });
-}
-
-function escapeHtml(value) {
-  return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
 async function validateLinks(output) {
@@ -95,9 +92,9 @@ export async function buildSite({ root = resolve(import.meta.dirname, ".."), out
   }
   const manifest = JSON.parse(await readFile(join(root, "src/manifest.json"), "utf8"));
   const recipeNames = [...new Set(manifest.recipes.filter((item) => item.endsWith("/metadata.json")).map((item) => item.split("/")[1]))];
-  const recipeCards = recipeNames.map((name) => `<article class="card nui-stack"><h2>${name.replaceAll("-", " ")}</h2><p>Semantic HTML recipe for the <code>${name}</code> relationship.</p><a data-variant="primary" href="/recipes/${name}/">Open recipe</a></article>`).join("");
+  const recipeCards = recipeNames.map((name) => renderCard({ title: name.replaceAll("-", " "), description: `Semantic HTML recipe for the ${name} relationship.`, href: `/recipes/${name}/`, label: "Open recipe", variant: "primary" })).join("");
   const guideNames = ["architecture", "accessibility", "browser-support", "theming", "migration", "analyzer", "governance", "security", "contributing"];
-  const guideCards = guideNames.map((name) => `<article class="card nui-stack"><h2>${name.replaceAll("-", " ")}</h2><p>Practical guidance for a durable HTML-first interface.</p><a href="/guides/${name}.html">Read guide</a></article>`).join("");
+  const guideCards = guideNames.map((name) => renderCard({ title: name.replaceAll("-", " "), description: "Practical guidance for a durable HTML-first interface.", href: `/guides/${name}.html`, label: "Read guide" })).join("");
   for (const [file, replacement] of [["recipes/index.html", recipeCards], ["guides/index.html", guideCards]]) {
     const path = join(outputRoot, file);
     await writeFile(path, (await readFile(path, "utf8")).replace(file.startsWith("recipes") ? "__RECIPE_CARDS__" : "__GUIDE_CARDS__", replacement));
