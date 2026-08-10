@@ -1,6 +1,6 @@
 # Foundation Tasks
 
-- [ ] T001 Approve constitution, browser policy, public API budget, and benchmark methodology.
+- [x] T001 Approve constitution, browser policy, public API budget, and benchmark methodology.
 - [ ] T002 Record baseline artifacts and metrics from Barebones, Pith, native-ui, native-html, Basecoat, and Starting Point UI.
 - [ ] T003 Finalize manifest schema and public API audit.
 - [ ] T004 Build attractive token and classless element foundation.

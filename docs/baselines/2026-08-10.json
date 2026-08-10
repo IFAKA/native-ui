@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-10",
+  "project": "@ifaka/native-ui",
+  "methodology": {
+    "runtimeDependencies": "package.json dependencies",
+    "cssAndBehaviorGzipBudgetBytes": 12288,
+    "classTokenCounting": "Whitespace-delimited class attribute tokens in benchmark HTML",
+    "lineEndings": "LF",
+    "repeatability": "Run the same measurement twice and require byte-identical JSON output"
+  },
+  "currentRepository": {
+    "source": "native-ui-next",
+    "revision": "working tree baseline",
+    "cssBytes": null,
+    "behaviorBytes": null,
+    "cssAndBehaviorGzipBytes": null,
+    "authoredClassTokens": null,
+    "runtimeDependencies": 0
+  },
+  "researchSources": [
+    { "name": "Barebones", "status": "not yet available", "revision": null },
+    { "name": "Pith", "status": "not yet available", "revision": null },
+    { "name": "native-ui", "status": "current repository; measure in Task 3", "revision": null },
+    { "name": "native-html", "status": "not yet available", "revision": null },
+    { "name": "Basecoat", "status": "not yet available", "revision": null },
+    { "name": "Starting Point UI", "status": "not yet available", "revision": null }
+  ]
+}
