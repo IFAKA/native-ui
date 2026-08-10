@@ -8,11 +8,11 @@ export function renderCard({ title, description, href, label, variant = "quiet" 
   return `<article class="card nui-stack"><h2>${escapeHtml(title)}</h2><p>${escapeHtml(description)}</p><a data-variant="${escapeHtml(variant)}" href="${escapeHtml(href)}">${escapeHtml(label)}</a></article>`;
 }
 
-export function renderGuidePage({ title, description, body }) {
+export function renderGuidePage({ slug, title, description, body }) {
   return renderPage({
     title: `${title} · Native UI`,
     description,
-    canonicalPath: `/guides/${title.toLowerCase().replaceAll(" ", "-")}.html`,
+    canonicalPath: `/guides/${slug}.html`,
     active: "guides",
     body: `<header class="nui-site-route-header"><p class="nui-site-eyebrow">Native UI guide</p><h1>${escapeHtml(title)}</h1></header><article class="card nui-stack"><p>${escapeHtml(description)}</p><p>${body}</p><p><a href="/guides/">Back to all guides</a> · <a href="/examples/">Try an example</a></p></article>`,
   });

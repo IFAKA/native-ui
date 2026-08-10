@@ -128,10 +128,19 @@ export async function buildSite({ root = resolve(import.meta.dirname, ".."), out
   for (const [file, active, canonicalPath] of generatedRoutes) {
     const path = join(outputRoot, file);
     const source = await readFile(path, "utf8");
-    const body = source.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? source;
     const title = source.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "Native UI";
     const description = source.match(/<meta name="description" content="([^"]+)">/i)?.[1] ?? "Native UI — semantic HTML with explicit visual contracts.";
-    await writeFile(path, renderPage({ title, description, canonicalPath, body, active }));
+    if (active === "guides") {
+      const slug = file.slice("guides/".length, -".html".length);
+      await writeFile(path, renderGuidePage({ slug, title, description, body: description }));
+    } else {
+      const name = file.slice("recipes/".length, -"/index.html".length);
+      const metadata = JSON.parse(await readFile(join(root, "recipes", name, "metadata.json"), "utf8"));
+      const snippet = await readFile(join(root, "recipes", name, "snippet.html"), "utf8");
+      const example = await readFile(join(root, "recipes", name, "example.html"), "utf8");
+      const exampleBody = (example.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? example).replace(/<h1>/g, "<h2>").replace(/<\/h1>/g, "</h2>");
+      await writeFile(path, renderRecipePage({ name, title: metadata.name.replaceAll("-", " "), purpose: metadata.purpose, exampleBody, snippet, whenNotToUse: metadata.whenNotToUse, nativeAlternative: metadata.nativeAlternative }));
+    }
   }
   for (const name of recipeNames) {
     const path = join(outputRoot, "recipes", name, "index.html");
