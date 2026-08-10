@@ -12,6 +12,7 @@ Native UI makes semantic HTML attractive, adaptive, and practical without replac
 
 ## Required boundaries
 
+- Mobile-first is a project requirement: design and verify the narrowest usable layout first, then enhance it for larger available space.
 - Preserve usable content and native actions without JavaScript.
 - Never use JavaScript to mirror native state into styling classes, calculate ordinary responsive layouts, or maintain separate mobile/desktop DOM.
 - Use classes for reusable layout/composition and attributes for state or behavior intent.

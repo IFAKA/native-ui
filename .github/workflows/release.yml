@@ -1,0 +1,21 @@
+name: Release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
+        with: { node-version: 22.14.0, registry-url: https://registry.npmjs.org }
+      - run: npm ci
+      - run: npm test
+      - run: npm pack
+      - run: npm run pack:consumer
+      - run: npm publish --provenance --access public --tag next

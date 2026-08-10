@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<body>
+  <main class="nui-container nui-readable">
+    <h1 data-case="long-label">Sign in to your account using your organization credentials</h1>
+    <form class="nui-stack">
+      <label>Username or email address <input id="identity" name="identity" autocomplete="username" required></label>
+      <label>Password <input id="password" name="password" type="password" autocomplete="current-password" required></label>
+      <p data-case="empty">No recovery method configured.</p>
+      <p data-case="loading" aria-live="polite">Checking credentials…</p>
+      <p data-case="error" role="alert">Those credentials were not accepted.</p>
+      <div data-case="dense" class="nui-cluster"><button type="submit" data-variant="primary">Sign in</button><a href="/recover">Forgot password?</a></div>
+    </form>
+  </main>
+</body>
+</html>

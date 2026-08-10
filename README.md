@@ -1,8 +1,8 @@
-# Native UI
+# Native UI — semantic HTML CSS framework
 
 **Write HTML. Get an interface people want to use.**
 
-Native UI is an experimental, framework-independent UI system for building attractive, accessible, responsive interfaces with semantic HTML, a small CSS foundation, and optional progressive behavior.
+Native UI is a lightweight, framework-independent CSS UI system for building attractive, accessible, responsive interfaces with semantic HTML. It provides classless HTML styling, intrinsic responsive layouts, accessible form and table defaults, dark mode, and optional progressive enhancement without runtime dependencies.
 
 ```html
 <link rel="stylesheet" href="native-ui.css">
@@ -38,6 +38,7 @@ This repository is a clean pre-1.0 foundation. The public API is intentionally f
 - Target budget: **CSS + optional JavaScript ≤ 12 KiB gzip**
 - Canonical plan: [`docs/plans/2026-08-10-native-ui-1.0-implementation-plan.md`](docs/plans/2026-08-10-native-ui-1.0-implementation-plan.md)
 - Foundation spec: [`specs/001-native-ui-foundation/spec.md`](specs/001-native-ui-foundation/spec.md)
+- Documentation site: [`site/index.html`](site/index.html)
 
 ## Intended API
 

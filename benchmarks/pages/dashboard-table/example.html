@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<body>
+  <main class="nui-container">
+    <header class="nui-cluster" data-case="long-label"><h1>Operations dashboard with a deliberately long localized heading</h1><button type="button">Export</button></header>
+    <section data-case="empty"><h2>Recent activity</h2><p>No activity yet.</p></section>
+    <section data-case="loading" aria-busy="true"><h2>Loading metrics</h2></section>
+    <section data-case="error" role="alert"><h2>Metrics unavailable</h2><p>Refresh to try again.</p></section>
+    <div data-case="dense" tabindex="0" aria-label="Scrollable orders table">
+      <table><caption>Orders and fulfillment status</caption><thead><tr><th scope="col">Order</th><th scope="col">Customer</th><th scope="col">Status</th></tr></thead><tbody><tr><th scope="row">#1001</th><td>Example customer</td><td>Ready</td></tr><tr><th scope="row">#1002</th><td>Another customer</td><td>Pending</td></tr></tbody></table>
+    </div>
+  </main>
+</body>
+</html>

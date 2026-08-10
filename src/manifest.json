@@ -5,6 +5,48 @@
     "css": "native-ui.css",
     "behavior": "behavior.js"
   },
+  "exports": [
+    ".",
+    "./behavior.js",
+    "./manifest.json"
+  ],
+  "tokens": [
+    "--nui-font-sans",
+    "--nui-font-mono",
+    "--nui-text-sm",
+    "--nui-text-base",
+    "--nui-leading-body",
+    "--nui-leading-heading",
+    "--nui-readable",
+    "--nui-space-1",
+    "--nui-space-2",
+    "--nui-space-3",
+    "--nui-space-4",
+    "--nui-space-6",
+    "--nui-space-8",
+    "--nui-control-size",
+    "--nui-control-padding",
+    "--nui-radius-sm",
+    "--nui-radius",
+    "--nui-radius-lg",
+    "--nui-border-width",
+    "--nui-border-color",
+    "--nui-surface",
+    "--nui-surface-raised",
+    "--nui-surface-sunken",
+    "--nui-foreground",
+    "--nui-foreground-muted",
+    "--nui-foreground-link",
+    "--nui-accent",
+    "--nui-accent-contrast",
+    "--nui-danger",
+    "--nui-danger-contrast",
+    "--nui-shadow-sm",
+    "--nui-shadow",
+    "--nui-ease-out",
+    "--nui-duration-fast",
+    "--nui-duration-normal"
+  ],
   "layouts": [
     "nui-container",
     "nui-readable",
@@ -17,5 +59,164 @@
     "danger",
     "quiet"
   ],
-  "capabilities": []
+  "compositions": ["card", "badge", "alert", "toolbar", "empty-state", "field-actions", "table-overflow", "dialog-sections", "popover-surface", "responsive-navigation"],
+  "behaviors": [],
+  "inference": {
+    "version": 1,
+    "mode": "recommendation-only",
+    "output": "explainable",
+    "sourceMutation": false,
+    "runtime": false,
+    "capabilities": ["nui-readable", "nui-grid", "field-actions", "toolbar", "table-overflow"]
+  },
+  "analyzerRules": ["labels-required", "image-alt", "native-control", "interactive-name", "aria-misuse", "responsive-overflow", "readable-width", "touch-target", "ambiguous-composition", "unnecessary-class", "suspicious-javascript"],
+  "recipes": ["recipes/card/metadata.json", "recipes/card/snippet.html", "recipes/card/example.html", "recipes/badge/metadata.json", "recipes/badge/snippet.html", "recipes/badge/example.html", "recipes/alert/metadata.json", "recipes/alert/snippet.html", "recipes/alert/example.html", "recipes/toolbar/metadata.json", "recipes/toolbar/snippet.html", "recipes/toolbar/example.html", "recipes/empty-state/metadata.json", "recipes/empty-state/snippet.html", "recipes/empty-state/example.html", "recipes/field-actions/metadata.json", "recipes/field-actions/snippet.html", "recipes/field-actions/example.html", "recipes/table-overflow/metadata.json", "recipes/table-overflow/snippet.html", "recipes/table-overflow/example.html", "recipes/dialog-sections/metadata.json", "recipes/dialog-sections/snippet.html", "recipes/dialog-sections/example.html", "recipes/popover-surface/metadata.json", "recipes/popover-surface/snippet.html", "recipes/popover-surface/example.html", "recipes/responsive-navigation/metadata.json", "recipes/responsive-navigation/snippet.html", "recipes/responsive-navigation/example.html"],
+  "capabilities": [
+    {
+      "id": "layout-container",
+      "category": "layout",
+      "nativePrimitive": "flow and block layout",
+      "selector": ".nui-container",
+      "declaration": "class=\"nui-container\"",
+      "cssRequirement": "Intrinsic inline sizing and centered content",
+      "jsRequirement": "none",
+      "fallback": "Normal block flow remains usable",
+      "responsiveBehavior": "Shrinks to the available inline size",
+      "keyboardFocusContract": "Preserves source order and native focus",
+      "statesEvents": [],
+      "authorOverrides": ["--nui-space-4"],
+      "analyzerRules": [],
+      "compatibilityEvidence": "docs/browser-support.md",
+      "recipePath": null
+    },
+    {
+      "id": "composition-badge", "category": "composition", "nativePrimitive": "span", "selector": ".badge", "declaration": "class=\"badge\"", "cssRequirement": "Compact pill surface", "jsRequirement": "none", "fallback": "Text remains inline content", "responsiveBehavior": "Wraps long labels within its intrinsic width", "keyboardFocusContract": "Does not remove focus from interactive descendants", "statesEvents": [], "authorOverrides": ["--nui-space-1", "--nui-radius-sm"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/badge/metadata.json"
+    },
+    {
+      "id": "composition-alert", "category": "composition", "nativePrimitive": "section or role=alert", "selector": ".alert, [role=\"alert\"]", "declaration": "class=\"alert\"", "cssRequirement": "Status surface and accent edge", "jsRequirement": "none", "fallback": "Message remains readable in normal flow", "responsiveBehavior": "Grows with message content", "keyboardFocusContract": "Uses native focus only when content requires it", "statesEvents": [], "authorOverrides": ["--nui-accent"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/alert/metadata.json"
+    },
+    {
+      "id": "composition-toolbar", "category": "composition", "nativePrimitive": "nav or div", "selector": ".toolbar", "declaration": "class=\"toolbar\"", "cssRequirement": "Wrapping action group", "jsRequirement": "none", "fallback": "Actions remain in source order", "responsiveBehavior": "Wraps controls when space is insufficient", "keyboardFocusContract": "Native controls retain keyboard operation", "statesEvents": [], "authorOverrides": ["--nui-space-3"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/toolbar/metadata.json"
+    },
+    {
+      "id": "composition-empty-state", "category": "composition", "nativePrimitive": "section", "selector": ".empty-state", "declaration": "class=\"empty-state\"", "cssRequirement": "Centered fallback surface", "jsRequirement": "none", "fallback": "Heading and action remain normal content", "responsiveBehavior": "Grows and wraps at narrow widths", "keyboardFocusContract": "Action remains natively focusable", "statesEvents": [], "authorOverrides": ["--nui-space-8"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/empty-state/metadata.json"
+    },
+    {
+      "id": "composition-field-actions", "category": "composition", "nativePrimitive": "form", "selector": ".field-actions", "declaration": "class=\"field-actions\"", "cssRequirement": "Wrapping field/action row", "jsRequirement": "none", "fallback": "Fields remain usable in normal flow", "responsiveBehavior": "Wraps fields and actions intrinsically", "keyboardFocusContract": "Labels and native controls remain associated", "statesEvents": [":invalid"], "authorOverrides": ["--nui-space-3"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/field-actions/metadata.json"
+    },
+    {
+      "id": "composition-table-overflow", "category": "composition", "nativePrimitive": "table wrapper", "selector": ".table-overflow", "declaration": "class=\"table-overflow\"", "cssRequirement": "Explicit horizontal scroll region", "jsRequirement": "none", "fallback": "Table remains complete and scrollable", "responsiveBehavior": "Owns overflow below intrinsic table width", "keyboardFocusContract": "Table semantics and source order are preserved", "statesEvents": [], "authorOverrides": [], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/table-overflow/metadata.json"
+    },
+    {
+      "id": "composition-dialog-sections", "category": "composition", "nativePrimitive": "dialog", "selector": "dialog > header, dialog > footer", "declaration": "<dialog><header>...", "cssRequirement": "Native dialog section rhythm", "jsRequirement": "none", "fallback": "Dialog remains native content", "responsiveBehavior": "Sections wrap within dialog width", "keyboardFocusContract": "Native dialog focus behavior is preserved", "statesEvents": ["open"], "authorOverrides": ["--nui-space-6"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/dialog-sections/metadata.json"
+    },
+    {
+      "id": "composition-popover-surface", "category": "composition", "nativePrimitive": "popover", "selector": "[popover]", "declaration": "popover", "cssRequirement": "Native popover surface", "jsRequirement": "none", "fallback": "Popover content remains available to native behavior", "responsiveBehavior": "Constrained to the available inline size", "keyboardFocusContract": "Native popover dismissal and focus are preserved", "statesEvents": ["open"], "authorOverrides": ["--nui-radius-lg"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/popover-surface/metadata.json"
+    },
+    {
+      "id": "composition-responsive-navigation", "category": "composition", "nativePrimitive": "nav", "selector": ".responsive-navigation", "declaration": "class=\"responsive-navigation\"", "cssRequirement": "Wrapping navigation composition", "jsRequirement": "none", "fallback": "Links remain a normal navigation list", "responsiveBehavior": "Wraps one DOM navigation at narrow widths", "keyboardFocusContract": "Links retain native keyboard operation", "statesEvents": [], "authorOverrides": ["--nui-space-3"], "analyzerRules": [], "compatibilityEvidence": "docs/browser-support.md", "recipePath": "recipes/responsive-navigation/metadata.json"
+    },
+    {
+      "id": "layout-readable",
+      "category": "layout",
+      "nativePrimitive": "flow and max-inline-size",
+      "selector": ".nui-readable",
+      "declaration": "class=\"nui-readable\"",
+      "cssRequirement": "Readable measure token",
+      "jsRequirement": "none",
+      "fallback": "Unconstrained block flow remains usable",
+      "responsiveBehavior": "Uses the available width below the readable measure",
+      "keyboardFocusContract": "Preserves source order and native focus",
+      "statesEvents": [],
+      "authorOverrides": ["--nui-readable"],
+      "analyzerRules": [],
+      "compatibilityEvidence": "docs/browser-support.md",
+      "recipePath": null
+    },
+    {
+      "id": "layout-stack",
+      "category": "layout",
+      "nativePrimitive": "flex column",
+      "selector": ".nui-stack",
+      "declaration": "class=\"nui-stack\"",
+      "cssRequirement": "Flex gap rhythm",
+      "jsRequirement": "none",
+      "fallback": "Children remain in document order",
+      "responsiveBehavior": "Remains a single intrinsic column at every width",
+      "keyboardFocusContract": "Preserves source order and native focus",
+      "statesEvents": [],
+      "authorOverrides": ["--nui-space-4"],
+      "analyzerRules": [],
+      "compatibilityEvidence": "docs/browser-support.md",
+      "recipePath": null
+    },
+    {
+      "id": "layout-cluster",
+      "category": "layout",
+      "nativePrimitive": "wrapping flex row",
+      "selector": ".nui-cluster",
+      "declaration": "class=\"nui-cluster\"",
+      "cssRequirement": "Wrapping and gap",
+      "jsRequirement": "none",
+      "fallback": "Children remain available in normal flow",
+      "responsiveBehavior": "Wraps controls when the inline space is insufficient",
+      "keyboardFocusContract": "Preserves source order and native focus",
+      "statesEvents": [],
+      "authorOverrides": ["--nui-space-3"],
+      "analyzerRules": [],
+      "compatibilityEvidence": "docs/browser-support.md",
+      "recipePath": null
+    },
+    {
+      "id": "layout-grid",
+      "category": "layout",
+      "nativePrimitive": "intrinsic auto-fit grid",
+      "selector": ".nui-grid",
+      "declaration": "class=\"nui-grid\"",
+      "cssRequirement": "Auto-fit minmax tracks",
+      "jsRequirement": "none",
+      "fallback": "Children remain available in normal flow",
+      "responsiveBehavior": "Changes columns intrinsically as available space changes",
+      "keyboardFocusContract": "Preserves source order and native focus",
+      "statesEvents": [],
+      "authorOverrides": ["--nui-space-4"],
+      "analyzerRules": [],
+      "compatibilityEvidence": "docs/browser-support.md",
+      "recipePath": null
+    },
+    {
+      "id": "composition-card",
+      "category": "composition",
+      "nativePrimitive": "article or section",
+      "selector": ".card",
+      "declaration": "class=\"card\"",
+      "cssRequirement": "Surface, border, radius, and padding",
+      "jsRequirement": "none",
+      "fallback": "Content remains a normal article or section",
+      "responsiveBehavior": "Surface dimensions follow intrinsic content",
+      "keyboardFocusContract": "Interactive descendants retain native focus",
+      "statesEvents": [],
+      "authorOverrides": ["--nui-space-6", "--nui-radius"],
+      "analyzerRules": [],
+      "compatibilityEvidence": "docs/browser-support.md",
+      "recipePath": "recipes/card/metadata.json"
+    },
+    {
+      "id": "action-variants",
+      "category": "variant",
+      "nativePrimitive": "button or link",
+      "selector": "[data-variant]",
+      "declaration": "data-variant=\"primary|danger|quiet\"",
+      "cssRequirement": "Attribute-selected action presentation",
+      "jsRequirement": "none",
+      "fallback": "Native action remains operable with default styling",
+      "responsiveBehavior": "Variant follows the action's intrinsic size",
+      "keyboardFocusContract": "Native keyboard activation and visible focus are preserved",
+      "statesEvents": [":focus-visible", ":disabled"],
+      "authorOverrides": ["--nui-accent", "--nui-danger"],
+      "analyzerRules": [],
+      "compatibilityEvidence": "docs/browser-support.md",
+      "recipePath": null
+    }
+  ]
 }

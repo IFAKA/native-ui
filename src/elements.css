@@ -1,19 +1,208 @@
 @layer nui.elements {
   :where(html) {
     font-family: var(--nui-font-sans);
-    line-height: 1.5;
+    line-height: var(--nui-leading-body);
     text-size-adjust: 100%;
   }
 
   :where(body) {
     margin: 0;
-    background: Canvas;
+    background: var(--nui-surface);
+    color: var(--nui-foreground);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    margin-block: 0 var(--nui-space-3);
+    color: var(--nui-foreground);
+    font-weight: 720;
+    line-height: var(--nui-leading-heading);
+    text-wrap: balance;
+  }
+
+  :where(h1) {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+    letter-spacing: -0.035em;
+  }
+
+  :where(h2) {
+    margin-block-start: var(--nui-space-6);
+    font-size: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+    letter-spacing: -0.025em;
+  }
+
+  :where(h3) {
+    margin-block-start: var(--nui-space-4);
+    font-size: 1.25rem;
+  }
+
+  :where(p, ul, ol, dl, blockquote, pre, figure, table, form, fieldset, details) {
+    margin-block: 0 var(--nui-space-4);
+  }
+
+  :where(p, li, dt, dd, figcaption, caption, label, legend, summary, th, td) {
+    overflow-wrap: anywhere;
+  }
+
+  :where(a[href]) {
+    color: var(--nui-foreground-link);
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.16em;
+    transition: color var(--nui-duration-fast) var(--nui-ease-out);
+  }
+
+  :where(a[href]):hover {
+    color: var(--nui-accent);
+  }
+
+  :where(a[href]):visited {
+    color: var(--nui-foreground-link);
+  }
+
+  :where(ul, ol) {
+    padding-inline-start: 1.5em;
+  }
+
+  :where(li + li) {
+    margin-block-start: var(--nui-space-2);
+  }
+
+  :where(dl) {
+    display: grid;
+    gap: var(--nui-space-2) var(--nui-space-4);
+  }
+
+  :where(dt) {
+    font-weight: 700;
+  }
+
+  :where(dd) {
+    margin-inline-start: 0;
+    color: var(--nui-foreground-muted);
+  }
+
+  :where(blockquote) {
+    margin-inline: 0;
+    padding-inline-start: var(--nui-space-4);
+    border-inline-start: 0.25rem solid var(--nui-accent);
+    color: var(--nui-foreground-muted);
+    font-size: 1.125em;
+  }
+
+  :where(hr) {
+    margin-block: var(--nui-space-6);
+    border: 0;
+    border-block-start: var(--nui-border-width) solid var(--nui-border-color);
+  }
+
+  :where(mark) {
+    padding-inline: 0.15em;
+    background: light-dark(oklch(0.9 0.12 95), oklch(0.35 0.1 95));
     color: CanvasText;
   }
 
+  :where(pre, code, kbd, samp) {
+    font-family: var(--nui-font-mono);
+  }
+
+  :where(code, kbd, samp) {
+    padding: 0.12em 0.3em;
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius-sm);
+    background: var(--nui-surface-sunken);
+    font-size: 0.9em;
+  }
+
+  :where(pre) {
+    max-inline-size: 100%;
+    padding: var(--nui-space-4);
+    overflow: auto;
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius);
+    background: var(--nui-surface-sunken);
+    color: var(--nui-foreground);
+    white-space: pre;
+  }
+
+  :where(pre code) {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  :where(img, audio, video, canvas, svg) {
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  :where(figure) {
+    margin-inline: 0;
+  }
+
+  :where(figcaption, caption) {
+    color: var(--nui-foreground-muted);
+    font-size: var(--nui-text-sm);
+    text-align: start;
+  }
+
+  :where(figcaption) {
+    margin-block-start: var(--nui-space-2);
+  }
+
   :where(button, input, select, textarea) {
-    min-block-size: 2.75rem;
+    min-block-size: var(--nui-control-size);
     font: inherit;
+  }
+
+  :where(input, select, textarea) {
+    max-inline-size: 100%;
+    padding: var(--nui-control-padding);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius-sm);
+    background: var(--nui-surface-raised);
+    color: var(--nui-foreground);
+    font-size: max(1rem, var(--nui-text-base));
+  }
+
+  :where(textarea) {
+    min-block-size: 7rem;
+    resize: vertical;
+  }
+
+  :where(input[type="checkbox"], input[type="radio"]) {
+    inline-size: 1.25rem;
+    min-block-size: 1.25rem;
+    accent-color: var(--nui-accent);
+  }
+
+  :where(input:checked) {
+    accent-color: var(--nui-accent);
+  }
+
+  :where(input[type="file"]) {
+    padding: var(--nui-space-2);
+  }
+
+  :where(select) {
+    min-inline-size: 12rem;
+  }
+
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"]) {
+    padding-inline: var(--nui-control-padding);
+    border: var(--nui-border-width) solid var(--nui-accent);
+    border-radius: var(--nui-radius-sm);
+    background: var(--nui-accent);
+    color: var(--nui-accent-contrast);
+    cursor: pointer;
+    font-weight: 650;
+    transition: filter var(--nui-duration-fast) var(--nui-ease-out), transform var(--nui-duration-fast) var(--nui-ease-out);
+  }
+
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"]):hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"]):active:not(:disabled) {
+    transform: translateY(1px);
   }
 
   :where(button, input, select, textarea, summary, a[href]):focus-visible {
@@ -21,14 +210,155 @@
     outline-offset: 0.125rem;
   }
 
-  :where(img, video, canvas, svg) {
-    max-inline-size: 100%;
-    block-size: auto;
+  :where(button, input, select, textarea):disabled,
+  :where(button, input, select, textarea)[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.58;
+  }
+
+  :where(input, select, textarea):read-only {
+    background: var(--nui-surface-sunken);
+  }
+
+  :where(label) {
+    display: grid;
+    gap: var(--nui-space-2);
+    color: var(--nui-foreground);
+    font-weight: 620;
+  }
+
+  :where(label:has(input[type="checkbox"]), label:has(input[type="radio"])) {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--nui-control-size);
+    font-weight: 500;
+  }
+
+  :where(form:has(label, input, select, textarea)) {
+    display: grid;
+    gap: var(--nui-space-4);
+  }
+
+  :where(fieldset) {
+    min-inline-size: 0;
+    padding: var(--nui-space-4);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius);
+  }
+
+  :where(legend) {
+    padding-inline: var(--nui-space-2);
+    font-weight: 720;
+  }
+
+  :where(input, select, textarea):user-valid {
+    border-color: color-mix(in oklch, var(--nui-accent) 65%, var(--nui-border-color));
+  }
+
+  :where(input, select, textarea):user-invalid {
+    border-color: var(--nui-danger);
+    box-shadow: 0 0 0 0.15rem color-mix(in oklch, var(--nui-danger) 20%, transparent);
+  }
+
+  :where(table) {
+    inline-size: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  :where(caption) {
+    margin-block-end: var(--nui-space-2);
+  }
+
+  :where(th, td) {
+    padding: var(--nui-space-3) var(--nui-space-2);
+    border-block-end: var(--nui-border-width) solid var(--nui-border-color);
+    text-align: start;
+    vertical-align: top;
+  }
+
+  :where(th) {
+    background: var(--nui-surface-sunken);
+    font-weight: 720;
+  }
+
+  :where(tbody tr:nth-child(even)) {
+    background: color-mix(in oklch, var(--nui-surface-sunken) 42%, transparent);
+  }
+
+  :where(progress, meter) {
+    inline-size: min(100%, 24rem);
+    accent-color: var(--nui-accent);
+  }
+
+  :where(output) {
+    font-variant-numeric: tabular-nums;
+    font-weight: 650;
+  }
+
+  :where(details) {
+    padding-block: var(--nui-space-3);
+    border-block: var(--nui-border-width) solid var(--nui-border-color);
+  }
+
+  :where(summary) {
+    min-block-size: var(--nui-control-size);
+    cursor: pointer;
+    font-weight: 650;
   }
 
   :where(dialog) {
     max-inline-size: min(36rem, calc(100% - 2rem));
     max-block-size: calc(100dvb - 2rem);
     overflow: auto;
+    padding: var(--nui-space-6);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius-lg);
+    background: var(--nui-surface-raised);
+    color: var(--nui-foreground);
+    box-shadow: var(--nui-shadow);
+  }
+
+  :where(dialog)::backdrop {
+    background: oklch(0.1 0.02 260 / 0.52);
+    backdrop-filter: blur(0.2rem);
+  }
+
+  :where([popover]) {
+    max-inline-size: min(24rem, calc(100% - 2rem));
+    padding: var(--nui-space-4);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius);
+    background: var(--nui-surface-raised);
+    color: var(--nui-foreground);
+    box-shadow: var(--nui-shadow);
+  }
+
+  :where(:popover-open) {
+    animation: nui-popover-in var(--nui-duration-fast) var(--nui-ease-out) both;
+  }
+
+  @keyframes nui-popover-in {
+    from { opacity: 0; transform: translateY(-0.25rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (forced-colors: active) {
+    :where(input, select, textarea, fieldset, pre, table, th, td, dialog, [popover]) {
+      border-color: ButtonText;
+    }
+
+    :where(button, input[type="button"], input[type="submit"], input[type="reset"]) {
+      border-color: ButtonText;
+      background: ButtonFace;
+      color: ButtonText;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where(a[href], button, input[type="button"], input[type="submit"], input[type="reset"], :popover-open) {
+      transition: none;
+      animation: none;
+    }
   }
 }

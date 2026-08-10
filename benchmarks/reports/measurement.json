@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "id": "article",
+      "path": "benchmarks/pages/article/example.html",
+      "rawBytes": 920,
+      "domNodes": 23,
+      "authoredClassTokens": 2,
+      "dataAttributes": 6,
+      "accessibilityViolations": 0,
+      "testCorrectionsRequired": 0,
+      "inference": {
+        "version": 1,
+        "recommendation": null,
+        "confidence": 0,
+        "evidence": [],
+        "recommendations": []
+      }
+    },
+    {
+      "id": "settings-form",
+      "path": "benchmarks/pages/settings-form/example.html",
+      "rawBytes": 1089,
+      "domNodes": 24,
+      "authoredClassTokens": 3,
+      "dataAttributes": 6,
+      "accessibilityViolations": 0,
+      "testCorrectionsRequired": 0,
+      "inference": {
+        "version": 1,
+        "recommendation": "field-actions",
+        "confidence": 0.92,
+        "evidence": [
+          "A native form groups associated fields and actions."
+        ],
+        "recommendations": [
+          {
+            "recommendation": "field-actions",
+            "confidence": 0.92,
+            "evidence": [
+              "A native form groups associated fields and actions."
+            ],
+            "rationale": "Use the existing form composition so fields and actions wrap intrinsically."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dashboard-table",
+      "path": "benchmarks/pages/dashboard-table/example.html",
+      "rawBytes": 986,
+      "domNodes": 31,
+      "authoredClassTokens": 2,
+      "dataAttributes": 5,
+      "accessibilityViolations": 0,
+      "testCorrectionsRequired": 0,
+      "inference": {
+        "version": 1,
+        "recommendation": "table-overflow",
+        "confidence": 0.94,
+        "evidence": [
+          "A table may exceed a narrow inline viewport."
+        ],
+        "recommendations": [
+          {
+            "recommendation": "table-overflow",
+            "confidence": 0.94,
+            "evidence": [
+              "A table may exceed a narrow inline viewport."
+            ],
+            "rationale": "Give the table an owned overflow region while preserving table semantics."
+          }
+        ]
+      }
+    },
+    {
+      "id": "authentication-flow",
+      "path": "benchmarks/pages/authentication-flow/example.html",
+      "rawBytes": 865,
+      "domNodes": 15,
+      "authoredClassTokens": 4,
+      "dataAttributes": 6,
+      "accessibilityViolations": 0,
+      "testCorrectionsRequired": 0,
+      "inference": {
+        "version": 1,
+        "recommendation": "field-actions",
+        "confidence": 0.92,
+        "evidence": [
+          "A native form groups associated fields and actions."
+        ],
+        "recommendations": [
+          {
+            "recommendation": "field-actions",
+            "confidence": 0.92,
+            "evidence": [
+              "A native form groups associated fields and actions."
+            ],
+            "rationale": "Use the existing form composition so fields and actions wrap intrinsically."
+          }
+        ]
+      }
+    },
+    {
+      "id": "application-shell",
+      "path": "benchmarks/pages/application-shell/example.html",
+      "rawBytes": 861,
+      "domNodes": 26,
+      "authoredClassTokens": 4,
+      "dataAttributes": 5,
+      "accessibilityViolations": 0,
+      "testCorrectionsRequired": 0,
+      "inference": {
+        "version": 1,
+        "recommendation": "toolbar",
+        "confidence": 0.72,
+        "evidence": [
+          "Multiple native actions appear together."
+        ],
+        "recommendations": [
+          {
+            "recommendation": "toolbar",
+            "confidence": 0.72,
+            "evidence": [
+              "Multiple native actions appear together."
+            ],
+            "rationale": "Consider the wrapping toolbar composition when the actions form one group."
+          }
+        ]
+      }
+    },
+    {
+      "id": "interaction-laboratory",
+      "path": "benchmarks/pages/interaction-laboratory/example.html",
+      "rawBytes": 880,
+      "domNodes": 21,
+      "authoredClassTokens": 3,
+      "dataAttributes": 6,
+      "accessibilityViolations": 0,
+      "testCorrectionsRequired": 0,
+      "inference": {
+        "version": 1,
+        "recommendation": null,
+        "confidence": 0,
+        "evidence": [],
+        "recommendations": []
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "src/*.css",
+      "rawBytes": 14894,
+      "gzipBytes": 3083,
+      "brotliBytes": 2673
+    },
+    {
+      "path": "src/behavior/index.js",
+      "rawBytes": 207,
+      "gzipBytes": 174,
+      "brotliBytes": 118
+    }
+  ],
+  "summary": {
+    "rawBytes": 15102,
+    "gzipBytes": 3211,
+    "brotliBytes": 2774,
+    "cssBytes": 14894,
+    "behaviorBytes": 207,
+    "cssAndBehaviorGzipBytes": 3211,
+    "authoredClassTokens": 18,
+    "dataAttributes": 34,
+    "customCssDeclarations": 238,
+    "customJsBytes": 207,
+    "accessibilityViolations": 0,
+    "testCorrectionsRequired": 0,
+    "inferenceRecommendations": [
+      {
+        "id": "settings-form",
+        "recommendation": "field-actions",
+        "confidence": 0.92
+      },
+      {
+        "id": "dashboard-table",
+        "recommendation": "table-overflow",
+        "confidence": 0.94
+      },
+      {
+        "id": "authentication-flow",
+        "recommendation": "field-actions",
+        "confidence": 0.92
+      },
+      {
+        "id": "application-shell",
+        "recommendation": "toolbar",
+        "confidence": 0.72
+      }
+    ]
+  }
+}

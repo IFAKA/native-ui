@@ -1,14 +1,19 @@
 @layer nui.compositions {
-  :where(.card) {
-    padding: var(--nui-space-6);
-    border: 1px solid color-mix(in oklch, CanvasText 18%, Canvas);
-    border-radius: var(--nui-radius);
-    background: Canvas;
-  }
-
-  :where(button[data-variant="danger"]) {
-    border-color: var(--nui-danger);
-    background: var(--nui-danger);
-    color: Canvas;
-  }
+  :where(.card) { padding: var(--nui-space-6); border: var(--nui-border-width) solid var(--nui-border-color); border-radius: var(--nui-radius); background: var(--nui-surface-raised); box-shadow: var(--nui-shadow-sm); }
+  :where(.badge) { display: inline-flex; align-items: center; max-inline-size: 100%; padding: var(--nui-space-1) var(--nui-space-2); border: var(--nui-border-width) solid var(--nui-border-color); border-radius: 999px; font-size: var(--nui-text-sm); overflow-wrap: anywhere; }
+  :where(.alert, [role="alert"]) { padding: var(--nui-space-4); border-inline-start: 0.25rem solid var(--nui-accent); border-radius: var(--nui-radius-sm); background: var(--nui-surface-sunken); }
+  :where(.toolbar) { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.empty-state) { display: grid; justify-items: center; gap: var(--nui-space-3); padding: var(--nui-space-8); text-align: center; border: var(--nui-border-width) dashed var(--nui-border-color); border-radius: var(--nui-radius); }
+  :where(.field-actions) { display: flex; flex-wrap: wrap; align-items: end; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.table-overflow) { max-inline-size: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+  :where(.table-overflow > table) { min-inline-size: 36rem; }
+  :where(dialog > header, dialog > footer, [popover] > header, [popover] > footer) { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nui-space-3); }
+  :where(dialog > header, [popover] > header) { margin-block-end: var(--nui-space-4); }
+  :where(dialog > footer, [popover] > footer) { margin-block-start: var(--nui-space-6); justify-content: end; }
+  :where(dialog, [popover]) { max-inline-size: min(100% - 2rem, 40rem); padding: var(--nui-space-6); border: var(--nui-border-width) solid var(--nui-border-color); border-radius: var(--nui-radius-lg); background: var(--nui-surface-raised); color: var(--nui-foreground); box-shadow: var(--nui-shadow); overflow-wrap: anywhere; }
+  :where(.responsive-navigation) { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.responsive-navigation > nav) { display: flex; flex-wrap: wrap; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.card > *, .toolbar > *, .empty-state > *, .field-actions > *, .responsive-navigation > *) { min-inline-size: 0; }
+  :where(button[data-variant="danger"]) { border-color: var(--nui-danger); background: var(--nui-danger); color: var(--nui-danger-contrast); }
+  @media (prefers-reduced-motion: reduce) { :where(dialog, [popover]) { scroll-behavior: auto; } }
 }

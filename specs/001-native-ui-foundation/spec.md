@@ -8,6 +8,8 @@ Plain browser HTML is semantically capable but often visually unappealing, while
 
 A developer can add one stylesheet, write ordinary semantic HTML, and receive an attractive, accessible, responsive baseline. They add a small layout/composition vocabulary only when HTML cannot express presentation and load optional behavior only for compound interactions.
 
+The responsive baseline is mobile-first: narrow layouts are the default contract, and larger viewports enhance the same semantic DOM without requiring alternate markup or viewport JavaScript.
+
 ## Primary users
 
 - Developers building static sites, server-rendered applications, and framework applications.

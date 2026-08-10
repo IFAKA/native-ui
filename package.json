@@ -2,7 +2,7 @@
   "name": "@ifaka/native-ui",
   "version": "0.1.0-alpha.0",
   "private": true,
-  "description": "An attractive, adaptive, HTML-first UI system with minimal CSS and optional progressive behavior.",
+  "description": "A lightweight, accessible CSS UI system for semantic HTML, responsive layouts, and framework-free web interfaces.",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -22,6 +22,9 @@
     "README.md",
     "LICENSE"
   ],
+  "bin": {
+    "native-ui": "./dist/cli.mjs"
+  },
   "exports": {
     ".": "./dist/native-ui.css",
     "./behavior.js": "./dist/behavior.js",
@@ -31,7 +34,11 @@
     "build": "node scripts/build.mjs",
     "check": "node scripts/check.mjs",
     "test": "node --test && npm run build && npm run check",
-    "pack:check": "npm pack --dry-run"
+    "test:browser-contract": "node --test tests/browser/**/*.spec.mjs",
+    "test:browser": "playwright test tests/browser/real-browser.spec.mjs",
+    "measure": "node scripts/measure.mjs",
+    "pack:check": "npm pack --dry-run",
+    "pack:consumer": "node scripts/pack-consumer.mjs"
   },
   "keywords": [
     "html",
@@ -42,5 +49,9 @@
     "accessibility",
     "progressive-enhancement",
     "framework-agnostic"
-  ]
+  ],
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "axe-core": "4.11.0"
+  }
 }

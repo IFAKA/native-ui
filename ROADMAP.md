@@ -8,7 +8,8 @@ The detailed dependency graph and acceptance gates live in the [Native UI 1.0 im
 2. **Attractive classless foundation** — tokens, semantic elements, forms, content, tables, disclosure, dialogs, and native states.
 3. **Adaptive compositions** — intrinsic layouts, container-aware patterns, and real benchmark pages.
 4. **Minimum behavior runtime** — audited progressive enhancement for genuine interaction gaps.
-5. **Smart analyzer** — deterministic HTML, accessibility, responsive-design, and unnecessary-code diagnostics.
+5. **Authoring analyzer** — deterministic HTML, accessibility, responsive-design, and unnecessary-code diagnostics.
 6. **Reference adapters** — Basecoat-first capability research with provenance and manual curation gates.
-7. **Public beta** — documentation, examples, cross-browser evidence, community review, and size/token benchmarks.
-8. **1.0** — stable API, secure publishing, provenance, migration guidance, and support policy.
+7. **Semantic inference engine** — explainable structural recommendations for likely layouts and compositions, initially development-time and opt-in.
+8. **Public beta** — local evidence package complete; external distribution, cross-browser evidence, and community review pending.
+9. **1.0** — stable API, secure publishing, provenance, migration guidance, and support policy.

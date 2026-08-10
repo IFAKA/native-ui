@@ -2,16 +2,20 @@
   :where(.nui-container) {
     inline-size: min(100% - 2rem, 72rem);
     margin-inline: auto;
+    overflow-wrap: anywhere;
   }
 
   :where(.nui-readable) {
     max-inline-size: var(--nui-readable);
+    margin-inline: auto;
+    overflow-wrap: anywhere;
   }
 
   :where(.nui-stack) {
     display: flex;
     flex-direction: column;
     gap: var(--nui-space-4);
+    min-inline-size: 0;
   }
 
   :where(.nui-cluster) {
@@ -19,11 +23,18 @@
     flex-wrap: wrap;
     align-items: center;
     gap: var(--nui-space-3);
+    min-inline-size: 0;
   }
 
   :where(.nui-grid) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
     gap: var(--nui-space-4);
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  :where(.nui-stack > *, .nui-cluster > *, .nui-grid > *) {
+    min-inline-size: 0;
   }
 }

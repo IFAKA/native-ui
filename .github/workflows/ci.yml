@@ -8,16 +8,89 @@ on:
 permissions:
   contents: read
 
+env:
+  NODE_VERSION: 22.14.0
+
 jobs:
-  verify:
+  unit:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 22.14.0
-          cache: npm
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
+        with: { node-version: ${{ env.NODE_VERSION }}, cache: npm }
       - run: npm ci
-      - run: npm test
+      - run: node --test tests/*.test.mjs
+
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
+        with: { node-version: ${{ env.NODE_VERSION }}, cache: npm }
+      - run: npm ci
+      - run: npm run build && npm run check
+
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
+        with: { node-version: ${{ env.NODE_VERSION }}, cache: npm }
+      - run: npm ci
       - run: npm run pack:check
+      - run: npm run pack:consumer
+
+  analyzer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
+        with: { node-version: ${{ env.NODE_VERSION }}, cache: npm }
+      - run: npm ci
+      - run: node --test tests/analyzer.test.mjs tests/research-adapters.test.mjs
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
+        with: { node-version: ${{ env.NODE_VERSION }}, cache: npm }
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:browser-contract
+
+  accessibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - run: echo "Accessibility evidence is source-level; no axe or browser engine is installed in this repository."
+      - run: npm run measure
+      - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808
+        if: always()
+        with: { name: accessibility-report, path: benchmarks/reports, if-no-files-found: ignore }
+
+  docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
+        with: { node-version: ${{ env.NODE_VERSION }}, cache: npm }
+      - run: npm ci
+      - run: node --test tests/docs.test.mjs
+
+  dependency-review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/dependency-review-action@da24556b548a50705dd671f478c72f7b3c4e1c5f

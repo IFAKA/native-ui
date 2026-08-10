@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Native UI makes semantic HTML attractive, adaptive, and practical.">
+  <link rel="canonical" href="https://ifaka.github.io/native-ui/">
+  <link rel="stylesheet" href="../dist/native-ui.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Native UI — Write HTML. Get an interface people want to use.</title>
+</head>
+<body>
+  <header class="nui-container nui-stack site-header">
+    <nav aria-label="Primary" class="nui-cluster">
+      <a href="index.html" aria-current="page"><strong>Native UI</strong></a>
+      <a href="guides/architecture.html">Guides</a>
+      <a href="guides/accessibility.html">Accessibility</a>
+      <a href="guides/contributing.html">Contributing</a>
+    </nav>
+  </header>
+  <main class="nui-container nui-stack">
+    <section class="hero nui-readable">
+      <p class="badge">HTML-first · zero runtime dependencies</p>
+      <h1>Write HTML. Get an interface people want to use.</h1>
+      <p class="lede">Native UI adds visual hierarchy, resilient layout, and restrained polish to the semantics the browser already understands.</p>
+      <p class="nui-cluster"><a data-variant="primary" href="#start">Start with one stylesheet</a><a data-variant="quiet" href="guides/architecture.html">Read the thesis</a><button data-variant="danger" type="button">Danger variant</button></p>
+    </section>
+
+    <section id="start" class="nui-grid">
+      <article class="card nui-stack"><h2>1. Import CSS</h2><pre><code>npm install @ifaka/native-ui
+&lt;link rel="stylesheet" href="native-ui.css"&gt;</code></pre><p>No component runtime, provider, or generated DOM.</p></article>
+      <article class="card nui-stack"><h2>2. Write HTML</h2><pre><code>&lt;form&gt;
+  &lt;label&gt;Email &lt;input type="email" required&gt;&lt;/label&gt;
+  &lt;button type="submit"&gt;Save&lt;/button&gt;
+&lt;/form&gt;</code></pre><p>Labels, validation, focus, and submission stay native.</p></article>
+      <article class="card nui-stack"><h2>3. Add layout intent</h2><pre><code>&lt;section class="nui-grid"&gt;...&lt;/section&gt;</code></pre><p>Classes describe composition, not every visual property.</p></article>
+    </section>
+
+    <section class="nui-readable nui-stack">
+      <h2>See the browser do the work</h2>
+      <details open><summary>Native disclosure</summary><p>This content is available without JavaScript, preserves source order, and uses the browser’s keyboard behavior.</p></details>
+      <form class="field-actions"><label>Try native validation <input type="email" required placeholder="name@example.com"></label><button data-variant="primary">Submit</button></form>
+      <p class="alert" role="note"><strong>JavaScript disabled?</strong> Content, links, forms, validation, focus, and native actions still work. Optional behavior is never the only path.</p>
+    </section>
+
+    <section class="nui-stack">
+      <h2>Small vocabulary, explicit contracts</h2>
+      <p>Public layout: <code>nui-container</code>, <code>nui-readable</code>, <code>nui-stack</code>, <code>nui-cluster</code>, <code>nui-grid</code>. Compositions: <code>card</code>, <code>badge</code>, <code>alert</code>, <code>toolbar</code>, <code>empty-state</code>, <code>field-actions</code>, <code>table-overflow</code>, <code>dialog-sections</code>, <code>popover-surface</code>, <code>responsive-navigation</code>. Variants use <code>data-variant="primary|danger|quiet"</code>.</p>
+      <p>Every name above is synchronized with <a href="../src/manifest.json">the manifest</a> and exercised by the documentation test.</p>
+    </section>
+  </main>
+  <footer class="nui-container nui-cluster"><small>Native UI 0.1 alpha · <a href="guides/browser-support.html">support</a> · <a href="guides/security.html">security</a> · <a href="../SUPPORT.md">help</a></small></footer>
+</body>
+</html>

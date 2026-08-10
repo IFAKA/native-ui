@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<body>
+  <main class="nui-container nui-readable">
+    <h1>Account settings</h1>
+    <form class="nui-stack">
+      <fieldset data-case="long-label"><legend>Contact and notification preferences for every available channel</legend>
+        <label>Email address <input id="email" name="email" type="email" autocomplete="email"></label>
+        <label>Preferred language <select id="language" name="language"><option>English</option><option>Español</option></select></label>
+      </fieldset>
+      <fieldset data-case="empty"><legend>Optional profile image</legend><input id="avatar" name="avatar" type="file"></fieldset>
+      <p data-case="loading" aria-live="polite">Saving changes…</p>
+      <p data-case="error" role="alert">The settings could not be saved.</p>
+      <div data-case="dense"><label><input type="checkbox" name="product"> Product updates</label><label><input type="checkbox" name="security"> Security notices</label></div>
+      <button type="submit" data-variant="primary">Save settings</button>
+    </form>
+  </main>
+</body>
+</html>

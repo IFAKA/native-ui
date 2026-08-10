@@ -1,0 +1,9 @@
+body { margin: 0; }
+.site-header, footer { padding-block: var(--nui-space-4); }
+.hero { padding-block: clamp(3rem, 12vw, 8rem); }
+.hero h1 { max-inline-size: 12ch; font-size: clamp(2.75rem, 8vw, 6rem); line-height: .95; }
+.lede { font-size: var(--nui-text-base); max-inline-size: 42rem; }
+pre { overflow-x: auto; padding: var(--nui-space-4); background: var(--nui-surface-sunken); border: var(--nui-border-width) solid var(--nui-border-color); border-radius: var(--nui-radius); }
+code { font-family: var(--nui-font-mono); overflow-wrap: anywhere; }
+footer { margin-block-start: var(--nui-space-8); border-block-start: var(--nui-border-width) solid var(--nui-border-color); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; } }

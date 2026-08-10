@@ -12,11 +12,40 @@
   "currentRepository": {
     "source": "native-ui-next",
     "revision": "working tree baseline",
-    "cssBytes": null,
-    "behaviorBytes": null,
-    "cssAndBehaviorGzipBytes": null,
-    "authoredClassTokens": null,
+    "cssBytes": 2179,
+    "behaviorBytes": 207,
+    "cssAndBehaviorGzipBytes": 984,
+    "authoredClassTokens": 18,
     "runtimeDependencies": 0
+  },
+  "benchmarkFixtures": [
+    "article",
+    "settings-form",
+    "dashboard-table",
+    "authentication-flow",
+    "application-shell",
+    "interaction-laboratory"
+  ],
+  "comparisonCoverage": {
+    "method": "Checked-in research/raw-HTML fixtures are the reproducible fallback when an upstream fixture is unavailable; unavailable sources are never represented as measured upstream results.",
+    "sources": {
+      "Barebones": { "status": "unavailable", "comparison": "not measurable; fallback coverage documented" },
+      "Pith": { "status": "unavailable", "comparison": "not measurable; fallback coverage documented" },
+      "native-ui": { "status": "current repository", "comparison": "measured by benchmarks/reports/measurement.json" },
+      "native-html": { "status": "unavailable", "comparison": "not measurable; fallback coverage documented" },
+      "Basecoat": { "status": "checked-in research fixture", "comparison": "measured research fixture" },
+      "Starting Point UI": { "status": "checked-in research fixture", "comparison": "measured research fixture" }
+    }
+  },
+  "measurement": {
+    "rawBytes": 2387,
+    "gzipBytes": 984,
+    "brotliBytes": 804,
+    "dataAttributes": 34,
+    "customCssDeclarations": 48,
+    "customJsBytes": 207,
+    "accessibilityViolations": 0,
+    "testCorrectionsRequired": 0
   },
   "researchSources": [
     { "name": "Barebones", "status": "not yet available", "revision": null },

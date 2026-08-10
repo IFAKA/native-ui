@@ -17,7 +17,7 @@ Native UI extends semantic HTML with attractive presentation, resilient layout, 
 
 ## Invariants
 
-1. One semantic DOM across viewports.
+1. Mobile-first layout as the default, with one semantic DOM across viewports.
 2. No runtime styling-class injection.
 3. No JavaScript for ordinary responsive layout.
 4. Explicit author configuration overrides inference.

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Native UI manifest",
   "type": "object",
-  "required": ["version", "runtime", "layouts", "variants", "capabilities"],
+  "required": ["version", "runtime", "exports", "tokens", "layouts", "variants", "compositions", "behaviors", "inference", "analyzerRules", "recipes", "capabilities"],
   "properties": {
     "version": { "type": "string" },
     "runtime": {
@@ -14,9 +14,56 @@
       },
       "additionalProperties": false
     },
+    "exports": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "minItems": 1 },
+    "tokens": { "type": "array", "items": { "type": "string", "pattern": "^--nui-[a-z0-9-]+$" }, "uniqueItems": true },
     "layouts": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
     "variants": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
-    "capabilities": { "type": "array", "items": { "type": "object" } }
+    "compositions": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "behaviors": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "inference": {
+      "type": "object",
+      "required": ["version", "mode", "output", "sourceMutation", "runtime", "capabilities"],
+      "properties": {
+        "version": { "type": "integer", "minimum": 1 },
+        "mode": { "const": "recommendation-only" },
+        "output": { "const": "explainable" },
+        "sourceMutation": { "const": false },
+        "runtime": { "const": false },
+        "capabilities": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+      },
+      "additionalProperties": false
+    },
+    "analyzerRules": { "type": "array", "items": { "type": "string", "pattern": "^[a-z][a-z0-9-]+$" }, "uniqueItems": true },
+    "recipes": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "capabilities": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/capability" },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "required": ["id", "category", "nativePrimitive", "selector", "declaration", "cssRequirement", "jsRequirement", "fallback", "responsiveBehavior", "keyboardFocusContract", "statesEvents", "authorOverrides", "analyzerRules", "compatibilityEvidence", "recipePath"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]+$" },
+        "category": { "enum": ["layout", "variant", "composition", "behavior", "token", "element"] },
+        "nativePrimitive": { "type": "string", "minLength": 1 },
+        "selector": { "type": "string", "minLength": 1 },
+        "declaration": { "type": "string", "minLength": 1 },
+        "cssRequirement": { "type": "string", "minLength": 1 },
+        "jsRequirement": { "type": "string", "minLength": 1 },
+        "fallback": { "type": "string", "minLength": 1 },
+        "responsiveBehavior": { "type": "string", "minLength": 1 },
+        "keyboardFocusContract": { "type": "string", "minLength": 1 },
+        "statesEvents": { "type": "array", "items": { "type": "string" } },
+        "authorOverrides": { "type": "array", "items": { "type": "string" } },
+        "analyzerRules": { "type": "array", "items": { "type": "string" } },
+        "compatibilityEvidence": { "type": "string", "minLength": 1 },
+        "recipePath": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    }
   },
   "additionalProperties": false
 }

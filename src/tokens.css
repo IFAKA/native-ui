@@ -3,6 +3,10 @@
     color-scheme: light dark;
     --nui-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --nui-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --nui-text-sm: 0.875rem;
+    --nui-text-base: 1rem;
+    --nui-leading-body: 1.5;
+    --nui-leading-heading: 1.15;
     --nui-readable: 68ch;
     --nui-space-1: 0.25rem;
     --nui-space-2: 0.5rem;
@@ -10,8 +14,59 @@
     --nui-space-4: 1rem;
     --nui-space-6: 1.5rem;
     --nui-space-8: 2rem;
+    --nui-control-size: 2.75rem;
+    --nui-control-padding: 0.75rem;
+    --nui-radius-sm: 0.375rem;
     --nui-radius: 0.625rem;
+    --nui-radius-lg: 1rem;
+    --nui-border-width: 1px;
+    --nui-border-color: light-dark(oklch(0.86 0.01 260), oklch(0.35 0.02 260));
+    --nui-surface: Canvas;
+    --nui-surface-raised: light-dark(oklch(0.99 0.005 260), oklch(0.2 0.02 260));
+    --nui-surface-sunken: light-dark(oklch(0.96 0.01 260), oklch(0.14 0.02 260));
+    --nui-foreground: CanvasText;
+    --nui-foreground-muted: light-dark(oklch(0.42 0.02 260), oklch(0.76 0.02 260));
+    --nui-foreground-link: LinkText;
     --nui-accent: AccentColor;
+    --nui-accent-contrast: Canvas;
     --nui-danger: light-dark(oklch(0.54 0.2 28), oklch(0.72 0.16 22));
+    --nui-danger-contrast: oklch(1 0 0);
+    --nui-shadow-sm: 0 1px 2px oklch(0.1 0.02 260 / 0.12);
+    --nui-shadow: 0 0.75rem 2rem oklch(0.1 0.02 260 / 0.14);
+    --nui-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --nui-duration-fast: 140ms;
+    --nui-duration-normal: 220ms;
+  }
+
+  @media (prefers-contrast: more) {
+    :root {
+      --nui-border-width: 2px;
+      --nui-foreground-muted: CanvasText;
+    }
+  }
+
+  @media (forced-colors: active) {
+    :root {
+      --nui-border-color: ButtonText;
+      --nui-surface: Canvas;
+      --nui-surface-raised: Canvas;
+      --nui-surface-sunken: Canvas;
+      --nui-foreground: CanvasText;
+      --nui-foreground-muted: CanvasText;
+      --nui-foreground-link: LinkText;
+      --nui-accent: Highlight;
+      --nui-accent-contrast: HighlightText;
+      --nui-danger: Mark;
+      --nui-danger-contrast: MarkText;
+      --nui-shadow-sm: none;
+      --nui-shadow: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --nui-duration-fast: 0ms;
+      --nui-duration-normal: 0ms;
+    }
   }
 }
