@@ -1,5 +1,6 @@
 import { cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { join, relative, resolve } from "node:path";
+import { renderPage } from "./site-template.mjs";
 
 const routeFiles = ["index.html", "lab/index.html", "examples/index.html", "recipes/index.html", "guides/index.html", "benchmarks/index.html", "changelog.html", "roadmap.html"];
 
@@ -43,6 +44,25 @@ export async function buildSite({ root = resolve(import.meta.dirname, ".."), out
   await rm(outputRoot, { recursive: true, force: true });
   await mkdir(outputRoot, { recursive: true });
   await copyTree(sourceSite, outputRoot);
+  const authoredRoutes = [
+    ["index.html", "home", "/"],
+    ["lab/index.html", "lab", "/lab/"],
+    ["examples/index.html", "examples", "/examples/"],
+    ["recipes/index.html", "recipes", "/recipes/"],
+    ["guides/index.html", "guides", "/guides/"],
+    ["benchmarks/index.html", "benchmarks", "/benchmarks/"],
+    ["changelog.html", "", "/changelog.html"],
+    ["roadmap.html", "", "/roadmap.html"],
+  ];
+  for (const [file, active, canonicalPath] of authoredRoutes) {
+    const path = join(outputRoot, file);
+    const source = await readFile(path, "utf8");
+    const body = source.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? source;
+    const title = source.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "Native UI";
+    const description = source.match(/<meta name="description" content="([^"]+)">/i)?.[1] ?? "Native UI — semantic HTML with explicit visual contracts.";
+    const scripts = [...source.matchAll(/<script[\s\S]*?<\/script>/gi)].map(([script]) => script).join("\n");
+    await writeFile(path, renderPage({ title, description, canonicalPath, body, active, scripts }));
+  }
   const guideDescriptions = {
     architecture: "HTML owns meaning and native state. CSS owns hierarchy, rhythm, and intrinsic adaptation. Application code owns data, routing, and business rules.",
     accessibility: "Use native elements first, keep labels explicit, preserve focus, and verify keyboard operation, zoom, forced colors, narrow widths, and reduced motion.",
@@ -103,6 +123,18 @@ export async function buildSite({ root = resolve(import.meta.dirname, ".."), out
     const title = metadata.name.replaceAll("-", " ");
     await mkdir(join(outputRoot, "recipes", name), { recursive: true });
     await writeFile(join(outputRoot, "recipes", name, "index.html"), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="${escapeHtml(metadata.purpose)}"><link rel="canonical" href="https://native-ui.example/recipes/${name}/"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/assets/native-ui/native-ui.css"><link rel="stylesheet" href="/styles.css"><title>${title} recipe · Native UI</title></head><body><a class="nui-site-skip" href="#main">Skip to content</a><header class="nui-site-header"><div class="nui-site-shell nui-site-header-inner"><nav class="nui-site-nav responsive-navigation" aria-label="Primary"><a class="nui-site-brand" href="/">Native UI</a><nav class="nui-site-nav-links nui-cluster" aria-label="Site"><a href="/lab/">Lab</a><a href="/examples/">Examples</a><a href="/recipes/" aria-current="page">Recipes</a><a href="/guides/">Guides</a><a href="/benchmarks/">Evidence</a></nav></nav></div></header><main id="main" class="nui-site-shell nui-site-main nui-stack"><header class="nui-site-route-header nui-readable"><p class="nui-site-eyebrow">Canonical recipe</p><h1>${title}</h1><p class="nui-site-lede">${escapeHtml(metadata.purpose)}.</p></header><section class="nui-grid"><article class="nui-site-frame"><header><h2>Live example</h2><p class="nui-site-muted">The same semantic markup, rendered with Native UI.</p></header><section>${exampleBody}</section></article><article class="nui-site-frame"><header><h2>HTML snippet</h2><p class="nui-site-muted">Select and copy the source; it has no framework dependency.</p></header><pre class="nui-site-code"><code>${escapeHtml(snippet)}</code></pre></article></section><section class="card nui-stack"><h2>When to use</h2><p>Use this recipe when the named relationship is present and native flow alone does not communicate the intended grouping.</p><h2>When not to use</h2><p>${escapeHtml(metadata.whenNotToUse)}</p><h2>Native alternative</h2><p>${escapeHtml(metadata.nativeAlternative)}</p><p><a href="/recipes/">Back to all recipes</a></p></section></main><footer class="nui-site-shell nui-site-footer"><small><a href="/">Home</a> · <a href="https://github.com/IFAKA/native-ui/tree/main/recipes/${name}">Repository source</a></small></footer></body></html>`);
+  }
+  const generatedRoutes = [
+    ...Object.keys(guideDescriptions).map((slug) => [`guides/${slug}.html`, "guides", `/guides/${slug}.html`]),
+    ...recipeNames.map((name) => [`recipes/${name}/index.html`, "recipes", `/recipes/${name}/`]),
+  ];
+  for (const [file, active, canonicalPath] of generatedRoutes) {
+    const path = join(outputRoot, file);
+    const source = await readFile(path, "utf8");
+    const body = source.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] ?? source;
+    const title = source.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "Native UI";
+    const description = source.match(/<meta name="description" content="([^"]+)">/i)?.[1] ?? "Native UI — semantic HTML with explicit visual contracts.";
+    await writeFile(path, renderPage({ title, description, canonicalPath, body, active }));
   }
   for (const name of recipeNames) {
     const path = join(outputRoot, "recipes", name, "index.html");

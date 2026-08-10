@@ -80,3 +80,19 @@ test("interactive examples start closed and site variants have distinct treatmen
     await rm(output, { recursive: true, force: true });
   }
 });
+
+test("shared site template owns the shell instead of route pages", async () => {
+  const { renderPage } = await import("../scripts/site-template.mjs");
+  const html = renderPage({
+    title: "Template test",
+    description: "Template description",
+    canonicalPath: "/template-test/",
+    body: "<h1>Template test</h1><p>Body content.</p>",
+    active: "examples",
+  });
+  assert.equal((html.match(/aria-label="Primary"/g) ?? []).length, 1);
+  assert.match(html, /href="\/assets\/native-ui\/native-ui\.css"/);
+  assert.match(html, /href="\/styles\.css"/);
+  assert.match(html, /<footer[^>]*nui-site-footer/);
+  assert.match(html, /aria-current="page"[^>]*>Examples/);
+});

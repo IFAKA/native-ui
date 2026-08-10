@@ -15,3 +15,5 @@ The implementation promotes no new Native UI capability. Existing native `detail
 `npm run build` creates package assets in `dist/` and a deterministic static artifact in `public/`. Site JavaScript is optional code-copy feedback only; all content and actions remain useful without it.
 
 Rejected promotions include hero, proof-band, route-header, comparison-frame, and marketing navigation selectors. They are application concerns and must not enter the Native UI manifest.
+
+The website uses a build-time HTML template in `scripts/site-template.mjs` for the shared shell. This supplies reuse without putting React, custom elements, or a client-side component runtime into the public artifact.

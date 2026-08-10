@@ -20,3 +20,5 @@ All notable changes will be documented here. Releases follow Semantic Versioning
   discovery pages, comparison lab, evidence routes, and static Vercel config.
 - Corrected analyzer name detection for visibly labelled native links and
   buttons exposed by the public-site dogfood pass.
+- Replaced repeated generated site shells with a shared build-time HTML
+  template, without adding a website runtime or changing the library API.
