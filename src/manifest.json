@@ -1,0 +1,21 @@
+{
+  "$schema": "./manifest.schema.json",
+  "version": "0.1.0-alpha.0",
+  "runtime": {
+    "css": "native-ui.css",
+    "behavior": "behavior.js"
+  },
+  "layouts": [
+    "nui-container",
+    "nui-readable",
+    "nui-stack",
+    "nui-cluster",
+    "nui-grid"
+  ],
+  "variants": [
+    "primary",
+    "danger",
+    "quiet"
+  ],
+  "capabilities": []
+}

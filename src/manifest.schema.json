@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Native UI manifest",
+  "type": "object",
+  "required": ["version", "runtime", "layouts", "variants", "capabilities"],
+  "properties": {
+    "version": { "type": "string" },
+    "runtime": {
+      "type": "object",
+      "required": ["css", "behavior"],
+      "properties": {
+        "css": { "type": "string" },
+        "behavior": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "layouts": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "variants": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "capabilities": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": false
+}

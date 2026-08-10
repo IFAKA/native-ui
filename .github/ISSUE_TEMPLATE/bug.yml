@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible Native UI defect
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Native UI. Do not report security vulnerabilities here.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide semantic HTML, CSS overrides, behavior imports, and exact steps.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Browsers and assistive technology
+      description: Include browser/OS versions, viewport, input mode, and assistive technology when relevant.
+    validations:
+      required: true
+  - type: checkboxes
+    id: modes
+    attributes:
+      label: Failure modes checked
+      options:
+        - label: I tested without JavaScript when applicable.
+        - label: I tested keyboard use and visible focus.
+        - label: I tested a narrow viewport or 200% zoom.

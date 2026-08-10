@@ -1,0 +1,38 @@
+name: Capability proposal
+description: Propose a new public capability or contract
+title: "[Proposal]: "
+labels: ["proposal", "needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Describe the user need without prescribing implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: native
+    attributes:
+      label: Native HTML/CSS considered
+      description: Which native elements, attributes, selectors, or APIs were evaluated?
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Proposed public contract
+      description: Show the smallest HTML/CSS/JS interface that could solve the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: fallback
+    attributes:
+      label: Accessibility, fallback, and author control
+      description: Explain keyboard/focus behavior, no-JS behavior, unsupported browsers, and overrides.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: References and examples
+      description: Link standards, prior art, or reproducible examples.

@@ -1,0 +1,14 @@
+@layer nui.compositions {
+  :where(.card) {
+    padding: var(--nui-space-6);
+    border: 1px solid color-mix(in oklch, CanvasText 18%, Canvas);
+    border-radius: var(--nui-radius);
+    background: Canvas;
+  }
+
+  :where(button[data-variant="danger"]) {
+    border-color: var(--nui-danger);
+    background: var(--nui-danger);
+    color: Canvas;
+  }
+}

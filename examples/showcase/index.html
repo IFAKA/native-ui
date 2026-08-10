@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Native UI foundation</title>
+    <link rel="stylesheet" href="../../dist/native-ui.css">
+  </head>
+  <body>
+    <main class="nui-container nui-stack">
+      <header class="nui-readable">
+        <p>Native UI foundation</p>
+        <h1>Write HTML. Get an interface people want to use.</h1>
+        <p>This page is intentionally small. It becomes a benchmark, not a marketing promise, as implementation proceeds.</p>
+      </header>
+
+      <section class="nui-grid" aria-label="Foundation examples">
+        <article class="card nui-stack">
+          <h2>Semantic form</h2>
+          <form class="nui-stack">
+            <label>
+              Email
+              <input type="email" required autocomplete="email">
+            </label>
+            <div class="nui-cluster">
+              <button type="submit">Save</button>
+              <button type="button" data-variant="danger">Delete</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="card nui-stack">
+          <h2>Native disclosure</h2>
+          <details>
+            <summary>Why native?</summary>
+            <p>The browser keeps semantics and behavior; Native UI supplies presentation and resilience.</p>
+          </details>
+          <progress value="70" max="100">70%</progress>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+@layer nui.tokens {
+  :root {
+    color-scheme: light dark;
+    --nui-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --nui-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --nui-readable: 68ch;
+    --nui-space-1: 0.25rem;
+    --nui-space-2: 0.5rem;
+    --nui-space-3: 0.75rem;
+    --nui-space-4: 1rem;
+    --nui-space-6: 1.5rem;
+    --nui-space-8: 2rem;
+    --nui-radius: 0.625rem;
+    --nui-accent: AccentColor;
+    --nui-danger: light-dark(oklch(0.54 0.2 28), oklch(0.72 0.16 22));
+  }
+}
