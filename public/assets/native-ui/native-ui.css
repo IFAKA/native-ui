@@ -1,0 +1,500 @@
+@layer nui.tokens, nui.elements, nui.layouts, nui.compositions, nui.enhancements;
+
+@layer nui.tokens {
+  :root {
+    color-scheme: light dark;
+    --nui-font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --nui-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --nui-text-sm: 0.875rem;
+    --nui-text-base: 1rem;
+    --nui-leading-body: 1.5;
+    --nui-leading-heading: 1.15;
+    --nui-readable: 68ch;
+    --nui-space-1: 0.25rem;
+    --nui-space-2: 0.5rem;
+    --nui-space-3: 0.75rem;
+    --nui-space-4: 1rem;
+    --nui-space-6: 1.5rem;
+    --nui-space-8: 2rem;
+    --nui-control-size: 2.75rem;
+    --nui-control-padding: 0.75rem;
+    --nui-radius-sm: 0.375rem;
+    --nui-radius: 0.625rem;
+    --nui-radius-lg: 1rem;
+    --nui-border-width: 1px;
+    --nui-border-color: light-dark(oklch(0.86 0.01 260), oklch(0.35 0.02 260));
+    --nui-surface: Canvas;
+    --nui-surface-raised: light-dark(oklch(0.99 0.005 260), oklch(0.2 0.02 260));
+    --nui-surface-sunken: light-dark(oklch(0.96 0.01 260), oklch(0.14 0.02 260));
+    --nui-foreground: CanvasText;
+    --nui-foreground-muted: light-dark(oklch(0.42 0.02 260), oklch(0.76 0.02 260));
+    --nui-foreground-link: LinkText;
+    --nui-accent: AccentColor;
+    --nui-accent-contrast: Canvas;
+    --nui-danger: light-dark(oklch(0.54 0.2 28), oklch(0.72 0.16 22));
+    --nui-danger-contrast: oklch(1 0 0);
+    --nui-shadow-sm: 0 1px 2px oklch(0.1 0.02 260 / 0.12);
+    --nui-shadow: 0 0.75rem 2rem oklch(0.1 0.02 260 / 0.14);
+    --nui-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --nui-duration-fast: 140ms;
+    --nui-duration-normal: 220ms;
+  }
+
+  @media (prefers-contrast: more) {
+    :root {
+      --nui-border-width: 2px;
+      --nui-foreground-muted: CanvasText;
+    }
+  }
+
+  @media (forced-colors: active) {
+    :root {
+      --nui-border-color: ButtonText;
+      --nui-surface: Canvas;
+      --nui-surface-raised: Canvas;
+      --nui-surface-sunken: Canvas;
+      --nui-foreground: CanvasText;
+      --nui-foreground-muted: CanvasText;
+      --nui-foreground-link: LinkText;
+      --nui-accent: Highlight;
+      --nui-accent-contrast: HighlightText;
+      --nui-danger: Mark;
+      --nui-danger-contrast: MarkText;
+      --nui-shadow-sm: none;
+      --nui-shadow: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --nui-duration-fast: 0ms;
+      --nui-duration-normal: 0ms;
+    }
+  }
+}
+
+@layer nui.elements {
+  :where(html) {
+    font-family: var(--nui-font-sans);
+    line-height: var(--nui-leading-body);
+    text-size-adjust: 100%;
+  }
+
+  :where(body) {
+    margin: 0;
+    background: var(--nui-surface);
+    color: var(--nui-foreground);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    margin-block: 0 var(--nui-space-3);
+    color: var(--nui-foreground);
+    font-weight: 720;
+    line-height: var(--nui-leading-heading);
+    text-wrap: balance;
+  }
+
+  :where(h1) {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+    letter-spacing: -0.035em;
+  }
+
+  :where(h2) {
+    margin-block-start: var(--nui-space-6);
+    font-size: clamp(1.5rem, 1.25rem + 1vw, 2.25rem);
+    letter-spacing: -0.025em;
+  }
+
+  :where(h3) {
+    margin-block-start: var(--nui-space-4);
+    font-size: 1.25rem;
+  }
+
+  :where(p, ul, ol, dl, blockquote, pre, figure, table, form, fieldset, details) {
+    margin-block: 0 var(--nui-space-4);
+  }
+
+  :where(p, li, dt, dd, figcaption, caption, label, legend, summary, th, td) {
+    overflow-wrap: anywhere;
+  }
+
+  :where(a[href]) {
+    color: var(--nui-foreground-link);
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.16em;
+    transition: color var(--nui-duration-fast) var(--nui-ease-out);
+  }
+
+  :where(a[href]):hover {
+    color: var(--nui-accent);
+  }
+
+  :where(a[href]):visited {
+    color: var(--nui-foreground-link);
+  }
+
+  :where(ul, ol) {
+    padding-inline-start: 1.5em;
+  }
+
+  :where(li + li) {
+    margin-block-start: var(--nui-space-2);
+  }
+
+  :where(dl) {
+    display: grid;
+    gap: var(--nui-space-2) var(--nui-space-4);
+  }
+
+  :where(dt) {
+    font-weight: 700;
+  }
+
+  :where(dd) {
+    margin-inline-start: 0;
+    color: var(--nui-foreground-muted);
+  }
+
+  :where(blockquote) {
+    margin-inline: 0;
+    padding-inline-start: var(--nui-space-4);
+    border-inline-start: 0.25rem solid var(--nui-accent);
+    color: var(--nui-foreground-muted);
+    font-size: 1.125em;
+  }
+
+  :where(hr) {
+    margin-block: var(--nui-space-6);
+    border: 0;
+    border-block-start: var(--nui-border-width) solid var(--nui-border-color);
+  }
+
+  :where(mark) {
+    padding-inline: 0.15em;
+    background: light-dark(oklch(0.9 0.12 95), oklch(0.35 0.1 95));
+    color: CanvasText;
+  }
+
+  :where(pre, code, kbd, samp) {
+    font-family: var(--nui-font-mono);
+  }
+
+  :where(code, kbd, samp) {
+    padding: 0.12em 0.3em;
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius-sm);
+    background: var(--nui-surface-sunken);
+    font-size: 0.9em;
+  }
+
+  :where(pre) {
+    max-inline-size: 100%;
+    padding: var(--nui-space-4);
+    overflow: auto;
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius);
+    background: var(--nui-surface-sunken);
+    color: var(--nui-foreground);
+    white-space: pre;
+  }
+
+  :where(pre code) {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  :where(img, audio, video, canvas, svg) {
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  :where(figure) {
+    margin-inline: 0;
+  }
+
+  :where(figcaption, caption) {
+    color: var(--nui-foreground-muted);
+    font-size: var(--nui-text-sm);
+    text-align: start;
+  }
+
+  :where(figcaption) {
+    margin-block-start: var(--nui-space-2);
+  }
+
+  :where(button, input, select, textarea) {
+    min-block-size: var(--nui-control-size);
+    font: inherit;
+  }
+
+  :where(input, select, textarea) {
+    max-inline-size: 100%;
+    padding: var(--nui-control-padding);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius-sm);
+    background: var(--nui-surface-raised);
+    color: var(--nui-foreground);
+    font-size: max(1rem, var(--nui-text-base));
+  }
+
+  :where(textarea) {
+    min-block-size: 7rem;
+    resize: vertical;
+  }
+
+  :where(input[type="checkbox"], input[type="radio"]) {
+    inline-size: 1.25rem;
+    min-block-size: 1.25rem;
+    accent-color: var(--nui-accent);
+  }
+
+  :where(input:checked) {
+    accent-color: var(--nui-accent);
+  }
+
+  :where(input[type="file"]) {
+    padding: var(--nui-space-2);
+  }
+
+  :where(select) {
+    min-inline-size: 12rem;
+  }
+
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"]) {
+    padding-inline: var(--nui-control-padding);
+    border: var(--nui-border-width) solid var(--nui-accent);
+    border-radius: var(--nui-radius-sm);
+    background: var(--nui-accent);
+    color: var(--nui-accent-contrast);
+    cursor: pointer;
+    font-weight: 650;
+    transition: filter var(--nui-duration-fast) var(--nui-ease-out), transform var(--nui-duration-fast) var(--nui-ease-out);
+  }
+
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"]):hover:not(:disabled) {
+    filter: brightness(1.08);
+  }
+
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"]):active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  :where(button, input, select, textarea, summary, a[href]):focus-visible {
+    outline: 0.1875rem solid var(--nui-accent);
+    outline-offset: 0.125rem;
+  }
+
+  :where(button, input, select, textarea):disabled,
+  :where(button, input, select, textarea)[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.58;
+  }
+
+  :where(input, select, textarea):read-only {
+    background: var(--nui-surface-sunken);
+  }
+
+  :where(label) {
+    display: grid;
+    gap: var(--nui-space-2);
+    color: var(--nui-foreground);
+    font-weight: 620;
+  }
+
+  :where(label:has(input[type="checkbox"]), label:has(input[type="radio"])) {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--nui-control-size);
+    font-weight: 500;
+  }
+
+  :where(form:has(label, input, select, textarea)) {
+    display: grid;
+    gap: var(--nui-space-4);
+  }
+
+  :where(fieldset) {
+    min-inline-size: 0;
+    padding: var(--nui-space-4);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius);
+  }
+
+  :where(legend) {
+    padding-inline: var(--nui-space-2);
+    font-weight: 720;
+  }
+
+  :where(input, select, textarea):user-valid {
+    border-color: color-mix(in oklch, var(--nui-accent) 65%, var(--nui-border-color));
+  }
+
+  :where(input, select, textarea):user-invalid {
+    border-color: var(--nui-danger);
+    box-shadow: 0 0 0 0.15rem color-mix(in oklch, var(--nui-danger) 20%, transparent);
+  }
+
+  :where(table) {
+    inline-size: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  :where(caption) {
+    margin-block-end: var(--nui-space-2);
+  }
+
+  :where(th, td) {
+    padding: var(--nui-space-3) var(--nui-space-2);
+    border-block-end: var(--nui-border-width) solid var(--nui-border-color);
+    text-align: start;
+    vertical-align: top;
+  }
+
+  :where(th) {
+    background: var(--nui-surface-sunken);
+    font-weight: 720;
+  }
+
+  :where(tbody tr:nth-child(even)) {
+    background: color-mix(in oklch, var(--nui-surface-sunken) 42%, transparent);
+  }
+
+  :where(progress, meter) {
+    inline-size: min(100%, 24rem);
+    accent-color: var(--nui-accent);
+  }
+
+  :where(output) {
+    font-variant-numeric: tabular-nums;
+    font-weight: 650;
+  }
+
+  :where(details) {
+    padding-block: var(--nui-space-3);
+    border-block: var(--nui-border-width) solid var(--nui-border-color);
+  }
+
+  :where(summary) {
+    min-block-size: var(--nui-control-size);
+    cursor: pointer;
+    font-weight: 650;
+  }
+
+  :where(dialog) {
+    max-inline-size: min(36rem, calc(100% - 2rem));
+    max-block-size: calc(100dvb - 2rem);
+    overflow: auto;
+    padding: var(--nui-space-6);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius-lg);
+    background: var(--nui-surface-raised);
+    color: var(--nui-foreground);
+    box-shadow: var(--nui-shadow);
+  }
+
+  :where(dialog)::backdrop {
+    background: oklch(0.1 0.02 260 / 0.52);
+    backdrop-filter: blur(0.2rem);
+  }
+
+  :where([popover]) {
+    max-inline-size: min(24rem, calc(100% - 2rem));
+    padding: var(--nui-space-4);
+    border: var(--nui-border-width) solid var(--nui-border-color);
+    border-radius: var(--nui-radius);
+    background: var(--nui-surface-raised);
+    color: var(--nui-foreground);
+    box-shadow: var(--nui-shadow);
+  }
+
+  :where(:popover-open) {
+    animation: nui-popover-in var(--nui-duration-fast) var(--nui-ease-out) both;
+  }
+
+  @keyframes nui-popover-in {
+    from { opacity: 0; transform: translateY(-0.25rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (forced-colors: active) {
+    :where(input, select, textarea, fieldset, pre, table, th, td, dialog, [popover]) {
+      border-color: ButtonText;
+    }
+
+    :where(button, input[type="button"], input[type="submit"], input[type="reset"]) {
+      border-color: ButtonText;
+      background: ButtonFace;
+      color: ButtonText;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where(a[href], button, input[type="button"], input[type="submit"], input[type="reset"], :popover-open) {
+      transition: none;
+      animation: none;
+    }
+  }
+}
+
+@layer nui.layouts {
+  :where(.nui-container) {
+    inline-size: min(100% - 2rem, 72rem);
+    margin-inline: auto;
+    overflow-wrap: anywhere;
+  }
+
+  :where(.nui-readable) {
+    max-inline-size: var(--nui-readable);
+    margin-inline: auto;
+    overflow-wrap: anywhere;
+  }
+
+  :where(.nui-stack) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--nui-space-4);
+    min-inline-size: 0;
+  }
+
+  :where(.nui-cluster) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--nui-space-3);
+    min-inline-size: 0;
+  }
+
+  :where(.nui-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: var(--nui-space-4);
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  :where(.nui-stack > *, .nui-cluster > *, .nui-grid > *) {
+    min-inline-size: 0;
+  }
+}
+
+@layer nui.compositions {
+  :where(.card) { padding: var(--nui-space-6); border: var(--nui-border-width) solid var(--nui-border-color); border-radius: var(--nui-radius); background: var(--nui-surface-raised); box-shadow: var(--nui-shadow-sm); }
+  :where(.badge) { display: inline-flex; align-items: center; max-inline-size: 100%; padding: var(--nui-space-1) var(--nui-space-2); border: var(--nui-border-width) solid var(--nui-border-color); border-radius: 999px; font-size: var(--nui-text-sm); overflow-wrap: anywhere; }
+  :where(.alert, [role="alert"]) { padding: var(--nui-space-4); border-inline-start: 0.25rem solid var(--nui-accent); border-radius: var(--nui-radius-sm); background: var(--nui-surface-sunken); }
+  :where(.toolbar) { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.empty-state) { display: grid; justify-items: center; gap: var(--nui-space-3); padding: var(--nui-space-8); text-align: center; border: var(--nui-border-width) dashed var(--nui-border-color); border-radius: var(--nui-radius); }
+  :where(.field-actions) { display: flex; flex-wrap: wrap; align-items: end; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.table-overflow) { max-inline-size: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
+  :where(.table-overflow > table) { min-inline-size: 36rem; }
+  :where(dialog > header, dialog > footer, [popover] > header, [popover] > footer) { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nui-space-3); }
+  :where(dialog > header, [popover] > header) { margin-block-end: var(--nui-space-4); }
+  :where(dialog > footer, [popover] > footer) { margin-block-start: var(--nui-space-6); justify-content: end; }
+  :where(dialog, [popover]) { max-inline-size: min(100% - 2rem, 40rem); padding: var(--nui-space-6); border: var(--nui-border-width) solid var(--nui-border-color); border-radius: var(--nui-radius-lg); background: var(--nui-surface-raised); color: var(--nui-foreground); box-shadow: var(--nui-shadow); overflow-wrap: anywhere; }
+  :where(.responsive-navigation) { display: flex; flex-wrap: wrap; align-items: center; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.responsive-navigation > nav) { display: flex; flex-wrap: wrap; gap: var(--nui-space-3); min-inline-size: 0; }
+  :where(.card > *, .toolbar > *, .empty-state > *, .field-actions > *, .responsive-navigation > *) { min-inline-size: 0; }
+  :where(button[data-variant="danger"]) { border-color: var(--nui-danger); background: var(--nui-danger); color: var(--nui-danger-contrast); }
+  @media (prefers-reduced-motion: reduce) { :where(dialog, [popover]) { scroll-behavior: auto; } }
+}

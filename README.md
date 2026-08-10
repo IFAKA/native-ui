@@ -71,6 +71,13 @@ npm test
 npm run pack:check
 ```
 
+## Public site
+
+Build the package and deterministic Vercel artifact with `npm run build`; the
+static output is `public/`. Preview it with `python3 -m http.server 4173
+--directory public`, then open `http://127.0.0.1:4173`. Vercel uses the
+repository root, `npm run build`, and `public` as its output directory.
+
 Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before proposing changes. New public selectors, attributes, events, exports, dependencies, or behavior require a specification and tests.
 
 ## Principles

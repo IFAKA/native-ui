@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { auditPublicApi } from "./audit-public-api.mjs";
+import { buildSite } from "./build-site.mjs";
 
 const cssFiles = ["tokens.css", "elements.css", "layouts.css", "compositions.css"];
 const css = ["@layer nui.tokens, nui.elements, nui.layouts, nui.compositions, nui.enhancements;", ""];
@@ -24,3 +25,5 @@ await writeFile(new URL("../dist/analyzer/inference.mjs", import.meta.url), awai
 
 const audit = await auditPublicApi();
 if (audit.errors.length) throw new Error(audit.errors.join("\n"));
+
+if (!process.argv.includes("--package-only")) await buildSite();

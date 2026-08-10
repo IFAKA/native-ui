@@ -16,3 +16,7 @@ All notable changes will be documented here. Releases follow Semantic Versioning
   checked-in implementation and evidence.
 - Exposed recommendation-only semantic inference through the CLI and manifest,
   and added inference coverage to deterministic benchmark reports.
+- Added the framework-free Native UI public site assembler, manifest-backed
+  discovery pages, comparison lab, evidence routes, and static Vercel config.
+- Corrected analyzer name detection for visibly labelled native links and
+  buttons exposed by the public-site dogfood pass.

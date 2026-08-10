@@ -5,6 +5,7 @@ export default defineConfig({
   timeout: 30_000,
   fullyParallel: false,
   reporter: [["list"]],
+  webServer: { command: "python3 -m http.server 4173 --directory public", url: "http://127.0.0.1:4173", reuseExistingServer: true },
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
     { name: "firefox", use: { ...devices["Desktop Firefox"] } },

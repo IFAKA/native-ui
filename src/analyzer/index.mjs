@@ -43,11 +43,13 @@ export function analyzeHtml(html, { file = "<stdin>" } = {}) {
   const findings = [];
   for (const node of nodes) {
     const { tag, attrs } = node;
-    if (controlTags.has(tag) && !attrs.hidden && !attrs.disabled && !attrs["aria-label"] && !attrs["aria-labelledby"] && !(attrs.id && html.match(new RegExp(`<label[^>]*for=["']${attrs.id}["']`, "i")))) findings.push(finding("labels-required", node, html, file));
+    if (controlTags.has(tag) && !attrs.hidden && !attrs.disabled && !attrs["aria-label"] && !attrs["aria-labelledby"] && node.parent?.tag !== "label" && !(attrs.id && html.match(new RegExp(`<label[^>]*for=["']${attrs.id}["']`, "i")))) findings.push(finding("labels-required", node, html, file));
     if (tag === "img" && attrs.alt === undefined) findings.push(finding("image-alt", node, html, file));
     if ((attrs.role === "button" || attrs.role === "link") && ((attrs.role === "button" && tag === "button") || (attrs.role === "link" && tag === "a"))) findings.push(finding("aria-misuse", node, html, file));
     if (attrs.class?.split(/\s+/).includes("btn") && tag !== "button" && tag !== "a") findings.push(finding("native-control", node, html, file));
-    if ((interactiveTags.has(tag) || attrs.role === "button" || attrs.role === "link") && !attrs["aria-label"] && !attrs["aria-labelledby"] && !/>\s*[^<\s][\s\S]*<\//.test(node.raw)) findings.push(finding("interactive-name", node, html, file));
+    const closing = html.indexOf(`</${tag}>`, node.index + node.raw.length);
+    const visibleText = closing < 0 ? "" : html.slice(node.index + node.raw.length, closing).replace(/<[^>]+>/g, "").trim();
+    if ((interactiveTags.has(tag) || attrs.role === "button" || attrs.role === "link") && !attrs["aria-label"] && !attrs["aria-labelledby"] && !visibleText) findings.push(finding("interactive-name", node, html, file));
   }
   findings.sort((a, b) => a.location.line - b.location.line || a.location.column - b.location.column || a.ruleId.localeCompare(b.ruleId));
   return { version: 1, file, findings, summary: { errors: findings.filter((f) => f.severity === "error").length, warnings: findings.filter((f) => f.severity === "warning").length } };

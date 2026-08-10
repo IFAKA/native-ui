@@ -23,6 +23,16 @@ test("analyzer keeps safe native markup quiet and JSON byte deterministic", () =
   assert.equal(formatJson(one), formatJson(two));
 });
 
+test("analyzer recognizes visible names in native links and buttons", () => {
+  const result = analyzeHtml('<a href="/lab/">Open lab</a><button type="button">Save</button>');
+  assert.deepEqual(result.findings, []);
+});
+
+test("analyzer accepts controls wrapped by their native label", () => {
+  const result = analyzeHtml('<label>Email <input type="email"></label>');
+  assert.deepEqual(result.findings, []);
+});
+
 test("rule explanations are stable and unknown rules are rejected", () => {
   assert.match(explainRule("labels-required"), /associated label/i);
   assert.throws(() => explainRule("missing-rule"), /Unknown analyzer rule/);

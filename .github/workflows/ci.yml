@@ -83,7 +83,8 @@ jobs:
       - uses: actions/setup-node@1e60f620b9541dca5b3c8e9c4f6f3c6d3a1b9f4e
         with: { node-version: ${{ env.NODE_VERSION }}, cache: npm }
       - run: npm ci
-      - run: node --test tests/docs.test.mjs
+      - run: npm run build
+      - run: node --test tests/docs.test.mjs tests/site-build.test.mjs
 
   dependency-review:
     if: github.event_name == 'pull_request'

@@ -32,10 +32,12 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:package": "node scripts/build.mjs --package-only",
+    "build:site": "node scripts/build.mjs",
     "check": "node scripts/check.mjs",
     "test": "node --test && npm run build && npm run check",
     "test:browser-contract": "node --test tests/browser/**/*.spec.mjs",
-    "test:browser": "playwright test tests/browser/real-browser.spec.mjs",
+    "test:browser": "playwright test tests/browser/real-browser.spec.mjs tests/browser/site.spec.mjs",
     "measure": "node scripts/measure.mjs",
     "pack:check": "npm pack --dry-run",
     "pack:consumer": "node scripts/pack-consumer.mjs"
